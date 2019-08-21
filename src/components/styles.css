@@ -1,0 +1,38 @@
+body{
+    background-image: linear-gradient(to right, #43C6AC, #F8FFAE);
+    font-family: ubuntu;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+h1{
+    color: #000000;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
+    font-size: 49px;
+    padding: 0px;
+}
+
+.content{
+    background: #fff;
+    height: 100%;
+    margin: 8PX;
+    padding: 0px;
+
+
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
+}
+.jumbotron{
+  height: 93vh;
+  padding: 5px;
+  background-color: #fff;
+}
+hr {
+  margin-top: 1rem;
+margin-bottom: 1rem;
+border: 0;
+border-top: 1px solid rgba(0, 0, 0, 0.1);
+}

@@ -31,3 +31,18 @@
     transform: rotate(360deg);
   }
 }
+.jumbotron{
+  height: 93vh;
+  padding: 5px;
+  width: 50vw;
+  background-color: #fff;
+  display: inline-block;
+}
+.content{
+    background: #fff;
+    height: 100%;
+    margin: 8PX;
+    padding: 0px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    display: inline-block;
+}

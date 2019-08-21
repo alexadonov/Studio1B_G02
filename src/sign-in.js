@@ -106,32 +106,34 @@ export default class Shop extends Component {
   render() {
     const { data } = this.state;
     return (
-      <div className="App">
-        <Router>
+      <div class="container">
+          <Router>
           <Menu/>
-          <div class="container">
+          <div className="App">
           <br/>
+          <div class="jumbotron">
             <h1>Sign In</h1>
             <form onSubmit={this.handleSubmit}>
-            <div class="input-group mb-3">
+            <div class="col-lg-4 col-lg-offset-4">
+            <div width="200px" class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">@</span>
               </div>
               <input type="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
             </div>
-
-
-            <div class="input-group mb-3">
+            </div>
+            <div class="col-sm-7 col-sm-offset-7" padding-left="300px">
+            <div class="input-group sm-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">*</span>
               </div>
               <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" />
             </div>
-
+            </div>
           <input type="submit" class="btn btn-outline-primary" value="Submit"/>
           </form>
         </div>
-
+        </div>
         <ul>{this.state.pictures}</ul>
         </Router>
       </div>

@@ -3,35 +3,9 @@ import React, { Component } from 'react';
 export default class Menu extends Component {
   render() {
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="\">Online Shop</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <div>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="\">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="shop">Shop</a>
-              </li>
-              <li class="nav-item">
-                <a href="sign-in"><img width="32px" height="32px" alt="" src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDgyLjkgNDgyLjkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ4Mi45IDQ4Mi45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTIzOS43LDI2MC4yYzAuNSwwLDEsMCwxLjYsMGMwLjIsMCwwLjQsMCwwLjYsMGMwLjMsMCwwLjcsMCwxLDBjMjkuMy0wLjUsNTMtMTAuOCw3MC41LTMwLjUgICAgYzM4LjUtNDMuNCwzMi4xLTExNy44LDMxLjQtMTI0LjljLTIuNS01My4zLTI3LjctNzguOC00OC41LTkwLjdDMjgwLjgsNS4yLDI2Mi43LDAuNCwyNDIuNSwwaC0wLjdjLTAuMSwwLTAuMywwLTAuNCwwaC0wLjYgICAgYy0xMS4xLDAtMzIuOSwxLjgtNTMuOCwxMy43Yy0yMSwxMS45LTQ2LjYsMzcuNC00OS4xLDkxLjFjLTAuNyw3LjEtNy4xLDgxLjUsMzEuNCwxMjQuOUMxODYuNywyNDkuNCwyMTAuNCwyNTkuNywyMzkuNywyNjAuMnogICAgIE0xNjQuNiwxMDcuM2MwLTAuMywwLjEtMC42LDAuMS0wLjhjMy4zLTcxLjcsNTQuMi03OS40LDc2LTc5LjRoMC40YzAuMiwwLDAuNSwwLDAuOCwwYzI3LDAuNiw3Mi45LDExLjYsNzYsNzkuNCAgICBjMCwwLjMsMCwwLjYsMC4xLDAuOGMwLjEsMC43LDcuMSw2OC43LTI0LjcsMTA0LjVjLTEyLjYsMTQuMi0yOS40LDIxLjItNTEuNSwyMS40Yy0wLjIsMC0wLjMsMC0wLjUsMGwwLDBjLTAuMiwwLTAuMywwLTAuNSwwICAgIGMtMjItMC4yLTM4LjktNy4yLTUxLjQtMjEuNEMxNTcuNywxNzYuMiwxNjQuNSwxMDcuOSwxNjQuNiwxMDcuM3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KCQk8cGF0aCBkPSJNNDQ2LjgsMzgzLjZjMC0wLjEsMC0wLjIsMC0wLjNjMC0wLjgtMC4xLTEuNi0wLjEtMi41Yy0wLjYtMTkuOC0xLjktNjYuMS00NS4zLTgwLjljLTAuMy0wLjEtMC43LTAuMi0xLTAuMyAgICBjLTQ1LjEtMTEuNS04Mi42LTM3LjUtODMtMzcuOGMtNi4xLTQuMy0xNC41LTIuOC0xOC44LDMuM2MtNC4zLDYuMS0yLjgsMTQuNSwzLjMsMTguOGMxLjcsMS4yLDQxLjUsMjguOSw5MS4zLDQxLjcgICAgYzIzLjMsOC4zLDI1LjksMzMuMiwyNi42LDU2YzAsMC45LDAsMS43LDAuMSwyLjVjMC4xLDktMC41LDIyLjktMi4xLDMwLjljLTE2LjIsOS4yLTc5LjcsNDEtMTc2LjMsNDEgICAgYy05Ni4yLDAtMTYwLjEtMzEuOS0xNzYuNC00MS4xYy0xLjYtOC0yLjMtMjEuOS0yLjEtMzAuOWMwLTAuOCwwLjEtMS42LDAuMS0yLjVjMC43LTIyLjgsMy4zLTQ3LjcsMjYuNi01NiAgICBjNDkuOC0xMi44LDg5LjYtNDAuNiw5MS4zLTQxLjdjNi4xLTQuMyw3LjYtMTIuNywzLjMtMTguOGMtNC4zLTYuMS0xMi43LTcuNi0xOC44LTMuM2MtMC40LDAuMy0zNy43LDI2LjMtODMsMzcuOCAgICBjLTAuNCwwLjEtMC43LDAuMi0xLDAuM2MtNDMuNCwxNC45LTQ0LjcsNjEuMi00NS4zLDgwLjljMCwwLjksMCwxLjctMC4xLDIuNWMwLDAuMSwwLDAuMiwwLDAuM2MtMC4xLDUuMi0wLjIsMzEuOSw1LjEsNDUuMyAgICBjMSwyLjYsMi44LDQuOCw1LjIsNi4zYzMsMiw3NC45LDQ3LjgsMTk1LjIsNDcuOHMxOTIuMi00NS45LDE5NS4yLTQ3LjhjMi4zLTEuNSw0LjItMy43LDUuMi02LjMgICAgQzQ0Nyw0MTUuNSw0NDYuOSwzODguOCw0NDYuOCwzODMuNnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+" /></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="cart"><img width="32px" height="32px" alt="" src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ3NS4wODQgNDc1LjA4NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDc1LjA4NCA0NzUuMDg1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzY1LjQ0Niw0MDEuOTk4YzAsMTAuMDkyLDMuNTc5LDE4LjcwMiwxMC43MTEsMjUuODM0YzcuMTMyLDcuMTM5LDE1Ljc0OSwxMC43MTEsMjUuODQ1LDEwLjcxMSAgICBjMTAuMDgxLDAsMTguNjk4LTMuNTcyLDI1LjgzLTEwLjcxMWM3LjEzOS03LjEzMiwxMC43MTEtMTUuNzQyLDEwLjcxMS0yNS44MzRzLTMuNTY4LTE4LjcwMi0xMC43MTEtMjUuODQxICAgIGMtNy4xMzItNy4xMzItMTUuNzQ5LTEwLjcwNC0yNS44My0xMC43MDRjLTEwLjA5NiwwLTE4LjcxMywzLjU3Mi0yNS44NDUsMTAuNzA0QzM2OS4wMjUsMzgzLjI5NiwzNjUuNDQ2LDM5MS45MDYsMzY1LjQ0Niw0MDEuOTk4ICAgIHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KCQk8cGF0aCBkPSJNNDY5LjY1OCw3OC41MWMtMy42MTgtMy42MTctNy44OTgtNS40MjYtMTIuODQ4LTUuNDI2SDExMy45MThjLTAuMTkzLTEuMzMxLTAuNjIxLTMuNzU2LTEuMjg3LTcuMjc3ICAgIGMtMC42NjYtMy41MjMtMS4xODgtNi4zMjktMS41NjktOC40MjVjLTAuMzgzLTIuMDg3LTEuMDkzLTQuNjExLTIuMTQyLTcuNTYxYy0xLjA0Ny0yLjk1Mi0yLjI4NC01LjI4Ni0zLjcxMS02Ljk5NSAgICBjLTEuNDI1LTEuNzE4LTMuMzI4LTMuMTg5LTUuNzA4LTQuNDNjLTIuMzc4LTEuMjMzLTUuMDkyLTEuODUzLTguMTM2LTEuODUzSDE4LjI3NmMtNC45NTIsMC05LjIzNCwxLjgxMi0xMi44NSw1LjQyNCAgICBDMS44MDksNDUuNTgzLDAsNDkuODY4LDAsNTQuODE2czEuODA5LDkuMjMxLDUuNDI2LDEyLjg0N2MzLjYxOSwzLjYxNyw3LjkwMiw1LjQyNCwxMi44NSw1LjQyNGg1OC4yMzdsNTAuNTMyLDIzNC45NzYgICAgYy0wLjM3OCwwLjc2LTIuMzI5LDQuMzczLTUuODUyLDEwLjg0OGMtMy41MjEsNi40NzUtNi4zMjgsMTIuMTM1LTguNDIsMTYuOTg4Yy0yLjA5Myw0Ljg1OS0zLjE0LDguNjE2LTMuMTQsMTEuMjc5ICAgIGMwLDQuOTQ4LDEuODA5LDkuMjMyLDUuNDI0LDEyLjg1NGMzLjYyMSwzLjYwNiw3LjkwMiw1LjQyMSwxMi44NTEsNS40MjFoMTguMjcyaDI1NS44MTVoMTguMjYxYzQuOTQ4LDAsOS4yMzItMS44MTQsMTIuODQ3LTUuNDIxICAgIGMzLjYyLTMuNjIxLDUuNDI3LTcuOTA1LDUuNDI3LTEyLjg1NGMwLTQuOTQ5LTEuODA3LTkuMjMzLTUuNDI3LTEyLjg0N2MtMy42MTQtMy42MTQtNy44OTgtNS40MjgtMTIuODQ3LTUuNDI4aC0yNjIuNjYgICAgYzQuNTctOS4xMzgsNi44NTQtMTUuMjIyLDYuODU0LTE4LjI2OGMwLTEuOTA5LTAuMjM4LTQuMDA0LTAuNzE1LTYuMjgzcy0xLjA0Ny00LjgwNS0xLjcxMy03LjU2OSAgICBjLTAuNjY3LTIuNzUyLTEuMDkzLTQuNzk5LTEuMjgzLTYuMTMzbDI5OC4wNzctMzQuODMxYzQuNzUzLTAuNTc1LDguNjU4LTIuNjE0LDExLjcwMy02LjE0YzMuMDQ2LTMuNTE4LDQuNTY1LTcuNTYyLDQuNTY1LTEyLjEzMyAgICBWOTEuMzYzQzQ3NS4wODIsODYuNDE1LDQ3My4yNzgsODIuMTMyLDQ2OS42NTgsNzguNTF6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+CgkJPHBhdGggZD0iTTEwOS42MzIsNDAxLjk5OGMwLDEwLjA5MiwzLjU2NywxOC43MDIsMTAuNzA2LDI1LjgzNGM3LjE0MSw3LjEzOSwxNS43NSwxMC43MTEsMjUuODQxLDEwLjcxMSAgICBjMTAuMDg1LDAsMTguNjk5LTMuNTcyLDI1LjgzNS0xMC43MTFjNy4xMzktNy4xMzIsMTAuNzEtMTUuNzQyLDEwLjcxLTI1LjgzNHMtMy41NjgtMTguNzAyLTEwLjcxLTI1Ljg0MSAgICBjLTcuMTM3LTcuMTMyLTE1Ljc1LTEwLjcwNC0yNS44MzUtMTAuNzA0Yy0xMC4wOSwwLTE4LjcwNCwzLjU3Mi0yNS44NDEsMTAuNzA0QzExMy4yMDMsMzgzLjI5NiwxMDkuNjMyLDM5MS45MDYsMTA5LjYzMiw0MDEuOTk4eiAgICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+" /></a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div>
-        </nav>
+        </div>
 
     );
   }
