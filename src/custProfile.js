@@ -15,10 +15,36 @@ export default class Shop extends Component {
             <div className="App">
                 <div class="jumbotron">
                     <div class="shadow p-3 mb-5 bg-white rounded">
-                        <h1 class="display-4">Customer</h1>
+                        <h1 class="display-4">Customer Profile</h1>
                     </div>
-                    <p>Shop now to secure our opening deals</p>
-                    <a class="btn btn-primary btn-lg" href="sign-in" role="button">Shop now!</a>
+
+                    <div>
+                        <h2>Personal Details</h2>
+                    </div>
+                    <div>
+                        <h3>Name: </h3>
+                    </div>
+                    <div>
+                        <h3>Date of Birth: </h3>
+                    </div>
+                    <div>
+                        <h3>Password: </h3>
+                    </div>
+
+                    <br></br>
+                    <br></br>
+
+                    <div>
+                        <h2>Contact Details</h2>
+                    </div>
+                    <div>
+                        <h3>Email: </h3>
+                    </div>
+                    <div>
+                        <h3>Phone: </h3>
+                    </div>
+
+                    <a class="btn btn-primary btn-lg" href="/" role="button">Edit Profile</a>
                 </div>
             </div>
         </Router>
