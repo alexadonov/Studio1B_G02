@@ -19,6 +19,9 @@ export default class Home extends Component {
             </div>
             <p>Shop now to secure our opening deals</p>
             <a class="btn btn-primary btn-lg" href="sign-in" role="button">Shop now!</a>
+            <div>
+              <a class="btn btn-primary btn-lg" href="custProfile" role="button">Profile</a>
+            </div>
             <div class="row">
               <div class="col">
               <img width="500px" height="312px"class="rounded mx-auto d-block" src="https://o.aolcdn.com/images/dims?resize=2000%2C2000%2Cshrink&image_uri=https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2019-05%2Fa3672910-8104-11e9-a0f7-aeb448b3c7e2&client=a1acac3e1b3290917d92&signature=b7df459cfd4ed082bc6df7f56cc2daf839ba46fa" alt="My image"/>
