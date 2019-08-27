@@ -13,9 +13,10 @@ export default class Shop extends Component {
                 <Router>
                     <Menu />
                     <div className="App">
+						<h1 class="headingTop">Purchase History</h1>  
                         <div class="card" >
                             <div class="card-body">
-                                <h1 class="card-title">You</h1>
+                                <h1 class="card-title">Title of Product</h1>
                                 <div class="blank">
                                     <img src="https://c7.alamy.com/comp/EPF1YW/nun-with-handgun-isolated-on-white-EPF1YW.jpg" class="card-img-top" alt="..." />
                                     <ul class="list-group list-group-flush">
