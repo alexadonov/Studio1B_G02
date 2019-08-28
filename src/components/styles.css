@@ -29,17 +29,30 @@ h2{
 low-pad{
     padding: 100px;
 }
+.app{
+  height: 100vh;
+  width: 100vw;
+}
 
 .content{
     background: #fff;
     height: 100%;
     margin: 0PX;
     padding: 0px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    width: 98vw;
+    overflow-y: auto;
+}
+.hidden-thing {
+  position: absolute;
+  left: 100%;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
 }
 .jumbotron1{
-    height: 98vh;
-    width: 99vw;
+  height: 97vh;
+    overflow: auto;
     background-color: #fff;
 }
 
@@ -126,4 +139,11 @@ hr {
 }
 .black{
   color: black;
+}
+.padding-signin{
+  padding-top: 15px;
+}
+.item:hover .wrapper,
+.item:hover ~ .wrapper {
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
 }
