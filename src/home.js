@@ -28,7 +28,7 @@ export default class Home extends Component {
               <div class="container">
               <div class="row px-5 mx-auto">
                 <div class="col-sm px-1">
-                  <button type="button" class="btn btn-default btn-sm"><b>Desktops</b></button>
+                  <button type="button" class="btn btn-default btn-sm black"><b>Desktops</b></button>
                 </div>
                 <div class="col-sm px-1">
                   <button type="button" class="btn btn-default btn-sm"><b>Accessories</b></button>
