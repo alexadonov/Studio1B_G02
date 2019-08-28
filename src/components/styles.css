@@ -16,6 +16,28 @@ h1{
     padding: 0px;
 }
 
+h2{
+  color: black;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+  padding: 10px;
+}
+
+h3{
+  color: black;
+  letter-spacing: 2px;
+  text-align: left;
+  margin: 0px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  padding: 10px;
+}
+
 .content{
     background: #fff;
     height: 100%;
@@ -25,11 +47,13 @@ h1{
 
     box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
 }
+
 .jumbotron{
   height: 93vh;
   padding: 5px;
   background-color: #fff;
 }
+
 hr {
   margin-top: 1rem;
 margin-bottom: 1rem;
