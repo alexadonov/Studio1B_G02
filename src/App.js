@@ -8,6 +8,7 @@ import Shop from "./shop.js";
 import Signin from "./sign-in.js";
 import Cart from "./cart.js";
 import Purchase from "./purchaseHistory.js"
+import Profile from "./custProfile.js";
 
 class App extends Component {
   render() {
@@ -43,6 +44,12 @@ class App extends Component {
                     <Purchase />
                 </div>
             )} />
+
+            <Route exact={true} path='/custProfile' render={() => (
+              <div className="App">
+                <Profile />
+              </div>
+            )}/>
           </div>
         </BrowserRouter>
     );
