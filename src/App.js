@@ -7,6 +7,8 @@ import Home from "./home.js";
 import Shop from "./shop.js";
 import Signin from "./sign-in.js";
 import Cart from "./cart.js";
+import Purchase from "./purchaseHistory.js"
+import Profile from "./custProfile.js";
 
 class App extends Component {
   render() {
@@ -34,6 +36,18 @@ class App extends Component {
             <Route exact={true} path='/cart' render={() => (
               <div className="App">
                 <Cart />
+              </div>
+                )} />
+
+            <Route exact={true} path='/purchaseHistory' render={() => (
+                <div className="App">
+                    <Purchase />
+                </div>
+            )} />
+
+            <Route exact={true} path='/custProfile' render={() => (
+              <div className="App">
+                <Profile />
               </div>
             )}/>
           </div>
