@@ -116,7 +116,7 @@ export default class Shop extends Component {
                 <section>
                     <div class = "container-2">
                         <div class = "product-box">
-                        <div class = "product-image"
+                        <div class = "product-image">
                         <a href="#"><img src= {product1} alt ="Razor BlackWidow Mechanical Keyboard"/></a>
                         </div>
                         <p>Razor BlackWidow Mechanical Keyboard</p>
