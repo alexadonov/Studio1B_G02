@@ -108,10 +108,9 @@ export default class Shop extends Component {
     return (
       <div class="container" >
           <Router>
-          <Menu/>
           <div className="App">
           <br/>
-          <div class="jumbotron shadow">
+          <div class="jumbotron4 shadow">
             <div class="shadow p-1 mb-5 bg-white rounded-top">
             <h1>Sign In</h1>
             </div>
@@ -163,7 +162,7 @@ export default class Shop extends Component {
                     </g>
                 </svg></b></span>
               </div>
-              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" />
+              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"/>
             </div>
             </div>
             </div>

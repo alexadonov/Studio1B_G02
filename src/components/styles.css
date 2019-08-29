@@ -147,3 +147,11 @@ hr {
 .item:hover ~ .wrapperb {
     color: #70d2ab;
 }
+.jumbotron{
+  padding: 0px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.i{
+  display: inline-block;
+}
