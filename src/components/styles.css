@@ -3,7 +3,7 @@ body{
     font-family: ubuntu;
     margin-top: 0px;
     padding-top: 0px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 h1{
@@ -25,6 +25,7 @@ h2{
     font-weight: 300;
     font-size: 35px;
     padding: 0px;
+
 }
 low-pad{
     padding: 100px;
@@ -32,6 +33,7 @@ low-pad{
 .app{
   height: 100vh;
   width: 100vw;
+  overflow: auto;
 }
 
 .content{
@@ -41,19 +43,13 @@ low-pad{
     padding: 0px;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
     width: 98vw;
-    overflow-y: auto;
-}
-.hidden-thing {
-  position: absolute;
-  left: 100%;
-  width: 50px;
-  height: 50px;
-  opacity: 0;
+      overflow: hidden;
 }
 .jumbotron1{
-  height: 97vh;
+  height: 98vh;
     overflow: auto;
     background-color: #fff;
+    overflow: hidden;
 }
 
 hr {
@@ -143,7 +139,11 @@ hr {
 .padding-signin{
   padding-top: 15px;
 }
-.item:hover .wrapper,
-.item:hover ~ .wrapper {
-    box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
+.item:hover .wrappera,
+.item:hover ~ .wrappera {
+    box-shadow:0 0rem 1rem rgb(112,210,171);
+}
+.item:hover .wrapperb,
+.item:hover ~ .wrapperb {
+    color: #70d2ab;
 }
