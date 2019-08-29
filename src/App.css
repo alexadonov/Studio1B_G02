@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: 0;
 }
 
 .App-logo {
@@ -32,11 +33,12 @@
   }
 }
 .jumbotron{
-  height: 93vh;
-  padding: 5px;
-  width: 50vw;
+  height: 54vh;
+  padding: 0px;
+  width: 34vw;
   background-color: #fff;
   display: inline-block;
+  overflow-y:auto;
 }
 .content{
     background: #fff;
@@ -45,4 +47,79 @@
     padding: 0px;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
     display: inline-block;
+}
+#input-gap{
+    padding-bottom: 25px;
+}
+h1{
+  padding-bottom:0px;
+}
+.black-background {
+  background-color:#97E0AD;
+}
+.white {
+  color:#ffffff;
+}
+.btn {
+  border-color:#97E0AD;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.b-s{
+  width: 186.5px;
+}
+.b-s:focus{
+  box-shadow: 0 0 0 0.2rem rgb(169, 227, 174);
+}
+.b-s:hover {
+  background-color:#DFF5E6; color:#87C99B;
+}
+.input-group {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.vertical-center {
+  margin: 0;
+  position: relative;
+  top: 27%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.form-control {
+  background-color: #ced4da;
+}
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgb(169, 227, 174);
+  border-color: rgb(169, 227, 174);
+}
+.input-group-text{
+  background-color: #ced4da;
+}
+#asterix-padding{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+h6{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  padding: 8px;
+}
+.btn-txt1{
+  color: black;
+  size: auto;
+}
+.btn-txt1:hover{
+  box-shadow: 0 0 0 0rem rgb(0, 0, 0);
+  color: black;
+}
+.btn-txt1:focus{
+  color: black;
+  box-shadow: 0 0 0 0rem rgb(0, 0, 0);
+  outline: none;
+    color: #97E0AD;
+}
+.svg-padlocks{
+  background-size: 16px;
+}
+.input-group-text {
+    min-width:39px;
+    vertical-align: middle;
 }
