@@ -1,13 +1,13 @@
-
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import CartItem from "./components/cartitem";
 import TopBar from "./components/TopBar";
+import Menu from "./components/Menu";
 
 const dummyItems = [
     {
         id: "44887",
         productName: "Ducky One 2 Mini RGB Mechanical Keyboard Cherry Silver",
-        price:159,
+        price: 159,
         quantity: 1
     },
     {
@@ -40,27 +40,29 @@ export default class Cart extends Component {
 
     render() {
         return (
-            <div>
-                <TopBar/>
-                <h1>Cart</h1>
-                <table className="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Total</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        this.state.items.map((item) => {
-                            return <CartItem item={item} deleteItem={this.deleteItem}/>;
-                        })
-                    }
-                    </tbody>
-                </table>
+            <div class="content rounded">
+                <div class="jumbotron1 rounded">
+                    <Menu/>
+                    <h1>Cart</h1>
+                    <table className="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            this.state.items.map((item) => {
+                                return <CartItem item={item} deleteItem={this.deleteItem}/>;
+                            })
+                        }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         );
     }
