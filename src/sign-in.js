@@ -12,16 +12,18 @@ export default class Shop extends Component {
   constructor(props) {
        super(props);
 
-       this.onChangeUsername = this.onChangeUsername.bind(this);
+       this.onChangeUsername = this.onChangeUsername.bind(this); //Needed for input fields it they change
        this.onChangePassword = this.onChangePassword.bind(this);
        this.onSubmit = this.onSubmit.bind(this);
 
+       //This just says we are going to call these fields from the database
        this.state = {
            username: String,
            password: String
        }
     }
 
+    //When the field changes, the new value is  saved locally
     onChangeUsername(e) {
       this.setState({
           username: e.target.value
@@ -47,7 +49,7 @@ export default class Shop extends Component {
                   if(response.data[i].username === newUser.username && response.data[i].password === newUser.password  ) {
                       localStorage.setItem('username', newUser.username);
                       localStorage.setItem('password', newUser.password);
-alert("Yes");
+                      alert("Yes");
                       // this.props.history.push('/custProfile')
                       return;
                     }

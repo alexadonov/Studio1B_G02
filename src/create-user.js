@@ -76,9 +76,7 @@ export default class Shop extends Component {
 
         axios.post('http://localhost:4000/users/add')
             .then(response => {
-              if(response === 200) {
                 alert("Welcome to the club!");
-              }
             })
             .catch(function (error){
                 console.log('What happened? ' + error);
