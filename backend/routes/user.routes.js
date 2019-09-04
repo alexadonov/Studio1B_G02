@@ -16,7 +16,7 @@ userRouter.route('/').get(function(req, res) {
 });
 
 
-todoRoutes.route('/:id').get(function(req, res) {
+userRouter.route('/:id').get(function(req, res) {
     let id = req.params.id;
     User.findById(id, function(err, user) {
       if(err) { console.log(err); }
@@ -24,7 +24,7 @@ todoRoutes.route('/:id').get(function(req, res) {
     });
 });
 
-todoRoutes.route('/update/:id').post(function(req, res) {
+userRouter.route('/update/:id').post(function(req, res) {
     User.findById(req.params.id, function(err, user) {
         if (!todo)
             res.status(404).send("data is not found");
