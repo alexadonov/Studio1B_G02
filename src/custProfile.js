@@ -3,9 +3,33 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./components/Menu";
 import "./components/styles.css"
 import { BrowserRouter as Router } from "react-router-dom";
+import axios from 'axios';
 
 
 export default class Shop extends Component {
+
+  constructor(props) {
+       super(props);
+
+       this.state = {
+           username: String,
+           password: String
+        }
+    }
+
+    componentDidMount() {
+      axios.get('http://localhost:4000/items/')
+          .then(res => {
+            this.setState({
+              username: res.data.username,
+              password: res.data.password
+            })
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+    }
+
 
   render() {
     return (
@@ -23,12 +47,14 @@ export default class Shop extends Component {
                     </div>
                     <div>
                         <h3>Name: </h3>
+                        <h5>{localStorage.getItem('username')}</h5>
                     </div>
                     <div>
                         <h3>Date of Birth: </h3>
                     </div>
                     <div>
                         <h3>Password: </h3>
+                        <h5>{localStorage.getItem('password')}</h5>
                     </div>
 
                     <br></br>
@@ -44,7 +70,7 @@ export default class Shop extends Component {
                         <h3>Phone: </h3>
                     </div>
 
-                    <a class="btn btn-primary btn-lg" href="/" role="button">Edit Profile</a>
+                    <a class="btn btn-primary btn-lg" href="/edit-user" role="button">Edit Profile</a>
                 </div>
             </div>
         </Router>

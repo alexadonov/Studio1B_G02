@@ -87,7 +87,6 @@ export default class EditUser extends Component {
     // axios.post('http://localhost:4000/users/update/' + this.props.match.id, obj)
     //     .then(res => console.log(res.data));
 
-    this.props.history.push('/');
     }
 
   render() {
