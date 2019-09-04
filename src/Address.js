@@ -4,14 +4,9 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Menu from "./components/Menu";
-import "./components/shop.css";
+import "./components/Address.css";
 
-import product1 from "./components/img/Blackwidow Keyboard.jpg";
-import product2 from "./components/img/Logitech G502 Mousepad.jpeg";
-import product3 from "./components/img/Lixon Mini Speaker.jpg";
-
-
-export default class Shop extends Component {
+export default class Address extends Component {
 
   render() {
     return (
@@ -19,12 +14,11 @@ export default class Shop extends Component {
         <Router>
         <Menu/>
         </Router>
-
         <div class="jumbotron">
 
         <header>
 
-          <h1 class="display-1">Accessories</h1>
+          <h1 class="display-1">Sign up</h1>
           <div className = "NavBar">
             <ul class="nav justify-content-center">
             <li class="nav-item">
@@ -109,56 +103,80 @@ export default class Shop extends Component {
         </div>
 
         </header>
-
-        <div class = "container-1">
-
-            <div class = "mainContent">
-                <section>
-                    <div class = "container-2">
-                        <div class = "product-box">
-                        <div class = "product-image">
-                        <a href="#"><img src= {product1} alt ="Razor BlackWidow Mechanical Keyboard"/></a>
-                        </div>
-                        <p>Razor BlackWidow Mechanical Keyboard</p>
-                        <p>299</p>
-                        </div>
-
-                        <div class = "product-box">
-                        <a href="#"><img src= {product2} alt ="Logitech G502 Mousepad"/></a>
-                        <p>Logitech G502 Gaming Mouse</p>
-                        <p>120</p>
-                        </div>
-
-                        <div class = "product-box">
-                        <a href="#"><img src= {product3} alt ="Lixon Mini Speaker"/></a>
-                        <p>Lixon Mini Speaker</p>
-                        <p>59</p>
-                        </div>
-
+        <section>
+            <form class="needs-validation" novalidate>
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">First name</label>
+                  <input type="text" pattern="[a-zA-Z\s]*" class="form-control" id="validationCustom01" placeholder="First name" required/>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom02">Last name</label>
+                  <input type="text" pattern="[a-zA-Z\s]*" class="form-control" id="validationCustom02" placeholder="Last name" required/>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Shipping Address 1</label>
+                    <input type="text" class="form-control" id="validationCustom03" placeholder="Shipping Address 1" required/>
+                    <div class="valid-feedback">
+                      Looks good!
                     </div>
-                    //main content
-                </section>
-            </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustom04">City</label>
+                  <input type="text" class="form-control" id="validationCustom04" placeholder="City/Town" required/>
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                <label for="validationCustom05">State</label>
+                <select class="custom-select" id="validationCustom05" placeholder="State" required>
+                  <option value="">Select</option>
+                  <option value="">New South Wales</option>
+                  <option value="">Queensland</option>
+                  <option value="">South Australia</option>
+                  <option value="">Victoria</option>
+                  <option value="">Western Australia</option>
+                </select>
+                <div class="invalid-feedback">
+                  Looks good!
+                </div>
+              </div>
 
-            <div class = "sideBar">
-                <aside>
-                    <h2>FILTERS</h2>
-                      <div class="list-group list-group-flush">
-                          <button type="button" class="list-group-item list-group-item-action">Keyboard</button>
-                          <button type="button" class="list-group-item list-group-item-action">Mouse</button>
-                          <button type="button" class="list-group-item list-group-item-action">Webcam</button>
-                          <button type="button" class="list-group-item list-group-item-action">Fan</button>
-                          <button type="button" class="list-group-item list-group-item-action">Speaker</button>
-                          <button type="button" class="list-group-item list-group-item-action">Cleaner</button>
-                    </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom06">Zip</label>
+                  <input type="text" pattern="[0-9]{4}" class="form-control" id="validationCustom06"  placeholder="Zip" title="Australian zip codes only contain 4 digits"required/>
+                  <div class="invalid-feedback">
+                    Please provide a valid zip.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
+                  <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                  </label>
+                  <div class="invalid-feedback">
+                    You must agree before submitting.
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Submit Shipping details</button>
+              </form>
 
-                </aside>
-            </div>
-
+        </section>
 
         </div>
         </div>
-      </div>
     );
   }
 }
