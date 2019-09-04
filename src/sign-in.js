@@ -75,10 +75,9 @@ export default class Shop extends Component {
     return (
       <div class="container" >
           <Router>
-          <Menu/>
           <div className="App">
           <br/>
-          <div class="jumbotron shadow">
+          <div class="jumbotron4 shadow">
             <div class="shadow p-1 mb-5 bg-white rounded-top">
             <h1>Sign In</h1>
             </div>

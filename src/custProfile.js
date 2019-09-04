@@ -35,7 +35,6 @@ export default class Shop extends Component {
     return (
     <div class="container">
         <Router>
-        <Menu/>
             <div className="App">
                 <div class="jumbotron">
                     <div class="shadow p-3 mb-5 bg-white rounded">
