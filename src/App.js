@@ -10,6 +10,9 @@ import Cart from "./cart.js";
 import Purchase from "./purchaseHistory.js"
 import Profile from "./custProfile.js";
 import Address from "./Address.js";
+import CreateUser from "./create-user";
+import EditUser from "./edit-user";
+import CreateItem from "./createItem.js";
 
 class App extends Component {
   render() {
@@ -57,6 +60,25 @@ class App extends Component {
                 <Profile />
               </div>
             )}/>
+
+            <Route exact={true} path='/create-user' render={() => (
+                <div className="App">
+                    <CreateUser />
+                </div>
+            )} />
+
+            <Route exact={true} path='/edit-user' render={() => (
+                <div className="App">
+                    <EditUser />
+                </div>
+            )} />
+
+            <Route exact={true} path='/create-item' render={() => (
+                <div className="App">
+                    <CreateItem />
+                </div>
+            )} />
+
           </div>
         </BrowserRouter>
     );
