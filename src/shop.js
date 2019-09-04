@@ -12,7 +12,6 @@ import product3 from "./components/img/Lixon Mini Speaker.jpg";
 
 
 export default class Shop extends Component {
-
     render() {
         return (
             <div className="App">
