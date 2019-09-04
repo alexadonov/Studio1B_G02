@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import CartItem from "./components/cartitem";
-import TopBar from "./components/TopBar";
 import Menu from "./components/Menu";
 
 const dummyItems = [
