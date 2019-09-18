@@ -32,7 +32,13 @@ export default class CreateItem extends Component {
       }
   }
 
-
+  componentDidMount() {
+    if(localStorage.getItem('userType') === "user") {
+      alert('You do not have access to this page');
+      window.location = "/";
+    }
+  }
+  
   onChangeName(e) {
     this.setState({
         name: e.target.value

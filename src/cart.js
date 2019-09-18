@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CartItem from "./components/cartitem";
 import Menu from "./components/Menu";
+import StripeCheckout from 'react-stripe-checkout';
 
 const dummyItems = [
     {
@@ -61,6 +62,18 @@ export default class Cart extends Component {
                         }
                         </tbody>
                     </table>
+                    <StripeCheckout
+                      label="Pay with 💳"
+                      amount="500" //This should change
+                      billingAddress
+                      description="Computers & Stuff" //This should change
+                      image="/logo.svg"
+                      locale="auto"
+                      name="Loren Ipsum"
+                      stripeKey="pk_test_amIsnVcb4dXtUFh2vbL9EKNo00BAkY8kZo"
+                      token={this.onToken}
+                      zipCode
+                    />
                 </div>
             </div>
         );
