@@ -9,99 +9,66 @@ import axios from 'axios';
 
 export default class Shop extends Component {
 
-  state = {
-      data: [],
-      id: 0,
-      username: String,
-      password: String,
-      intervalIsSet: false,
-      idToDelete: null,
-      idToUpdate: null,
-      objectToUpdate: null,
-    };
+  constructor(props) {
+       super(props);
 
-    // when component mounts, first thing it does is fetch all existing data in our db
-    // then we incorporate a polling logic so that we can easily see if our db has
-    // changed and implement those changes into our UI
-    componentDidMount() {
-      this.getDataFromDb();
-      if (!this.state.intervalIsSet) {
-        let interval = setInterval(this.getDataFromDb, 1000);
-        this.setState({ intervalIsSet: interval });
-      }
+       this.onChangeUsername = this.onChangeUsername.bind(this); //Needed for input fields it they change
+       this.onChangePassword = this.onChangePassword.bind(this);
+       this.onSubmit = this.onSubmit.bind(this);
+
+       //This just says we are going to call these fields from the database
+       this.state = {
+           username: String,
+           password: String
+       }
     }
 
-    // never let a process live forever
-    // always kill a process everytime we are done using it
-    componentWillUnmount() {
-      if (this.state.intervalIsSet) {
-        clearInterval(this.state.intervalIsSet);
-        this.setState({ intervalIsSet: null });
-      }
+    //When the field changes, the new value is  saved locally
+    onChangeUsername(e) {
+      this.setState({
+          username: e.target.value
+      });
+    }
+    onChangePassword(e) {
+     this.setState({
+         password: e.target.value
+     });
     }
 
-    // just a note, here, in the front end, we use the id key of our data object
-    // in order to identify which we want to Update or delete.
-    // for our back end, we use the object id assigned by MongoDB to modify
-    // data base entries
+    onSubmit(e) {
+          e.preventDefault();
 
-    // our first get method that uses our backend api to
-    // fetch data from our data base
-    getDataFromDb = () => {
-      fetch('http://localhost:3001/api/getData')
-        .then((data) => data.json())
-        .then((res) => this.setState({ data: res.data }));
-    };
+          const newUser = {
+            username: this.state.username,
+            password: this.state.password
+        };
 
-    // our put method that uses our backend api
-  // to create new query into our data base
-  putDataToDB = (message) => {
-    let currentIds = this.state.data.map((data) => data.id);
-    let idToBeAdded = 0;
-    while (currentIds.includes(idToBeAdded)) {
-      ++idToBeAdded;
-    }
+          axios.get('http://localhost:4000/users/')
+              .then(response => {
+                for(var i = 0; i < response.data.length; i++) {
+                  if(response.data[i].username === newUser.username && response.data[i].password === newUser.password  ) {
+                      localStorage.setItem('username', newUser.username);
+                      localStorage.setItem('password', newUser.password);
+                      alert("Yes");
+                      // this.props.history.push('/custProfile')
+                      return;
+                    }
+                }
+                if(!(response.data.username === newUser.username) || !(response.data.password === newUser.password)) {
+                  alert("Wrong username and/or password");
+                  return;
+                }
+              })
+              .catch(function (error){
+                  console.log('What happened? ' + error);
+              })
 
-    axios.post('http://localhost:3001/api/putData', {
-      id: idToBeAdded,
-      message: message,
-    });
-  };
-
-  // our delete method that uses our backend api
-  // to remove existing database information
-  deleteFromDB = (idTodelete) => {
-    parseInt(idTodelete);
-    let objIdToDelete = null;
-    this.state.data.forEach((dat) => {
-      if (dat.id == idTodelete) {
-        objIdToDelete = dat._id;
+            this.setState({
+              username: '',
+              password : '',
+            });
       }
-    });
 
-    axios.delete('http://localhost:3001/api/deleteData', {
-      data: {
-        id: objIdToDelete,
-      },
-    });
-  };
-
-  // our update method that uses our backend api
-  // to overwrite existing data base information
-  updateDB = (idToUpdate, updateToApply) => {
-    let objIdToUpdate = null;
-    parseInt(idToUpdate);
-    this.state.data.forEach((dat) => {
-      if (dat.id == idToUpdate) {
-        objIdToUpdate = dat._id;
-      }
-    });
-
-    axios.post('http://localhost:3001/api/updateData', {
-      id: objIdToUpdate,
-      update: { message: updateToApply },
-    });
-  };
 
   render() {
     const { data } = this.state;
@@ -115,7 +82,7 @@ export default class Shop extends Component {
             <h1>Sign In</h1>
             </div>
             <div class="vertical-center">
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.onSubmit}>
             <div>
             <div class="col" align="center" >
             <div class="col-lg-8 col-lg-offset-8" id="input-gap">
@@ -138,7 +105,7 @@ export default class Shop extends Component {
                     </g>
                 </svg></span>
               </div>
-              <input type="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+              <input type="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={this.state.username} onChange={this.onChangeUsername} required/>
             </div>
             </div>
             <div class="col-lg-8 col-lg-offset-8" id="input-gap">
@@ -162,7 +129,7 @@ export default class Shop extends Component {
                     </g>
                 </svg></b></span>
               </div>
-              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"/>
+              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"  value={this.state.password} onChange={this.onChangePassword} required/>
             </div>
             </div>
             </div>
