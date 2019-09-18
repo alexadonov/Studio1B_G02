@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./components/Menu";
-import "./components/styles.css"
+import "./static/styles.css"
 import { BrowserRouter as Router } from "react-router-dom";
 import axios from 'axios';
 

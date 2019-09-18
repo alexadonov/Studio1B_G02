@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./components/Menu";
-import "./components/styles.css"
+import "./static/styles.css"
 
 
 export default class Home extends Component {
