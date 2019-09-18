@@ -12,7 +12,7 @@ export default class Shop extends Component {
   constructor(props) {
        super(props);
 
-       this.onChangeUsername = this.onChangeUsername.bind(this);
+       this.onChangeUsername = this.onChangeUsername.bind(this); //Needed for input fields it they change
        this.onChangePassword = this.onChangePassword.bind(this);
        this.onSubmit = this.onSubmit.bind(this);
 
@@ -89,10 +89,9 @@ export default class Shop extends Component {
     return (
       <div class="container" >
           <Router>
-          <Menu/>
           <div className="App">
           <br/>
-          <div class="jumbotron shadow">
+          <div class="jumbotron4 shadow">
             <div class="shadow p-1 mb-5 bg-white rounded-top">
             <h1>Sign In</h1>
             </div>

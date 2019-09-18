@@ -4,8 +4,8 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Menu from "./components/Menu";
-import "./components/shop.css";
 import axios from 'axios';
+import "./static/shop.css";
 
 import product1 from "./components/img/Blackwidow Keyboard.jpg";
 import product2 from "./components/img/Logitech G502 Mousepad.jpeg";

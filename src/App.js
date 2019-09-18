@@ -7,8 +7,11 @@ import Home from "./home.js";
 import Shop from "./shop.js";
 import Signin from "./sign-in.js";
 import Cart from "./cart.js";
-import Purchase from "./purchaseHistory.js"
+import Purchase from "./purchaseHistory.js";
 import Profile from "./custProfile.js";
+
+import EditCust from "./editCustProfile.js";
+
 import Address from "./Address.js";
 import CreateUser from "./create-user";
 import EditUser from "./edit-user";
@@ -47,7 +50,7 @@ class App extends Component {
               <div className="App">
                 <Cart />
               </div>
-                )} />
+             )} />
 
             <Route exact={true} path='/purchaseHistory' render={() => (
                 <div className="App">
@@ -59,6 +62,15 @@ class App extends Component {
               <div className="App">
                 <Profile />
               </div>
+
+             )} />
+
+            <Route exact={true} path='/editCustProfile' render={() => (
+                <div className="App">
+                    <EditCust />
+                </div>
+            )} />
+
             )}/>
 
             <Route exact={true} path='/create-user' render={() => (
@@ -78,7 +90,6 @@ class App extends Component {
                     <CreateItem />
                 </div>
             )} />
-
           </div>
         </BrowserRouter>
     );

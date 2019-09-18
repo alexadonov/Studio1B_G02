@@ -52,11 +52,7 @@ userRouter.delete('/:id', (req, res) => {
 });
 
 userRouter.route('/add').post(function(req, res) {
-    let user = new User({
-      username: req.body.username,
-      password: req.body.password
-    });
-
+    let user = new User(req.body);
     user.save()
         .then(user => {
             res.status(200).json({'user': 'user added successfully ' + user});

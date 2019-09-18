@@ -4,7 +4,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Menu from "./components/Menu";
-import "./components/Address.css";
+import "./static/Address.css";
 
 export default class Address extends Component {
 
