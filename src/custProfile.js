@@ -43,33 +43,32 @@ export default class Shop extends Component {
                     </div>
 
                     <div>
-                        <h2>Personal Details</h2>
+                        <h3>Personal Details</h3>
                     </div>
-                    <div>
-                        <h3>Name: </h3>
-                        <h5>{localStorage.getItem('username')}</h5>
-                    </div>
-                    <div>
-                        <h3>Date of Birth: </h3>
-                    </div>
-                    <div>
-                        <h3>Password: </h3>
-                        <h5>{localStorage.getItem('password')}</h5>
-                    </div>
+                    <p>
+                        <strong>Name: </strong> {localStorage.getItem('username')}
+                    </p>
+                    <p>
+                        <strong>Date of Birth: </strong> {localStorage.getItem('dob')}
+                    </p>
+                    <p>
+                        <strong>Password: </strong> {localStorage.getItem('password')}
+                    </p>
 
                     <br></br>
                     <br></br>
 
                     <div>
-                        <h2>Contact Details</h2>
+                        <h3>Contact Details</h3>
                     </div>
-                    <div>
-                        <h3>Email: </h3>
-                    </div>
-                    <div>
-                        <h3>Phone: </h3>
-                    </div>
+                    <p>
+                        <strong>Email: </strong> {localStorage.getItem('email')}
+                    </p>
+                    <p>
+                        <strong>Phone: </strong> {localStorage.getItem('phone')}
+                    </p>
 
+                    <br></br>
                     <a class="btn btn-primary btn-lg" href="/edit-user" role="button">Edit Profile</a>
                 </div>
             </div>
