@@ -27,6 +27,16 @@ h2{
     padding: 0px;
 
 }
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel img {
+  margin: auto;
+}
+
 low-pad{
     padding: 100px;
 }
