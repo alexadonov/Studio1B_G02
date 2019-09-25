@@ -35,6 +35,13 @@ itemRouter.route('/:id').get(function(req, res) {
     });
 });
 
+//Delete
+itemRouter.delete('/:id', (req, res) => {
+  Item.findByIdAndRemove(req.params.id, req.body)
+    .then(book => res.json({ mgs: 'Item Deleted' }))
+    .catch(err => res.status(404).json({ error: 'No such Item' }));
+});
+
 //Edit
 itemRouter.route('/update/:id').post(function(req, res) {
     Item.findById(req.params.id, function(err, item) {

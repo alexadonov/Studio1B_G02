@@ -21,9 +21,9 @@ export default class Shop extends Component {
            username: String,
            password: String,
            email: String,
-          phone: String,
-          dob: String,
-          loggedIn: Boolean
+           phone: String,
+           dob: String,
+           loggedIn: Boolean
        }
     }
 

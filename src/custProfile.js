@@ -18,7 +18,7 @@ export default class Shop extends Component {
     }
 
     componentDidMount() {
-      axios.get('http://localhost:4000/items/')
+      axios.get('http://localhost:4000/users/')
           .then(res => {
             this.setState({
               username: res.data.username,

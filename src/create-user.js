@@ -114,7 +114,7 @@ export default class Shop extends Component {
               localStorage.setItem('email', newUser.email);
               localStorage.setItem('phone', newUser.phone);
               localStorage.setItem('userType', newUser.userType);
-                window.location = "/home";
+                window.location = "/";
             })
             .catch(function (error){
                 console.log('What happened? ' + error);

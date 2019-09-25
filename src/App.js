@@ -16,6 +16,9 @@ import Address from "./Address.js";
 import CreateUser from "./create-user";
 import EditUser from "./edit-user";
 import CreateItem from "./createItem.js";
+import AdminUser from "./admin-users.js";
+import AdminItem from "./admin-items.js";
+import AdminCenter from "./admin-center.js";
 
 class App extends Component {
   render() {
@@ -90,6 +93,26 @@ class App extends Component {
                     <CreateItem />
                 </div>
             )} />
+
+
+          <Route exact={true} path='/admin-user' render={() => (
+              <div className="App">
+                  <AdminUser />
+              </div>
+          )} />
+
+          <Route exact={true} path='/admin-item' render={() => (
+              <div className="App">
+                  <AdminItem />
+              </div>
+          )} />
+
+          <Route exact={true} path='/admin' render={() => (
+              <div className="App">
+                  <AdminCenter />
+              </div>
+          )} />
+
           </div>
         </BrowserRouter>
     );

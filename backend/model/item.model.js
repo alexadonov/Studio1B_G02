@@ -9,6 +9,7 @@ let Item = new Schema({
     model: {type: String},
     inStock: {type: Boolean},
     image: {data: Buffer, contentType: String }
+    // productOwner: {type: ObjectId}
 });
 
 module.exports = mongoose.model('item', Item);
