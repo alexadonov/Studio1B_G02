@@ -123,3 +123,10 @@ h6{
     min-width:39px;
     vertical-align: middle;
 }
+
+.slider-slide > img {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  max-height: 350px;
+}
