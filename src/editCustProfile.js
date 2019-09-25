@@ -7,23 +7,21 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 export default class Shop extends Component {
 
-    /*name="John Smith"
+    name="John Smith"
     birth = 19 / 10 / 1999
     password = "wheresthelambSAUCE"
     email = "johnSmith@gmail.com"
     phone = "041234567"
 
-    changeName() {
-
+    changeName(editName) {
     }
-
     changeBirth() { }
 
     changePassword() { }
 
     changeEmail() { }
 
-    changePhone() { }*/
+    changePhone() { }
 
     render() {
         return (
@@ -68,11 +66,10 @@ export default class Shop extends Component {
                             <br></br>
 
 
-                            <div>
-                                <h2>Contact Details</h2>
-                            </div>
-
                             <form>
+                                <div className="col">
+                                    <h2>Contact Details</h2>
+                                </div>
                                 <div class="form-group row">
                                     <h2 for="formGroup" class = "col-sm-2">Email: </h2>
                                     <div class="col">
