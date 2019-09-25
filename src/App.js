@@ -13,6 +13,7 @@ import Address from "./Address.js";
 import CreateUser from "./create-user";
 import EditUser from "./edit-user";
 import CreateItem from "./createItem.js";
+import PaymentMenu from "./PaymentMenu.js";
 
 class App extends Component {
   render() {
@@ -34,6 +35,12 @@ class App extends Component {
             <Route exact={true} path='/Address' render={() => (
               <div className="App">
                 <Address />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/PaymentMenu' render={() => (
+              <div className="App">
+                <PaymentMenu />
               </div>
             )}/>
 
