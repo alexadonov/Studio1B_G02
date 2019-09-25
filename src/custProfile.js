@@ -1,11 +1,35 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./components/Menu";
-import "./components/styles.css"
+import "./static/styles.css"
 import { BrowserRouter as Router } from "react-router-dom";
+import axios from 'axios';
 
 
 export default class Shop extends Component {
+
+  constructor(props) {
+       super(props);
+
+       this.state = {
+           username: String,
+           password: String
+        }
+    }
+
+    componentDidMount() {
+      axios.get('http://localhost:4000/items/')
+          .then(res => {
+            this.setState({
+              username: res.data.username,
+              password: res.data.password
+            })
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+    }
+
 
   render() {
     return (
@@ -18,32 +42,33 @@ export default class Shop extends Component {
                     </div>
 
                     <div>
-                        <h2>Personal Details</h2>
+                        <h3>Personal Details</h3>
                     </div>
-                    <div>
-                        <h3>Name: </h3>
-                    </div>
-                    <div>
-                        <h3>Date of Birth: </h3>
-                    </div>
-                    <div>
-                        <h3>Password: </h3>
-                    </div>
+                    <p>
+                        <strong>Name: </strong> {localStorage.getItem('username')}
+                    </p>
+                    <p>
+                        <strong>Date of Birth: </strong> {localStorage.getItem('dob')}
+                    </p>
+                    <p>
+                        <strong>Password: </strong> {localStorage.getItem('password')}
+                    </p>
 
                     <br></br>
                     <br></br>
 
                     <div>
-                        <h2>Contact Details</h2>
+                        <h3>Contact Details</h3>
                     </div>
-                    <div>
-                        <h3>Email: </h3>
-                    </div>
-                    <div>
-                        <h3>Phone: </h3>
-                    </div>
+                    <p>
+                        <strong>Email: </strong> {localStorage.getItem('email')}
+                    </p>
+                    <p>
+                        <strong>Phone: </strong> {localStorage.getItem('phone')}
+                    </p>
 
-                    <a class="btn btn-primary btn-lg" href="/" role="button">Edit Profile</a>
+                    <br></br>
+                    <a class="btn btn-primary btn-lg" href="/edit-user" role="button">Edit Profile</a>
                 </div>
             </div>
         </Router>
