@@ -38,12 +38,15 @@ export default class Admin extends Component {
               });
     }
 
-    deleteItem() {
+    deleteItem(e) {
+      e.preventDefault();
+
       axios.delete('http://localhost:4000/items/' + localStorage.getItem('id'))
         .then(res => alert("Deleted"));
     }
 
   render() {
+    var btn = <td><button class="btn btn-link" onClick={this.deleteItem}>X</button></td>
     return (
       <div class="container" >
           <Router>
@@ -52,13 +55,23 @@ export default class Admin extends Component {
           <br/>
           <div class="shadow p-1 mb-5 bg-white rounded-top">
             <h1>Admin Center: Items</h1>
+            <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm"></div>
+              <div class="col-sm">
+                <h5><a href="/admin-user">View users</a></h5>
+              </div>
+              <div class="col-sm">
+                <h5><a href="/create-item">Add new item</a></h5>
+              </div>
+              <div class="col-sm"></div><div class="col-sm"></div>
+            </div>
 
             <table className="table table-striped" style={{ marginTop: 20 }} >
               <thead>
                 <tr>
                   <th>Owner</th>
                   <th>Name</th>
-                  <th>Add</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
@@ -70,9 +83,8 @@ export default class Admin extends Component {
                     <tr>
                       <td>{currentItem.ownerId}</td>
                         <td>{currentItem.name}</td>
-                      <td><Link to={"/create-item"}>Add</Link></td>
-                      <td><Link to={"/custProfile"  }>Edit</Link></td>
-                      <td><button onClick={() =>  this.deleteItem()}>Delete</button></td>
+                        <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
+                        {localStorage.setItem('id', currentItem._id)}{btn}
                     </tr>
                   )
                 })

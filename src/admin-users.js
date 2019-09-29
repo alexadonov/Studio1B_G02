@@ -13,6 +13,7 @@ export default class Admin extends Component {
        this.state = {
          items: []
        }
+       this.deleteUser = this.deleteUser.bind(this);
     }
 
     componentDidMount() {
@@ -25,16 +26,18 @@ export default class Admin extends Component {
           .catch(function (error) {
               console.log(error);
           });
-          this.deleteUser = this.deleteUser.bind(this);
 
     }
 
-    deleteUser() {
+    deleteUser(e) {
+      e.preventDefault();
+
       axios.delete('http://localhost:4000/users/' + localStorage.getItem('id'))
         .then(res => alert("Deleted"));
     }
 
   render() {
+    var btn = <td><button class="btn btn-link" onClick={this.deleteUser}>X</button></td>
 
     return (
       <div class="container" >
@@ -45,12 +48,23 @@ export default class Admin extends Component {
           <div class="shadow p-1 mb-5 bg-white rounded-top">
             <h1>Admin Center: Users</h1>
 
+            <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm"></div>
+              <div class="col-sm">
+                <h5><a href="/admin-item">View Items</a></h5>
+              </div>
+              <div class="col-sm">
+                <h5><a href="/create-user">Add new User</a></h5>
+              </div>
+              <div class="col-sm"></div><div class="col-sm"></div>
+            </div>
+
             <table className="table table-striped" style={{ marginTop: 20 }} >
               <thead>
                 <tr>
                   <th>Name</th>
                   <th>User Type</th>
-                  <th>Add</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
@@ -62,9 +76,8 @@ export default class Admin extends Component {
                     <tr>
                       <td>{currentItem.username}</td>
                       <td>Admin</td>
-                      <td><button><a href="/create-user">Add</a></button></td>
-                      <td><button><a href={"/edit-user"}>Edit</a></button></td>
-                      <td><button onClick={() => this.deleteUser()}>Delete</button></td>
+                      <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
+                      {localStorage.setItem('id', currentItem._id)}{btn}
                     </tr>
                   )
                 }
@@ -73,9 +86,8 @@ export default class Admin extends Component {
                     <tr>
                       <td>{currentItem.username }</td>
                       <td>Retailer</td>
-                      <td><button><a href="/create-user">Add</a></button></td>
-                      <td><button><a href={"/edit-user"}>Edit</a></button></td>
-                      <td><button onClick={() => this.deleteUser()}>Delete</button></td>
+                      <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)} >Edit</a></button></td>
+                      {localStorage.setItem('id', currentItem._id)}{btn}
                     </tr>
                   )
                 }
@@ -84,9 +96,8 @@ export default class Admin extends Component {
                     <tr>
                       <td>{currentItem.username}</td>
                       <td>User</td>
-                      <td><button><a href="/create-user">Add</a></button></td>
-                      <td><button><a href={"/edit-user"}>Edit</a></button></td>
-                      <td><button onClick={() => this.deleteUser()}>Delete</button></td>
+                      <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)}>Edit</a></button></td>
+                      {localStorage.setItem('id', currentItem._id)}{btn}
                     </tr>
                   )
                 }
