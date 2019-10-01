@@ -4,24 +4,45 @@ import Menu from "./components/Menu";
 import "./static/shop.css"
 import { BrowserRouter as Router } from "react-router-dom";
 
+var name = "John Smith";
+
+
+function changeNameTest() {
+    name = "not John"
+}
 
 export default class Shop extends Component {
 
-    name="John Smith"
+    //name="John Smith"
     birth = 19 / 10 / 1999
     password = "wheresthelambSAUCE"
     email = "johnSmith@gmail.com"
     phone = "041234567"
 
-    changeName(editName) {
+    changeDetails(editName, editBirth, editPassword, editEmail, editPhone) {
+
     }
-    changeBirth() { }
 
-    changePassword() { }
+    changeNameTest(){
+        //document.getElementById('editName').innerHTML = "lmao";
+        //this.name = "not John"
+    }
 
-    changeEmail() { }
+    changeBirth(editBirth) {
 
-    changePhone() { }
+    }
+
+    changePassword(editPassword) {
+
+    }
+
+    changeEmail(editEmail) {
+
+    }
+
+    changePhone(editPhone) {
+
+    }
 
     render() {
         return (
@@ -29,7 +50,7 @@ export default class Shop extends Component {
                 <Router>
                     <div className="App">
                         <div class="jumbotron">
-                            <div class="shadow p-3 mb-5 bg-white rounded">
+                            <div class="shadow p-3 mb-5 bg-white ro-unded">
                                 <h1 class="display-4">Edit Customer Profile</h1>
                             </div>
 
@@ -42,7 +63,7 @@ export default class Shop extends Component {
                                     <div class = "form-group row">
                                         <h2 for="formGroup" class = "col-sm-2">Name: </h2>
                                         <div class="col">
-                                            <input type="text" class="form-control" id="editName" value="John Smith" />
+                                            <input type="text" class="form-control" id="editName" value={name} />
                                         </div>
                                     </div>
 
@@ -65,7 +86,6 @@ export default class Shop extends Component {
                             <br></br>
                             <br></br>
 
-
                             <form>
                                 <div className="col">
                                     <h2>Contact Details</h2>
@@ -73,18 +93,19 @@ export default class Shop extends Component {
                                 <div class="form-group row">
                                     <h2 for="formGroup" class = "col-sm-2">Email: </h2>
                                     <div class="col">
-                                        <input type="text" class="form-control" id="editEmail" value="testerone@gmail.com" />
+                                        <input type="text" class="form-control" id="editEmail" value={this.email} />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <h2 for="formGroup" class = "col-sm-2">Phone: </h2>
                                     <div class="col">
-                                        <input type="text" class="form-control" id="editPhone" value="0123456789" />
+                                        <input type="text" class="form-control" id="editPhone" value={this.phone} />
                                     </div>
                                 </div>
                             </form>
-                            <a class="btn btn-primary btn-lg" href="/" role="button">Confirm Edit</a>
+                            <a class="btn btn-primary btn-lg" role="button" onClick="changeDetails();">Confirm Edit</a>
+                            <a class="button btn-primary btn-lg" role="button" onClick={changeNameTest()}>Confirm Edita</a>
                         </div>
                     </div>
                 </Router>
