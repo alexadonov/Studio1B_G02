@@ -114,7 +114,7 @@ export default class Shop extends Component {
               localStorage.setItem('email', newUser.email);
               localStorage.setItem('phone', newUser.phone);
               localStorage.setItem('userType', newUser.userType);
-                window.location = "/home";
+                window.location = "/";
             })
             .catch(function (error){
                 console.log('What happened? ' + error);
@@ -133,60 +133,63 @@ export default class Shop extends Component {
     return (
       <div class="container">
         <Router>
-          <Menu/>
           <div className="App" >
           <br/>
-          <div class="jumbotron">
-            <h1>Create User</h1>
+          <div class="jumbotron5 shadow">
+          <div class="shadow p-1 mb-5 bg-white rounded-top">
+          <h1>Register</h1>
+          </div>
             <form onSubmit={this.onSubmit}>
-
-            <div class="form-group">
-              <input type="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={this.state.username} onChange={this.onChangeUsername} required/>
+          <div>
+          <div class="col p-0" align="center" >
+          <div class="col-lg-8 col-lg-offset-8">
+          <div width="200px" class="form-group">
+            <div class="input-group-prepend border-right">
             </div>
-
-            <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" value={this.state.password} onChange={this.onChangePassword} required/>
+            <input type="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={this.state.username} onChange={this.onChangeUsername} required/>
+          </div>
+          </div>
+          <div class="col-lg-8 col-lg-offset-8">
+          <div class="form-group sm-3">
+            <div class="input-group-prepend border-right">
             </div>
-
-            <div class="form-group">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" value={this.state.email} onChange={this.onChangeEmail}/>
+            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" value={this.state.password} onChange={this.onChangePassword} required/>
+          </div>
+          </div>
+          <div class="col-lg-8 col-lg-offset-8">
+          <div class="form-group sm-3">
+            <div class="input-group-prepend border-right">
             </div>
-
-
-            <div class="form-group">
-              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number" value={this.state.phone} onChange={this.onChangePhone}/>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" value={this.state.email} onChange={this.onChangeEmail}/>
+          </div>
+          </div>
+          <div class="col-lg-8 col-lg-offset-8">
+          <div class="form-group sm-3">
+            <div class="input-group-prepend border-right">
             </div>
-
-            <div class="form-group">
-              <div class="row">
-
-                <div class="col-sm">
-                  <select id="inputState" class="form-control" id="date" value={this.state.date} onChange={this.onChangeDate}>
-                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>44</option><option>12</option>
-                    <option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option>
-                    <option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
-                  </select>
-                </div>
-
-                <div class="col-sm">
-                  <select id="inputState" class="form-control" value={this.state.month} onChange={this.onChangeMonth} id="month">
-                    <option selected>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option>
-                    <option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
-                  </select>
-                </div>
-
-                <div class="col-sm">
-                  <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Year (yyyy)" id="year" value={this.state.year} onChange={this.onChangeYear}/>
-                </div>
-
-                </div>
+            <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number" value={this.state.phone} onChange={this.onChangePhone}/>
+          </div>
+          </div>
+          <div class="col-lg-8 col-lg-offset-8">
+          <div class="form-group sm-3">
+                        <div><h5>Birthday:</h5></div>
+            <div class="input-group-prepend border-right">
             </div>
+            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Year (yyyy)" id="year" value={this.state.year} onChange={this.onChangeYear}/>
+          </div>
+          </div>
+            <div class="col-lg-8 col-lg-offset-8">
+                <div class="form-group sm-3">
+                <div><h5>Account Type?:</h5></div>
+          </div>
+          </div>
+          </div>
+          </div>
+
+
 
             <div class="container">
               <div class="row">
-              <div class="col">
-                  <h5>Who are you?</h5>
-              </div>
 
                 <div class="col">
                   <div class="custom-control custom-radio">
@@ -214,11 +217,10 @@ export default class Shop extends Component {
           </div>
           </div>
 
-          <input type="submit" class="btn btn-outline-primary" value="Submit"/>
+          <input type="submit" class="btn black-background white b-s" value="Register"/>
           </form>
         </div>
         </div>
-
 
         </Router>
       </div>

@@ -72,8 +72,6 @@ class App extends Component {
                 </div>
             )} />
 
-            )}/>
-
             <Route exact={true} path='/create-user' render={() => (
                 <div className="App">
                     <CreateUser />
