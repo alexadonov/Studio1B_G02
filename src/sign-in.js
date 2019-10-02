@@ -16,19 +16,14 @@ export default class Shop extends Component {
        this.onChangePassword = this.onChangePassword.bind(this);
        this.onSubmit = this.onSubmit.bind(this);
 
-       //Tells the front end we are calling these fields from the database
+       //This just says we are going to call these fields from the database
        this.state = {
            username: String,
-           password: String,
-           email: String,
-          phone: String,
-          dob: String,
-          loggedIn: Boolean
+           password: String
        }
     }
 
-    //When the value changes, saves it locally
-    //This also needs to be called in the input field so it can be recognised
+    //When the field changes, the new value is  saved locally
     onChangeUsername(e) {
       this.setState({
           username: e.target.value
@@ -43,30 +38,23 @@ export default class Shop extends Component {
     onSubmit(e) {
           e.preventDefault();
 
-          //So the program knows to acknowledge the locally saved data
           const newUser = {
             username: this.state.username,
             password: this.state.password
         };
 
-          axios.get('http://localhost:4000/users/') //Calls the webpage that saves all the data
+          axios.get('http://localhost:4000/users/')
               .then(response => {
-                for(var i = 0; i < response.data.length; i++) { //Going through the data
-                  if(response.data[i].username === newUser.username && response.data[i].password === newUser.password  ) { //finding a match
+                for(var i = 0; i < response.data.length; i++) {
+                  if(response.data[i].username === newUser.username && response.data[i].password === newUser.password  ) {
                       localStorage.setItem('username', newUser.username);
-                      localStorage.setItem('password', newUser.password); //Saves the data found to a local drive so you can call in other functions
-                      localStorage.setItem('email', response.data[i].email);
-                      localStorage.setItem('phone', response.data[i].phone);
-                      localStorage.setItem('userType', response.data[i].userType);
-                      localStorage.setItem('dob', response.data[i].dob);
-                      localStorage.setItem('loggedIn', 1);
-
-                      window.location = "/custProfile";
-
+                      localStorage.setItem('password', newUser.password);
+                      //alert("Yes");
+                      window.location = "/";
+                      // this.props.history.push('/custProfile')
                       return;
                     }
                 }
-                //Just a basic check that it doesnt match
                 if(!(response.data.username === newUser.username) || !(response.data.password === newUser.password)) {
                   alert("Wrong username and/or password");
                   return;
@@ -76,7 +64,6 @@ export default class Shop extends Component {
                   console.log('What happened? ' + error);
               })
 
-              //resets the fields to blank after everything has been done.
             this.setState({
               username: '',
               password : '',
@@ -88,7 +75,6 @@ export default class Shop extends Component {
     const { data } = this.state;
     return (
       <div class="container" >
-          <Router>
           <div className="App">
           <br/>
           <div class="jumbotron4 shadow">
@@ -149,14 +135,13 @@ export default class Shop extends Component {
             </div>
             </div>
           <input type="submit" class="btn black-background white b-s" value="Login"/>
-          <a class="btn-txt1" href="/" role="button"><h6>Not a member? Register <u>here</u>.</h6></a>
+          <a class="btn-txt1" href="/create-user" role="button"><h6>Not a member? Register <u>here</u>.</h6></a>
           </form>
           </div>
         </div>
         </div>
         <ul>{this.state.pictures}</ul>
-        </Router>
-      </div>
+        </div>
     );
   }
 }

@@ -30,6 +30,7 @@ export default class Cart extends Component {
         this.state = {
             items: dummyItems
         }
+
     }
 
     deleteItem = (itemId) => {
@@ -69,7 +70,7 @@ export default class Cart extends Component {
                       description="Computers & Stuff" //This should change
                       image="/logo.svg"
                       locale="auto"
-                      name="Loren Ipsum"
+                      name=""
                       stripeKey="pk_test_amIsnVcb4dXtUFh2vbL9EKNo00BAkY8kZo"
                       token={this.onToken}
                       zipCode
