@@ -14,6 +14,7 @@ import CreateUser from "./create-user";
 import EditUser from "./edit-user";
 import CreateItem from "./createItem.js";
 import PaymentMenu from "./PaymentMenu.js";
+import CartMenu from "./CartMenu.js";
 
 class App extends Component {
   render() {
@@ -41,6 +42,12 @@ class App extends Component {
             <Route exact={true} path='/PaymentMenu' render={() => (
               <div className="App">
                 <PaymentMenu />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/CartMenu' render={() => (
+              <div className="App">
+                <CartMenu />
               </div>
             )}/>
 
