@@ -4,6 +4,26 @@ import Menu from "./components/Menu";
 import "./static/styles.css"
 import { BrowserRouter as Router } from "react-router-dom";
 
+const dumData = [
+    {
+        id: "44887",
+        productName: "Ducky One 2 Mini RGB Mechanical Keyboard Cherry Silver",
+        price: 159,
+        quantity: 1
+    },
+    {
+        id: "47639",
+        productName: "Logitech G903 HERO Lightspeed Wireless Gaming Mouse",
+        price: 219,
+        quantity: 1
+    },
+    {
+        id: "47036",
+        productName: "ASUS GeForce RTX 2060 Dual EVO OC 6GB",
+        price: 599,
+        quantity: 2
+    },
+]
 
 export default class Shop extends Component {
     constructor(props){
@@ -47,9 +67,11 @@ export default class Shop extends Component {
                                                         src="https://c7.alamy.com/comp/EPF1YW/nun-with-handgun-isolated-on-white-EPF1YW.jpg"
                                                         class="card-img-top" alt="..."/>
                                                     <ul class="list-group list-group-flush">
+                                                        <li className="list-group-item">Date</li>
+                                                        <li className="list-group-item">Amount</li>
                                                         <li class="list-group-item">Item name</li>
+                                                        <li className="list-group-item">Item price</li>
                                                         <li class="list-group-item">Item price</li>
-                                                        <li class="list-group-item">Item description</li>
                                                     </ul>
                                                     <div class="card-footer">
                                                         <a class="btn btn-primary">Item Link</a>
@@ -68,9 +90,11 @@ export default class Shop extends Component {
                                                         src="https://lz12v4f1p8c1cumxnbiqvm10-wpengine.netdna-ssl.com/wp-content/uploads/2018/02/hilarious-stock-photos-for-memes.jpg"
                                                         class="card-img-top" alt="..."/>
                                                     <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">Item name</li>
-                                                        <li class="list-group-item">Item price</li>
-                                                        <li class="list-group-item">Item description</li>
+                                                        <li className="list-group-item">Date</li>
+                                                        <li className="list-group-item">Amount</li>
+                                                        <li className="list-group-item">Item name</li>
+                                                        <li className="list-group-item">Item price</li>
+                                                        <li className="list-group-item">Item price</li>
                                                     </ul>
                                                     <div class="card-footer">
                                                         <a class="btn btn-primary">Go Somewhere</a>
@@ -103,9 +127,11 @@ export default class Shop extends Component {
                                                         src="https://i.kym-cdn.com/photos/images/original/001/316/888/f81.jpeg"
                                                         class="card-img-top" alt="..."/>
                                                     <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">Item name</li>
-                                                        <li class="list-group-item">Item price</li>
-                                                        <li class="list-group-item">Item description</li>
+                                                        <li className="list-group-item">Date</li>
+                                                        <li className="list-group-item">Amount</li>
+                                                        <li className="list-group-item">Item name</li>
+                                                        <li className="list-group-item">Buyer</li>
+                                                        <li className="list-group-item">Profile</li>
                                                     </ul>
                                                     <div class="card-footer">
                                                         <a class="btn btn-primary">Item Link</a>
@@ -124,9 +150,11 @@ export default class Shop extends Component {
                                                         src="https://qph.fs.quoracdn.net/main-qimg-c10a5cfe8ec1cc8f81b79cb4e14b63bd"
                                                         class="card-img-top" alt="..."/>
                                                     <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">Item name</li>
-                                                        <li class="list-group-item">Item price</li>
-                                                        <li class="list-group-item">Item description</li>
+                                                        <li className="list-group-item">Date</li>
+                                                        <li className="list-group-item">Amount</li>
+                                                        <li className="list-group-item">Item name</li>
+                                                        <li className="list-group-item">Buyer</li>
+                                                        <li className="list-group-item">Profile</li>
                                                     </ul>
                                                     <div class="card-footer">
                                                         <a class="btn btn-primary">Go Somewhere</a>
