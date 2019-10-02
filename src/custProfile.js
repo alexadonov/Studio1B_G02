@@ -36,8 +36,9 @@ export default class Shop extends Component {
     <div class="container">
         <Router>
             <div className="App">
+            <br/>
                 <div class="jumbotron">
-                    <div class="shadow p-3 mb-5 bg-white rounded">
+                    <div class="border-bottom p-3 mb-5 bg-white rounded-t">
                         <h1 class="display-4">Customer Profile</h1>
                     </div>
 
@@ -72,7 +73,7 @@ export default class Shop extends Component {
                     </p>
 
                     <br></br>
-                    <a class="btn btn-primary btn-lg" href="/edit-user" role="button">Edit Profile</a>
+                    <a class="btn black-background white b-s" href="/edit-user" role="button">Edit Profile</a>
                 </div>
             </div>
         </Router>
