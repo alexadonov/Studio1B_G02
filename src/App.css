@@ -23,6 +23,9 @@
 .App-link {
   color: #61dafb;
 }
+.mainContent {
+    display:inline-block;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -34,6 +37,14 @@
 }
 .jumbotron4{
   height: 54vh;
+  padding: 0px;
+  width: 34vw;
+  background-color: #fff;
+  display: inline-block;
+  overflow-y:auto;
+}
+.jumbotron5{
+  height: 80vh;
   padding: 0px;
   width: 34vw;
   background-color: #fff;
