@@ -4,6 +4,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Menu from "./components/Menu";
+import axios from 'axios';
 import "./static/shop.css";
 
 import product1 from "./components/img/Blackwidow Keyboard.jpg";
@@ -13,7 +14,38 @@ import product3 from "./components/img/Lixon Mini Speaker.jpg";
 
 export default class Shop extends Component {
 
+  constructor(props) {
+       super(props);
+       this.state = { items: []
+         // name: String,
+         // price: String,
+         // description: String,
+         // brand: String,
+         // model: String,
+         // inStock: Boolean,
+         // image: String
+       }
+    }
+
+    componentDidMount() {
+      axios.get('http://localhost:4000/items/')
+          .then(res => {
+            this.setState({
+              items: res.data
+            })
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+    }
+
+    addToCart(currentItem) {
+      localStorage.setItem('name', currentItem.name);
+    }
+
+
   render() {
+
     return (
       <div class="content rounded">
       <div className="App">
@@ -22,46 +54,36 @@ export default class Shop extends Component {
         <div class="jumbotron1">
           <Menu/>
           <div class="row">
-            <div class = "mainContent col-10">
-                <section>
-                        <div class="row">
-                        <div class="card-deck py-3 px-4">
-                          <div class="card">
-                            <img src={product1} class="card-img-top card-header" alt="hi"/>
-                            <div class="card-body">
-                              <h5 class="card-title"><b>Keyboard</b></h5>
-                              <p class="card-text">Razor BlackWidow Mechanical Keyboard</p>
-                            </div>
-                            <div class="card-footer">
-                              <a class="price"><b>$299</b></a>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <img src={product2}  class="card-img-top card-header" alt="wd"/>
-                            <div class="card-body">
-                              <h5 class="card-title"><b>Mouse</b></h5>
-                              <p class="card-text">Logitech G502 Gaming Mouse</p>
-                            </div>
-                            <div class="card-footer">
-                              <a class="price"><b>$120</b></a>
+            <div class="mainContent">
+                <section class="pt-0 pb-5">
+                            <div class="row pb-5">
+                            <div class="card-deck py-3 px-4">
+                        {this.state.items.map(function(currentItem, i) {
+                          return (
+                            <div class="row">
+                            <div class="card-deck py-3 px-4">
+                              <div class="card" key={i}>
+                                <img src={currentItem.image} class="card-img-top card-header" alt="placeholder"/>
+                                <div class="card-body">
+                                  <h5 class="card-title"><b>{currentItem.name}</b></h5>
+                                  <p class="card-text">{currentItem.description}</p>
+                                </div>
+                                <div class="card-footer">
+                                  <a class="price" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"> <b>${currentItem.price}</b></a>
+                                  <button class="list-group-item list-group-item-action" onClick={localStorage.setItem('name', currentItem)}>Add to Cart</button>
+                                </div>
                             </div>
                           </div>
-                          <div class="card">
-                            <img src={product3} class="card-img-top card-header" alt="dwq"/>
-                            <div class="card-body">
-                              <h5 class="card-title"><b>Speaker</b></h5>
-                              <p class="card-text">Lixon Mini Speaker</p>
-                            </div>
-                            <div class="card-footer">
-                              <a class="price"><b>$59</b></a>
-                            </div>
                         </div>
+                            
+                          )
+                        })
+                      }
+                         </div>
                         </div>
-                      </div>
                 </section>
             </div>
-
-            <div class = "sideBar col-3 px-4 py-3">
+            <div class = "sideBar col-3 px-3 py-3">
                 <aside>
                     <h2>FILTERS</h2>
                       <div class="list-group list-group-flush">

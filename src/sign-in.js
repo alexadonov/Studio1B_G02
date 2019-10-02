@@ -49,7 +49,8 @@ export default class Shop extends Component {
                   if(response.data[i].username === newUser.username && response.data[i].password === newUser.password  ) {
                       localStorage.setItem('username', newUser.username);
                       localStorage.setItem('password', newUser.password);
-                      alert("Yes");
+                      //alert("Yes");
+                      window.location = "/";
                       // this.props.history.push('/custProfile')
                       return;
                     }
@@ -74,7 +75,6 @@ export default class Shop extends Component {
     const { data } = this.state;
     return (
       <div class="container" >
-          <Router>
           <div className="App">
           <br/>
           <div class="jumbotron4 shadow">
@@ -135,14 +135,13 @@ export default class Shop extends Component {
             </div>
             </div>
           <input type="submit" class="btn black-background white b-s" value="Login"/>
-          <a class="btn-txt1" href="/" role="button"><h6>Not a member? Register <u>here</u>.</h6></a>
+          <a class="btn-txt1" href="/create-user" role="button"><h6>Not a member? Register <u>here</u>.</h6></a>
           </form>
           </div>
         </div>
         </div>
         <ul>{this.state.pictures}</ul>
-        </Router>
-      </div>
+        </div>
     );
   }
 }
