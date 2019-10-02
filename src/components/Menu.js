@@ -4,29 +4,15 @@ export default class Menu extends Component {
   render() {
     return (
         <div>
-        <div class="shadow bg-white rounded-top">
+        <div class="bg-white rounded-top position-relative border-bottom">
         <div class="row px-0 mx-auto">
         <div class="col px-1">
         </div>
-          <div class="col-9 px-1">
-            <h1 class="display-4 p-1" id="title">Lorem Ipsum</h1>
+          <div class="col-6 px-1">
+            <h1 class="display-4 pt-1" id="title">Computers & Stuff</h1>
           </div>
-          <div class="col row px-1 fixed-right">
-             <div class="col-3 px-1">
-             <a href="shop" role="button" class="btn btn-default btn-sm padding-signin">
-
-<svg width="24px" height="17px" viewBox="0 0 24 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-<defs></defs>
-<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="Curved-essential-icons" transform="translate(-863.000000, -912.000000)" fill="#000000">
-        <g id="Group-730">
-            <path d="M866.375,924.65 L883.625,924.65 L883.625,913.725 L866.375,913.725 L866.375,924.65 Z M866.375,926.375 C865.422225,926.375 864.65,925.602775 864.65,924.65 L864.65,913.725 C864.65,912.772225 865.422225,912 866.375,912 L883.625,912 C884.577775,912 885.35,912.772225 885.35,913.725 L885.35,924.65 C885.35,925.602775 884.577775,926.375 883.625,926.375 L866.375,926.375 Z M863.5,928.675 L863.5,926.95 L886.5,926.95 L886.5,928.675 L863.5,928.675 Z" id="Fill-681"></path>
-        </g>
-    </g>
-</g>
-</svg></a>
-             </div>
-             <div class="col-3 px-1">
+          <div class="col row">
+             <div class="col-2 px-0 ml-auto">
             <a href="sign-in" role="button" class="btn btn-default btn-sm padding-signin">
 
 <svg width="23px" height="22px" viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
@@ -40,8 +26,8 @@ export default class Menu extends Component {
 </g>
 </svg></a>
              </div>
-             <div class="col-3 px-1">
-             <a href="purchaseHistory" role="button" class="btn btn-default btn-sm padding-signin">
+             <div class="col-3 px-0">
+             <a href="cart" role="button" class="btn btn-default btn-sm padding-signin">
 
 
              <svg width="23px" height="20px" viewBox="0 0 23 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
@@ -55,21 +41,19 @@ export default class Menu extends Component {
                  </g>
              </svg></a>
              </div>
+
            </div>
         </div>
-          <div class="container">
+          <div class="container pb-1">
           <div class="row px-5 mx-auto">
             <div class="col-sm px-1">
-              <button type="button" class="btn btn-default btn-sm black"><b>Desktops</b></button>
+              <a href="/" role="button" class="btn btn-default btn-sm"><b>Home</b></a>
             </div>
             <div class="col-sm px-1">
-              <button type="button" class="btn btn-default btn-sm"><b>Accessories</b></button>
+              <a href="/shop" role="button" class="btn btn-default btn-sm"><b>Shop</b></a>
             </div>
             <div class="col-sm px-1">
-              <button type="button" class="btn btn-default btn-sm"><b>Featured Products</b></button>
-            </div>
-            <div class="col-sm px-1">
-              <button type="button" class="btn btn-default btn-sm"><b>Discounted</b></button>
+              <a href="/shop" tole="button" class="btn btn-default btn-sm"><b>Popular</b></a>
             </div>
           </div>
         </div>
@@ -78,3 +62,4 @@ export default class Menu extends Component {
     );
   }
 }
+
