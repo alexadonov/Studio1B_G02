@@ -18,7 +18,7 @@ export default class Shop extends Component {
     }
 
     componentDidMount() {
-      axios.get('http://localhost:4000/items/')
+      axios.get('http://localhost:4000/users/')
           .then(res => {
             this.setState({
               username: res.data.username,
@@ -65,6 +65,10 @@ export default class Shop extends Component {
                     </p>
                     <p>
                         <strong>Phone: </strong> {localStorage.getItem('phone')}
+                    </p>
+
+                    <p>
+                        <strong>Account Type: </strong> {localStorage.getItem('__v')}
                     </p>
 
                     <br></br>

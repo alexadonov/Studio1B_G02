@@ -15,7 +15,6 @@ export default class Home extends Component {
           <Menu/>
           <br/>
           <br/>
-          <h3>Popular Items</h3>
           <Carousel autoplay="true" wrapAround="true" height="300px" autoplayInterval="6000">
               <img src="https://icdn6.digitaltrends.com/image/microsoft-surface-studio-2-6009-640x640.jpg" 
                 ></img>
@@ -24,6 +23,7 @@ export default class Home extends Component {
               <img src="https://icdn6.digitaltrends.com/image/microsoft-surface-studio-2-6009-640x640.jpg" 
                 ></img>
             </Carousel>
+            <button type="button" href="#" class="btn btn-default2 pizza btn-lg wrapperb"><b>Popular Items</b></button>
 
             <div class="row">
               <div class="col thumb-padding item">
