@@ -16,6 +16,12 @@ export default class Admin extends Component {
     }
 
     componentDidMount() {
+
+      if(localStorage.getItem('userType') != 'admin' || localStorage.getItem('userType') != '0') {
+        alert("You are not admin and cannot access this page")
+        window.location = "/";
+      }
+      
       axios.get('http://localhost:4000/items/')
           .then(res => {
             this.setState({

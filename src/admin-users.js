@@ -17,6 +17,13 @@ export default class Admin extends Component {
     }
 
     componentDidMount() {
+
+      if(localStorage.getItem('userType') != 'admin' || localStorage.getItem('userType') != '0') {
+        alert("You are not admin and cannot access this page")
+        window.location = "/";
+      }
+
+      
       axios.get('http://localhost:4000/users/')
           .then(res => {
             this.setState({
@@ -77,7 +84,7 @@ export default class Admin extends Component {
                       <td>{currentItem.username}</td>
                       <td>Admin</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
-                      {localStorage.setItem('id', currentItem._id)}{btn}
+                      {btn}{localStorage.setItem('id', currentItem._id)}
                     </tr>
                   )
                 }
@@ -87,7 +94,7 @@ export default class Admin extends Component {
                       <td>{currentItem.username }</td>
                       <td>Retailer</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)} >Edit</a></button></td>
-                      {localStorage.setItem('id', currentItem._id)}{btn}
+                      {btn}{localStorage.setItem('id', currentItem._id)}
                     </tr>
                   )
                 }
@@ -97,7 +104,7 @@ export default class Admin extends Component {
                       <td>{currentItem.username}</td>
                       <td>User</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)}>Edit</a></button></td>
-                      {localStorage.setItem('id', currentItem._id)}{btn}
+                      {btn}{localStorage.setItem('id', currentItem._id)}
                     </tr>
                   )
                 }
