@@ -17,42 +17,46 @@ import product1 from "./components/img/Blackwidow Keyboard.jpg";
 import product2 from "./components/img/Logitech G502 Mousepad.jpeg";
 import product3 from "./components/img/Lixon Mini Speaker.jpg";
 
-
+const dummyItems = [
+    {
+        id: "44887",
+        productName: "Ducky One 2 Mini RGB Mechanical Keyboard Cherry Silver",
+        price: 159,
+        quantity: 1
+    },
+    {
+        id: "47639",
+        productName: "Logitech G903 HERO Lightspeed Wireless Gaming Mouse",
+        price: 219,
+        quantity: 1
+    },
+    {
+        id: "47036",
+        productName: "ASUS GeForce RTX 2060 Dual EVO OC 6GB",
+        price: 599,
+        quantity: 2
+    },
+]
 
 export default class CartMenu extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          items: dummyItems
+      }
+  }
+
 
   render() {
 
     return (
       <div className="App">
         <Router>
-        <Menu/>
         </Router>
             <div class="jumbotron">
-
             <header>
 
               <h1 class="display-1">Your Cart</h1>
-
-              <div className = "NavBar">
-                  <ul class="nav justify-content-center">
-                      <li class="nav-item">
-                          <a class="nav-link active" href="#">Desktop</a>
-                      </li>
-
-                      <li class="nav-item">
-                          <a class="nav-link" href="#">Laptop</a>
-                      </li>
-
-                      <li class="nav-item">
-                          <a class="nav-link" href="#">Parts</a>
-                      </li>
-
-                      <li class="nav-item">
-                          <a class="nav-link" href="shop">Accessories</a>
-                      </li>
-                  </ul>
-              </div>
 
               <div class= "NavIcons">
 
@@ -134,8 +138,8 @@ export default class CartMenu extends Component {
               </div>
 
               <div class="item">
-                <div class="buttons">
-                <img src={crossIcon} alt="crossIcon"/>
+                <div class="buttons" onclick="doFunction()">
+                <img src={crossIcon} alt="crossIcon"/>                
                   <span class="delete-btn"></span>
                 </div>
 
