@@ -17,7 +17,7 @@ export default class Home extends Component {
 
           <br/>
           <br/>
-          <button type="button" href="#" class="btn btn-default2 pizza btn-lg wrapperb"><b>Popular Items</b></button>
+          <a type="button" href="./popShop" class="btn btn-default2 pizza btn-lg wrapperb"><b>Popular Items</b></a>
           <Carousel autoplay="true" wrapAround="true" height="300px" autoplayInterval="6000">
               <img src="https://icdn6.digitaltrends.com/image/microsoft-surface-studio-2-6009-640x640.jpg" 
                 ></img>
