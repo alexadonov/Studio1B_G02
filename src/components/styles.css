@@ -1,0 +1,157 @@
+body{
+    background-image: linear-gradient(to right, #43C6AC, #F8FFAE);
+    font-family: ubuntu;
+    margin-top: 0px;
+    padding-top: 0px;
+    overflow: hidden;
+}
+
+h1{
+    color: #000000;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 49px;
+    padding: 0px;
+}
+h2{
+    color: #000000;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 10px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 35px;
+    padding: 0px;
+
+}
+low-pad{
+    padding: 100px;
+}
+.app{
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+.content{
+    background: #fff;
+    height: 100%;
+    margin: 0PX;
+    padding: 0px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    width: 98vw;
+      overflow: hidden;
+}
+.jumbotron1{
+  height: 98vh;
+    overflow: auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.float-left{
+  padding-left: 50px;
+}
+
+.float-right{
+  padding-right: 50px;
+}
+
+.btn-default:hover{
+  background-color: #fff;
+  color: black;
+    text-decoration: underline;
+    border:none;
+}
+.btn-default:focus{
+  outline:none;
+  margin-bottom: 0px;
+  background-color: white;
+  box-shadow: none;
+  border:none;
+  color: #70d2ab;
+}
+.btn-default{
+  color: grey;
+  background-color: white;
+  border-color: white;
+  outline: none;
+  border:none;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.btn{
+  border-color: white;
+  border:none;
+}
+.btn-default2:hover{
+  background-color: transparent;
+  color: black;
+  border:none;
+}
+
+.btn-default2:focus{
+  outline:none;
+  margin-bottom: 0px;
+  background-color: transparent;
+  box-shadow: none;
+  color: #70d2ab;
+  border:none;
+}
+.btn-default2{
+  color: black;
+  letter-spacing: 1px;
+  text-align: left;
+  margin: 10px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+  border:none;
+}
+.thumb-padding{
+  padding-top:100px;
+}
+.thumb-shadow{
+  box-shadow: none;
+}
+.thumb-shadow:hover{
+  box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.thumb-shadow:focus{
+  box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.black{
+  color: black;
+}
+.padding-signin{
+  padding-top: 15px;
+}
+.wrappera{
+  max-width: 500px ;
+  max-height: 312px;
+}
+.item:hover .wrappera,
+.item:hover ~ .wrappera {
+    box-shadow:0 0rem 1rem rgb(112,210,171);
+}
+.item:hover .wrapperb,
+.item:hover ~ .wrapperb {
+    color: #70d2ab;
+}
+.jumbotron{
+  padding: 0px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.i{
+  display: inline-block;
+}

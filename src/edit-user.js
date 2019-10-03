@@ -109,7 +109,6 @@ export default class EditUser extends Component {
     return (
       <div class="container">
         <Router>
-          <Menu/>
           <div className="App" >
           <br/>
           <div class="jumbotron">
@@ -134,10 +133,10 @@ export default class EditUser extends Component {
             </div>
 
             <div class="form-group">
-              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Date of Birth" value={this.state.dob} onChange={this.onChangeDOB}/>
+              <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Date of Birth" value={this.state.dob} onChange={this.onChangeDOB}/>
             </div>
 
-          <input type="submit" class="btn btn-outline-primary" value="Submit"/>
+          <input type="submit" class="btn black-background white b-s" value="Submit"/>
           </form>
         </div>
         </div>

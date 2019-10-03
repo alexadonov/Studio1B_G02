@@ -72,6 +72,8 @@ letter-spacing: 0;
 .mainContent{
     flex:5;
     order:2;
+    height:100vh;
+    overflow-y: scroll;
 }
 .sideBar{
     flex:1.2;
@@ -92,7 +94,7 @@ letter-spacing: 0;
 }
 .card{
   width: 18rem;
-  margin: 15px;
+  margin-bottom: 15px;
 
 }
 .card:hover{
