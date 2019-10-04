@@ -42,16 +42,20 @@ export default class Home extends Component {
 
           <br/>
           <br/>
-          <a type="button" href="./popShop" class="btn btn-default2 pizza btn-lg wrapperb"><b>Popular Items</b></a>
+          <a href="./popShop">
+            <button type="button" class="btn btn-default2 btn-lg wrapperb"><b>Popular Items</b></button>
+          </a>
+          <a href="./popShop">
           <Carousel autoplay="true" wrapAround="true" height="300px" autoplayInterval="6000">
             {this.state.items.map(function(currentItem, i) {
               if (currentItem.popItem) {
                 return (
-                  <img src={currentItem.image}/>
+                  <img src={currentItem.image} alt={currentItem.name} width="auto"/>
                 )}
               })
             }
           </Carousel>
+          </a>
 
 
             <div class="row">
