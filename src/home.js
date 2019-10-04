@@ -52,10 +52,9 @@ export default class Home extends Component {
               })
             }
           </Carousel>
+          <button type="button" class="btn btn-default2 btn-lg wrapperb"><b>Recommended For You</b></button>
           </a>
-          <a href="./popShop">
-            <button type="button" class="btn btn-default2 btn-lg wrapperb"><b>Popular Items</b></button>
-          </a>
+          
 
 
             <div class="row">
