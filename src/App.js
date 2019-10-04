@@ -13,6 +13,7 @@ import Profile from "./custProfile.js";
 import EditCust from "./editCustProfile.js";
 
 import Address from "./Address.js";
+import PaymentMenu from "./PaymentMenu.js"
 import CreateUser from "./create-user";
 import EditUser from "./edit-user";
 import CreateItem from "./createItem.js";
@@ -37,6 +38,12 @@ class App extends Component {
             <Route exact={true} path='/Address' render={() => (
               <div className="App">
                 <Address />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/PaymentMenu' render={() => (
+              <div className="App">
+                <PaymentMenu />
               </div>
             )}/>
 

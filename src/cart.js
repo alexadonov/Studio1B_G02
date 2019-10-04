@@ -3,6 +3,7 @@ import CartItem from "./components/cartitem";
 import Menu from "./components/Menu";
 import StripeCheckout from 'react-stripe-checkout';
 
+
 const dummyItems = [
     {
         id: "44887",
@@ -46,15 +47,6 @@ export default class Cart extends Component {
                     <Menu/>
                     <h1>Cart</h1>
                     <table className="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Product</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Total</th>
-                            <th scope="col"></th>
-                        </tr>
-                        </thead>
                         <tbody>
                         {
                             this.state.items.map((item) => {
@@ -63,18 +55,6 @@ export default class Cart extends Component {
                         }
                         </tbody>
                     </table>
-                    <StripeCheckout
-                      label="Pay with 💳"
-                      amount="500" //This should change
-                      billingAddress
-                      description="Computers & Stuff" //This should change
-                      image="/logo.svg"
-                      locale="auto"
-                      name=""
-                      stripeKey="pk_test_amIsnVcb4dXtUFh2vbL9EKNo00BAkY8kZo"
-                      token={this.onToken}
-                      zipCode
-                    />
                 </div>
             </div>
         );

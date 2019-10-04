@@ -8,11 +8,11 @@ export default class CartItem extends Component {
         return (
 
             <tr id={item.id}>
+              <td onClick={() => this.props.deleteItem(item.id)}>X</td>
                 <td>{item.productName}</td>
-                <td>${item.price}</td>
                 <td>{item.quantity}</td>
+                <td>${item.price}</td>
                 <td>${item.price* item.quantity}</td>
-                <td onClick={() => this.props.deleteItem(item.id)}>X</td>
             </tr>
         );
     }
