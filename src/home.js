@@ -3,10 +3,35 @@ import React, { Component } from 'react';
 import Carousel from 'nuka-carousel'
 import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./components/Menu";
-import "./static/styles.css"
+import "./static/styles.css";
+import axios from 'axios';
 
 
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { items: []
+      // name: String,
+      // price: String,
+      // description: String,
+      // brand: String,
+      // model: String,
+      // inStock: Boolean,
+      // image: String
+    }
+ }
+
+ componentDidMount() {
+   axios.get('http://localhost:4000/items/')
+       .then(res => {
+         this.setState({
+           items: res.data
+         })
+       })
+       .catch(function (error) {
+           console.log(error);
+       });
+    }
 
   render() {
     return (
@@ -19,13 +44,14 @@ export default class Home extends Component {
           <br/>
           <a type="button" href="./popShop" class="btn btn-default2 pizza btn-lg wrapperb"><b>Popular Items</b></a>
           <Carousel autoplay="true" wrapAround="true" height="300px" autoplayInterval="6000">
-              <img src="https://icdn6.digitaltrends.com/image/microsoft-surface-studio-2-6009-640x640.jpg" 
-                ></img>
-              <img src="https://o.aolcdn.com/images/dims?resize=2000%2C2000%2Cshrink&image_uri=https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2019-05%2Fa3672910-8104-11e9-a0f7-aeb448b3c7e2&client=a1acac3e1b3290917d92&signature=b7df459cfd4ed082bc6df7f56cc2daf839ba46fa" 
-                ></img>
-              <img src="https://icdn6.digitaltrends.com/image/microsoft-surface-studio-2-6009-640x640.jpg" 
-                ></img>
-            </Carousel>
+            {this.state.items.map(function(currentItem, i) {
+              if (currentItem.popItem) {
+                return (
+                  <img src={currentItem.image}/>
+                )}
+              })
+            }
+          </Carousel>
 
 
             <div class="row">
