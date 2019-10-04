@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
-import Menu from "./components/Menu";
 import axios from 'axios';
 
 
