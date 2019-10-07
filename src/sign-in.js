@@ -77,8 +77,8 @@ export default class Shop extends Component {
       <div class="container" >
           <div className="App">
           <br/>
-          <div class="jumbotron4 shadow">
-            <div class="shadow p-1 mb-5 bg-white rounded-top">
+          <div class="jumbotron4 rounded shadow">
+            <div class="p-1 mb-5 bg-white rounded-top border-bottom">
             <h1>Sign In</h1>
             </div>
             <div class="vertical-center">

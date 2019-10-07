@@ -7,11 +7,6 @@ import Menu from "./components/Menu";
 import axios from 'axios';
 import "./static/shop.css";
 
-import product1 from "./components/img/Blackwidow Keyboard.jpg";
-import product2 from "./components/img/Logitech G502 Mousepad.jpeg";
-import product3 from "./components/img/Lixon Mini Speaker.jpg";
-
-
 export default class Shop extends Component {
 
   constructor(props) {
@@ -47,14 +42,16 @@ export default class Shop extends Component {
   render() {
 
     return (
+
       <div class="content rounded">
+            <head><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/></head>
       <div className="App">
         <Router>
         </Router>
         <div class="jumbotron1">
           <Menu/>
           <div class="row">
-            <div class="mainContent">
+            <div class="mainContent pb-4">
                 <section class="pt-0 pb-5">
                             <div class="row pb-5">
                             <div class="card-deck py-3 px-4">
@@ -69,8 +66,8 @@ export default class Shop extends Component {
                                   <p class="card-text">{currentItem.description}</p>
                                 </div>
                                 <div class="card-footer">
-                                  <a class="price" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"> <b>${currentItem.price}</b></a>
-                                  <button class="list-group-item list-group-item-action" onClick={localStorage.setItem('name', currentItem)}>Add to Cart</button>
+                                  <a class="price card-title" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"> <b>${currentItem.price}</b></a>
+                                  <button class="list-group-item list-group-item-action mt-2" onClick={localStorage.setItem('name', currentItem)}>Add to Cart</button>                            
                                 </div>
                             </div>
                           </div>
