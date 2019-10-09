@@ -9,6 +9,7 @@ import Signin from "./sign-in.js";
 import Cart from "./cart.js";
 import Purchase from "./purchaseHistory.js";
 import Profile from "./custProfile.js";
+import PopShop from "./popShop.js";
 
 import EditCust from "./editCustProfile.js";
 
@@ -102,6 +103,12 @@ class App extends Component {
                       <RetailerProducts />
                   </div>
               )} />
+                
+            <Route exact={true} path='/popShop' render={() => (
+                <div className="App">
+                  <PopShop/>
+                </div>
+            )} />
           </div>
         </BrowserRouter>
     );

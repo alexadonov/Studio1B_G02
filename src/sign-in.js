@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
-import Menu from "./components/Menu";
 import axios from 'axios';
+import CurrencyFormat from 'react-currency-format';
 
 
 export default class Shop extends Component {
@@ -77,12 +77,12 @@ export default class Shop extends Component {
       <div class="container" >
           <div className="App">
           <br/>
-          <div class="jumbotron4 shadow">
-            <div class="shadow p-1 mb-5 bg-white rounded-top">
+          <div class="jumbotron4 rounded shadow">
+            <div class="p-1 mb-5 bg-white rounded-top border-bottom">
             <h1>Sign In</h1>
             </div>
-            <div class="vertical-center">
-            <form onSubmit={this.onSubmit}>
+
+            <form class="mb-4" onSubmit={this.onSubmit}>
             <div>
             <div class="col" align="center" >
             <div class="col-lg-8 col-lg-offset-8" id="input-gap">
@@ -135,11 +135,11 @@ export default class Shop extends Component {
             </div>
             </div>
           <input type="submit" class="btn black-background white b-s" value="Login"/>
-          <a class="btn-txt1" href="/create-user" role="button"><h6>Not a member? Register <u>here</u>.</h6></a>
+          <a class="btn-txt1 mb-5" href="/create-user" role="button"><h6>Not a member? Register <u>here</u>.</h6></a>
           </form>
           </div>
         </div>
-        </div>
+        
         <ul>{this.state.pictures}</ul>
         </div>
     );
