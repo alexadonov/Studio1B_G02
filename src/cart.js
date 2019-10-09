@@ -56,6 +56,19 @@ export default class Cart extends Component {
                         }
                         </tbody>
                     </table>
+
+                    <StripeCheckout
+                      label="Pay with 💳"
+                      amount="500" //This should change
+                      billingAddress
+                      description="Computers & Stuff" //This should change
+                      locale="auto"
+                      name=""
+                      stripeKey="pk_test_amIsnVcb4dXtUFh2vbL9EKNo00BAkY8kZo"
+                      token={this.onToken}
+                      zipCode
+                    />
+
                 </div>
             </div>
         );

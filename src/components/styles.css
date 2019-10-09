@@ -11,7 +11,6 @@ h1{
     letter-spacing: 2px;
     text-align: center;
     margin: 0px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     font-size: 49px;
     padding: 0px;
@@ -21,7 +20,6 @@ h2{
     letter-spacing: 1px;
     text-align: center;
     margin: 10px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     font-size: 35px;
     padding: 0px;
@@ -87,7 +85,6 @@ hr {
   border-color: white;
   outline: none;
   border:none;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 .btn{
   border-color: white;
@@ -112,7 +109,6 @@ hr {
   letter-spacing: 1px;
   text-align: left;
   margin: 10px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   font-size: 35px;
   border:none;
@@ -154,4 +150,7 @@ hr {
 }
 .i{
   display: inline-block;
+}
+.transparent {
+    
 }

@@ -6,10 +6,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Menu from "./components/Menu";
 import axios from 'axios';
 import "./static/shop.css";
-import CurrencyFormat from 'react-currency-format';
 
 
-export default class Shop extends Component {
+export default class PopShop extends Component {
 
   constructor(props) {
        super(props);
@@ -44,38 +43,37 @@ export default class Shop extends Component {
   render() {
 
     return (
-
       <div class="content rounded">
-            <head><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/></head>
       <div className="App">
         <Router>
         </Router>
         <div class="jumbotron1">
           <Menu/>
           <div class="row">
-            <div class="mainContent pb-4">
+            <div class="mainContent">
                 <section class="pt-0 pb-5">
                             <div class="row pb-5">
-                            <div class="card-deck pb-3 px-4">
-                        {this.state.items.map(function(currentItem, i) {
-                          return (
-                            <div class="row">
                             <div class="card-deck py-3 px-4">
-                              <div class="card" key={i}>
-                                <img src={currentItem.image} class="card-img-top card-header" alt="placeholder"/>
-                                <div class="card-body">
-                                  <h5 class="card-title"><b>{currentItem.name}</b></h5>
-                                  <p class="card-text">{currentItem.description}</p>
+                        {this.state.items.map(function(currentItem, i) {
+                          if (currentItem.popItem) {
+                            return (
+                            <div class="row">
+                              <div class="card-deck py-3 px-4">
+                                <div class="card" key={i}>
+                                  <img src={currentItem.image} class="card-img-top card-header" alt="placeholder"/>
+                                  <div class="card-body">
+                                    <h5 class="card-title"><b>{currentItem.name}</b></h5>
+                                    <p class="card-text">{currentItem.description}</p>
+                                  </div>
+                                  <div class="card-footer">
+                                    <a class="price" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"> <b>${currentItem.price}</b></a>
+                                    <button class="list-group-item list-group-item-action" onClick={localStorage.setItem('name', currentItem)}>Add to Cart</button>
+                                  </div>
                                 </div>
-                                <div class="card-footer">
-                                  <a class="price my-2"> <b><CurrencyFormat value={currentItem.price} displayType="text" thousandSeparator={true} prefix="$" /></b></a>
-                                  <button class="list-group-item list-group-item-action" onClick={localStorage.setItem('name', currentItem)}>Add to Cart</button>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-
-                          )
+                              </div>
+                            </div>                            
+                            )
+                          }
                         })
                       }
                          </div>
@@ -102,3 +100,4 @@ export default class Shop extends Component {
     );
   }
 }
+

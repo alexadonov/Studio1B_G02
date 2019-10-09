@@ -9,6 +9,7 @@ import Signin from "./sign-in.js";
 import Cart from "./cart.js";
 import Purchase from "./purchaseHistory.js";
 import Profile from "./custProfile.js";
+import PopShop from "./popShop.js";
 
 import EditCust from "./editCustProfile.js";
 
@@ -19,6 +20,11 @@ import Bing from "./Bing.js";
 import CreateUser from "./create-user";
 import EditUser from "./edit-user";
 import CreateItem from "./createItem.js";
+import AdminUser from "./admin-users.js";
+import AdminItem from "./admin-items.js";
+import AdminCenter from "./admin-center.js";
+import RetailerProfile from "./retailerProfile";
+import RetailerProducts from "./retailerProducts";
 
 class App extends Component {
   render() {
@@ -109,6 +115,43 @@ class App extends Component {
                     <CreateItem />
                 </div>
             )} />
+
+          <Route exact={true} path='/admin-user' render={() => (
+              <div className="App">
+                  <AdminUser />
+              </div>
+          )} />
+
+          <Route exact={true} path='/admin-item' render={() => (
+              <div className="App">
+                  <AdminItem />
+              </div>
+          )} />
+
+          <Route exact={true} path='/admin' render={() => (
+              <div className="App">
+                  <AdminCenter />
+              </div>
+          )} />
+            
+              <Route exact={true} path='/retailerProfile' render={() => (
+                  <div className="App">
+                      <RetailerProfile />
+                  </div>
+              )} />
+
+              <Route exact={true} path='/retailerProducts' render={() => (
+                  <div className="App">
+                      <RetailerProducts />
+                  </div>
+              )} />
+                
+            <Route exact={true} path='/popShop' render={() => (
+                <div className="App">
+                  <PopShop/>
+                </div>
+            )} />
+
           </div>
         </BrowserRouter>
     );
