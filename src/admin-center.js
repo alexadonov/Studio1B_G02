@@ -21,7 +21,7 @@ export default class Admin extends Component {
         alert("You are not admin and cannot access this page")
         window.location = "/";
       }
-      
+
       axios.get('http://localhost:4000/items/')
           .then(res => {
             this.setState({
