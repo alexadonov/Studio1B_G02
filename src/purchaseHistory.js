@@ -65,6 +65,7 @@ export default class Shop extends Component {
         var productList = products.map(function(name, index){
             return <li className="list-group-item">{name}</li>
         })
+        return <li className="list-group-item">{productList} </li>
     }
 
 
