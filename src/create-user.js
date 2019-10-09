@@ -217,7 +217,7 @@ export default class Shop extends Component {
           </div>
           </div>
 
-          <input type="submit" class="btn black-background white b-s" value="Register"/>
+          <input type="submit" class="btn black-background white b-s mb-4" value="Register"/>
           </form>
         </div>
         </div>

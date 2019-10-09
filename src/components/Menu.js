@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import "./menu.css";
 
 export default class Menu extends Component {
   render() {
     return (
         <div>
+        <head><link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet"/></head>
         <div class="bg-white rounded-top position-relative border-bottom">
         <div class="row px-0 mx-auto">
         <div class="col px-1">
@@ -47,7 +49,7 @@ export default class Menu extends Component {
           <div class="container pb-1">
           <div class="row px-5 mx-auto">
             <div class="col-sm px-1">
-              <a href="/" role="button" class="btn btn-default btn-sm"><b>Home</b></a>
+              <a href="/" role="button" class="btn btn-default btn-sm "><b>Home</b></a>
             </div>
             <div class="col-sm px-1">
               <a href="/shop" role="button" class="btn btn-default btn-sm"><b>Shop</b></a>
