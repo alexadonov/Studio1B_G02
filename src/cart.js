@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import CartItem from "./components/cartitem";
 import Menu from "./components/Menu";
 import StripeCheckout from 'react-stripe-checkout';
+import "./components/cart.css";
 
 
-const dummyItems = [
+var cart = [
     {
         id: "44887",
         productName: "Ducky One 2 Mini RGB Mechanical Keyboard Cherry Silver",
@@ -29,7 +30,7 @@ export default class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: dummyItems
+            items: cart
         }
 
     }
