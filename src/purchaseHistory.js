@@ -63,11 +63,9 @@ export default class Shop extends Component {
     listsOfProducts = () => {
         var products = ["RGB", "Monitor", "GPU", "Dell", "Nice"];
         var productList = products.map(function(name, index){
-            return <li key={index}>{name}</li>
+            return <li className="list-group-item">{name}</li>
         })
-        return <li>{productList}</li>
     }
-
 
 
     handleChange(e) {
@@ -229,7 +227,6 @@ export default class Shop extends Component {
                                                     <div class="card-footer">
                                                         <a class="btn btn-primary">Item Link</a>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
