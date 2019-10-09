@@ -112,7 +112,7 @@ class App extends Component {
                   <AdminCenter />
               </div>
           )} />
-            
+
               <Route exact={true} path='/retailerProfile' render={() => (
                   <div className="App">
                       <RetailerProfile />
@@ -124,7 +124,7 @@ class App extends Component {
                       <RetailerProducts />
                   </div>
               )} />
-                
+
             <Route exact={true} path='/popShop' render={() => (
                 <div className="App">
                   <PopShop/>
