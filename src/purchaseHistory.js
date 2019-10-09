@@ -4,7 +4,7 @@ import Menu from "./components/Menu";
 import "./static/styles.css"
 import { BrowserRouter as Router } from "react-router-dom";
 
-/*var listsOfProducts = React.createClass({
+/*listsOfProducts = React.createClass({
     render: function(){
         var products = ["RGB", "Monitor", "GPU", "Dell", "Nice"];
         var productList = products.map(function(name, index){
@@ -14,13 +14,13 @@ import { BrowserRouter as Router } from "react-router-dom";
     }
 });*/
 
-function listsOfProducts(props){
+/*function listsOfProducts(props){
     var products = ["RGB", "Monitor", "GPU", "Dell", "Nice"];
     var productList = products.map(function(name, index){
         return <li key={index}>{name}</li>
     })
     return <li>{productList}</li>
-}
+}*/
 
 function test(props){
     return(
@@ -60,13 +60,13 @@ export default class Shop extends Component {
 
 
     }
-    /*listsOfProducts(){
+    listsOfProducts = () => {
         var products = ["RGB", "Monitor", "GPU", "Dell", "Nice"];
         var productList = products.map(function(name, index){
             return <li key={index}>{name}</li>
         })
-        return <ul>{productList}</ul>
-    }*/
+        return <li>{productList}</li>
+    }
 
 
 
@@ -101,7 +101,7 @@ export default class Shop extends Component {
                                                         src="https://c7.alamy.com/comp/EPF1YW/nun-with-handgun-isolated-on-white-EPF1YW.jpg"
                                                         class="card-img-top" alt="..."/>
                                                     <ul class="list-group list-group-flush">
-                                                        <li className="list-group-item">Date</li>
+                                                        <li className="list-group-item" >Date</li>
                                                         <li className="list-group-item">Amount</li>
                                                         <li class="list-group-item">Item name</li>
                                                         <li className="list-group-item">Item price</li>
@@ -112,7 +112,7 @@ export default class Shop extends Component {
                                                     </div>
 
                                                 </div>
-                                            </div>
+                                            </div>z
                                         </div>
                                         <p></p>
                                         <a className="btn btn-primary" role="button" onClick = {this.handleRetailer}>Change State</a>
@@ -224,7 +224,7 @@ export default class Shop extends Component {
                                                         src="https://c7.alamy.com/comp/EPF1YW/nun-with-handgun-isolated-on-white-EPF1YW.jpg"
                                                         class="card-img-top" alt="..."/>
                                                     <ul class="list-group list-group-flush">
-                                                        <listsOfProducts>   </listsOfProducts>
+                                                        {this.listsOfProducts()}
                                                     </ul>
                                                     <div class="card-footer">
                                                         <a class="btn btn-primary">Item Link</a>
