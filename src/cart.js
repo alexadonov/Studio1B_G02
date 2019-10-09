@@ -5,21 +5,24 @@ import StripeCheckout from 'react-stripe-checkout';
 
 const dummyItems = [
     {
-        id: "44887",
-        productName: "Ducky One 2 Mini RGB Mechanical Keyboard Cherry Silver",
-        price: 159,
+        _id: "5d78877668c1611ab0b924bb",
+        retailerId: "5d93de2a1c9d440000a88790",
+        name: "Car",
+        price: 10000000,
         quantity: 1
     },
     {
-        id: "47639",
-        productName: "Logitech G903 HERO Lightspeed Wireless Gaming Mouse",
-        price: 219,
+        id: "5d8da5453bf18a429041283e",
+        retailerId: "5d93de2a1c9d440000a88790",
+        name: "Toughpad",
+        price: 456,
         quantity: 1
     },
     {
-        id: "47036",
-        productName: "ASUS GeForce RTX 2060 Dual EVO OC 6GB",
-        price: 599,
+        id: "5d943d4a1c9d440000a88792",
+        retailerId: "5d93de2a1c9d440000a88790",
+        productName: "an item",
+        price: 20,
         quantity: 2
     },
 ]
@@ -45,6 +48,11 @@ export default class Cart extends Component {
                 <div class="jumbotron1 rounded">
                     <Menu/>
                     <h1>Cart</h1>
+                    <br/>
+                    <br/>
+
+                    <button onClick="" >Save to Database</button>
+
                     <table className="table">
                         <thead>
                         <tr>
