@@ -12,14 +12,12 @@
 }
 
 h1{
-  font-family: HelveticaNeue-Thin;
   font-size: 58px;
   color: #000000;
   letter-spacing: 0;
   text-align: center;
 }
 h2{
-  font-family: HelveticaNeue-Thin;
   font-size: 16px;
   color: #000000;
   letter-spacing: 0;
@@ -29,7 +27,6 @@ h2{
 
 body{
     background-image: linear-gradient(to left, #F8FFAE, #43C6AC);
-    font-family: HelveticaNeue-Thin;
     margin-top: 0px;
     padding-top: 0px;
 }
@@ -78,7 +75,7 @@ letter-spacing: 0;
 .sideBar{
     flex:1.2;
     order:1;
-    font-family: HelveticaNeue-Light;
+    font-family: "Roboto", sans-serif;
     font-size: 18px;
     color: #000000;
     letter-spacing: 0;
@@ -95,13 +92,16 @@ letter-spacing: 0;
 .card{
   width: 18rem;
   margin-bottom: 15px;
+  transition: all .1s ease-in-out;
 
 }
 .card:hover{
-  box-shadow:0 0rem 1rem rgba(0,0,0,.15)!important;
+  /*box-shadow:0 0rem 1rem rgba(0,0,0,.15)!important;*/
   border-color: #70d2ab;
-  transition: box-shadow 0.15s ease-in-out;
+  /*transition: box-shadow 0.15s ease-in-out; */
   transition: border-color 0.4s ease-in-out;
+    
+  transform: scale(1.03);
 }
 .card:hover .card-header,
 .card:hover ~.card-header{
@@ -115,6 +115,7 @@ letter-spacing: 0;
   transition: border-color 0.4s ease-in-out;
   transition: background-color 0.5s ease-in-out;
 }
+
 .price{
   font-size: 20px;
 }

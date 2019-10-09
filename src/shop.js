@@ -7,9 +7,6 @@ import Menu from "./components/Menu";
 import axios from 'axios';
 import "./static/shop.css";
 import CurrencyFormat from 'react-currency-format';
-import product1 from "./components/img/Blackwidow Keyboard.jpg";
-import product2 from "./components/img/Logitech G502 Mousepad.jpeg";
-import product3 from "./components/img/Lixon Mini Speaker.jpg";
 
 
 export default class Shop extends Component {
@@ -47,14 +44,16 @@ export default class Shop extends Component {
   render() {
 
     return (
+
       <div class="content rounded">
+            <head><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/></head>
       <div className="App">
         <Router>
         </Router>
         <div class="jumbotron1">
           <Menu/>
           <div class="row">
-            <div class="mainContent py-3">
+            <div class="mainContent pb-4">
                 <section class="pt-0 pb-5">
                             <div class="row pb-5">
                             <div class="card-deck pb-3 px-4">
@@ -75,7 +74,7 @@ export default class Shop extends Component {
                             </div>
                           </div>
                         </div>
-                            
+
                           )
                         })
                       }
