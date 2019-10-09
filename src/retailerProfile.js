@@ -78,7 +78,7 @@ export default class Shop extends Component {
                                         Profile</a>
                                 </div>
                                 <div className="col-3">
-                                    <a className="btn black-background white b-s" href="/edit-user" role="button">View My Products</a>
+                                    <a className="btn black-background white b-s" href="/retailerProducts" role="button">View My Products</a>
                                 </div>
                                     <div className="col">
                                     </div>

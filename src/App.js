@@ -17,6 +17,7 @@ import CreateUser from "./create-user";
 import EditUser from "./edit-user";
 import CreateItem from "./createItem.js";
 import RetailerProfile from "./retailerProfile";
+import RetailerProducts from "./retailerProducts";
 
 class App extends Component {
   render() {
@@ -93,6 +94,12 @@ class App extends Component {
               <Route exact={true} path='/retailerProfile' render={() => (
                   <div className="App">
                       <RetailerProfile />
+                  </div>
+              )} />
+
+              <Route exact={true} path='/retailerProducts' render={() => (
+                  <div className="App">
+                      <RetailerProducts />
                   </div>
               )} />
           </div>
