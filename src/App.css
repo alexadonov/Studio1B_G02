@@ -36,7 +36,7 @@
   }
 }
 .jumbotron4{
-  height: 54vh;
+  height: auto;
   padding: 0px;
   width: 34vw;
   background-color: #fff;
@@ -44,7 +44,7 @@
   overflow-y:auto;
 }
 .jumbotron5{
-  height: 80vh;
+  height: auto;
   padding: 0px;
   width: 34vw;
   background-color: #fff;
