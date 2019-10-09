@@ -55,7 +55,7 @@ export default class Menu extends Component {
               <a href="/shop" role="button" class="btn btn-default btn-sm"><b>Shop</b></a>
             </div>
             <div class="col-sm px-1">
-              <a href="/shop" tole="button" class="btn btn-default btn-sm"><b>Popular</b></a>
+              <a href="/popShop" tole="button" class="btn btn-default btn-sm"><b>Popular</b></a>
             </div>
           </div>
         </div>
