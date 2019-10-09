@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import Carousel from 'nuka-carousel'
+import Carousel from 'nuka-carousel';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./components/Menu";
 import "./static/styles.css";
