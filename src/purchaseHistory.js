@@ -68,6 +68,9 @@ export default class Shop extends Component {
         return <li className="list-group-item">{productList} </li>
     }
 
+    actualLists = () => {
+        return <h1></h1>
+    }
 
     handleChange(e) {
         this.setState({ inputText: e.target.value });
