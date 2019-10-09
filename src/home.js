@@ -36,6 +36,7 @@ export default class Home extends Component {
   render() {
     return (
       <div class="content rounded">
+        <head><link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet"/></head>
         <div className="App">
           <div class="jumbotron1 rounded">
           <Menu/>
@@ -64,7 +65,7 @@ export default class Home extends Component {
               </div>
               <div class="col thumb-padding item">
               <img width="500px" height="312px"class="rounded wrappera" src="https://icdn6.digitaltrends.com/image/microsoft-surface-studio-2-6009-640x640.jpg" alt="My image"/>
-              <button type="button" class="btn btn-default2 btn-lg wrapperb"><b>Featured Desktops</b></button>
+              <button type="button" class="btn btn-default2 btn-lg wrapperb "><b>Featured Desktops</b></button>
               </div>
             </div>
           </div>

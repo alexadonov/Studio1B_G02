@@ -14,14 +14,12 @@
 }
 
 h1{
-  font-family: HelveticaNeue-Thin;
   font-size: 58px;
   color: #000000;
   letter-spacing: 0;
   text-align: center;
 }
 h2{
-  font-family: HelveticaNeue-Thin;
   font-size: 16px;
   color: #000000;
   letter-spacing: 0;
@@ -31,7 +29,6 @@ h2{
 
 body{
     background-image: linear-gradient(to left, #F8FFAE, #43C6AC);
-    font-family: HelveticaNeue-Thin;
     margin-top: 0px;
     padding-top: 0px;
 }
