@@ -18,6 +18,11 @@ export default class Shop extends Component {
     }
 
     componentDidMount() {
+      if(localStorage.getItem('loggedIn') != 'true') {
+        alert("You are not logged in and cannot access this page")
+        window.location = "/";
+      }
+      
       axios.get('http://localhost:4000/users/')
           .then(res => {
             this.setState({

@@ -19,14 +19,13 @@ userRouter.route('/').get(function(req, res) {
 userRouter.route('/:id').get(function(req, res) {
     let id = req.params.id;
     User.findById(id, function(err, user) {
-      if(err) { console.log(err); }
       res.json(user);
     });
 });
 
 userRouter.route('/update/:id').post(function(req, res) {
     User.findById(req.params.id, function(err, user) {
-        if (!todo)
+        if (!user)
             res.status(404).send("data is not found");
         else
           user.username = req.body.username;
@@ -36,7 +35,7 @@ userRouter.route('/update/:id').post(function(req, res) {
           user.email = req.body.email;
 
             user.save().then(user => {
-                res.json('Todo updated!');
+                res.json('User updated!');
             })
             .catch(err => {
                 res.status(400).send("Update not possible");
@@ -61,5 +60,6 @@ userRouter.route('/add').post(function(req, res) {
             res.status(400).send('adding new user failed ' + err);
         });
 });
+
 
 module.exports = userRouter;

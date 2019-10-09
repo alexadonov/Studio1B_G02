@@ -19,7 +19,11 @@ export default class Shop extends Component {
        //This just says we are going to call these fields from the database
        this.state = {
            username: String,
-           password: String
+           password: String,
+           email: String,
+           phone: String,
+           dob: String,
+           loggedIn: Boolean
        }
     }
 

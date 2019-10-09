@@ -14,9 +14,15 @@ import PopShop from "./popShop.js";
 import EditCust from "./editCustProfile.js";
 
 import Address from "./Address.js";
+import PaymentMenu from "./PaymentMenu.js";
+import CartMenu from "./CartMenu.js";
+import Bing from "./Bing.js";
 import CreateUser from "./create-user";
 import EditUser from "./edit-user";
 import CreateItem from "./createItem.js";
+import AdminUser from "./admin-users.js";
+import AdminItem from "./admin-items.js";
+import AdminCenter from "./admin-center.js";
 import RetailerProfile from "./retailerProfile";
 import RetailerProducts from "./retailerProducts";
 
@@ -40,6 +46,24 @@ class App extends Component {
             <Route exact={true} path='/Address' render={() => (
               <div className="App">
                 <Address />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/PaymentMenu' render={() => (
+              <div className="App">
+                <PaymentMenu />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/CartMenu' render={() => (
+              <div className="App">
+                <CartMenu />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/Bing' render={() => (
+              <div className="App">
+                <Bing />
               </div>
             )}/>
 
@@ -92,6 +116,24 @@ class App extends Component {
                 </div>
             )} />
 
+          <Route exact={true} path='/admin-user' render={() => (
+              <div className="App">
+                  <AdminUser />
+              </div>
+          )} />
+
+          <Route exact={true} path='/admin-item' render={() => (
+              <div className="App">
+                  <AdminItem />
+              </div>
+          )} />
+
+          <Route exact={true} path='/admin' render={() => (
+              <div className="App">
+                  <AdminCenter />
+              </div>
+          )} />
+            
               <Route exact={true} path='/retailerProfile' render={() => (
                   <div className="App">
                       <RetailerProfile />
@@ -109,6 +151,7 @@ class App extends Component {
                   <PopShop/>
                 </div>
             )} />
+
           </div>
         </BrowserRouter>
     );

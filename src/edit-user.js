@@ -11,7 +11,6 @@ import {withRouter} from 'react-router-dom';
 export default class EditUser extends Component {
   constructor(props) {
      super(props);
-
      this.onChangeUsername = this.onChangeUsername.bind(this);
      this.onChangePassword = this.onChangePassword.bind(this);
      this.onChangeDOB = this.onChangeDOB.bind(this);
@@ -42,6 +41,19 @@ export default class EditUser extends Component {
     //     .catch(function (error) {
     //         console.log(error);
     //     })
+
+    axios.get('http://localhost:4000/users/') //Calls the webpage that saves all the data
+      .then(response => {
+        for(var i = 0; i < response.data.length; i++) { //Going through the data
+          if(response.data[i].username === localStorage.getItem('username')) {
+            localStorage.setItem('id', response.data[i]._id);
+            console.log(response.data[i]._id);
+          }
+                    }
+                  })
+                  .catch(function (error){
+                      console.log('What happened? ' + error);
+                  })
 }
 
   onChangeUsername(e) {
@@ -84,8 +96,12 @@ export default class EditUser extends Component {
         phone: this.state.phone
     };
     console.log(obj);
-    // axios.post('http://localhost:4000/users/update/' + this.props.match.id, obj)
-    //     .then(res => console.log(res.data));
+
+    axios.post('http://localhost:4000/users/update/' + localStorage.getItem('id'), obj)
+      .then(res => console.log(res.data))
+      .catch(function(err) {
+        console.log("ERROR: " + err);
+      })
 
     }
 
