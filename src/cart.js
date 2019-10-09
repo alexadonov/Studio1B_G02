@@ -2,10 +2,8 @@ import React, {Component} from 'react';
 import CartItem from "./components/cartitem";
 import Menu from "./components/Menu";
 import StripeCheckout from 'react-stripe-checkout';
-import "./components/cart.css";
 
-
-var cart = [
+const dummyItems = [
     {
         id: "44887",
         productName: "Ducky One 2 Mini RGB Mechanical Keyboard Cherry Silver",
@@ -30,7 +28,7 @@ export default class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: cart
+            items: dummyItems
         }
 
     }
@@ -48,6 +46,15 @@ export default class Cart extends Component {
                     <Menu/>
                     <h1>Cart</h1>
                     <table className="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
                         <tbody>
                         {
                             this.state.items.map((item) => {
@@ -56,7 +63,6 @@ export default class Cart extends Component {
                         }
                         </tbody>
                     </table>
-
                     <StripeCheckout
                       label="Pay with 💳"
                       amount="500" //This should change
@@ -68,7 +74,6 @@ export default class Cart extends Component {
                       token={this.onToken}
                       zipCode
                     />
-
                 </div>
             </div>
         );
