@@ -68,7 +68,6 @@ export default class Cart extends Component {
                       amount="500" //This should change
                       billingAddress
                       description="Computers & Stuff" //This should change
-                      image="/logo.svg"
                       locale="auto"
                       name=""
                       stripeKey="pk_test_amIsnVcb4dXtUFh2vbL9EKNo00BAkY8kZo"
