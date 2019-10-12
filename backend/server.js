@@ -12,6 +12,9 @@ let userRouter = require('./routes/user.routes.js');
 let Item = require('./model/item.model');
 let itemRouter = require('./routes/items.routes.js');
 
+let History = require('./model/history.model');
+let historyRouter = require('./routes/history.routes.js');
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -27,6 +30,7 @@ connection.once('open', function() {
 
 app.use('/users', userRouter);
 app.use('/items', itemRouter);
+app.use('/history', historyRouter);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);

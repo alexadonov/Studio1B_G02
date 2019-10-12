@@ -22,7 +22,7 @@ export default class Shop extends Component {
         alert("You are not logged in and cannot access this page")
         window.location = "/";
       }
-      
+
       axios.get('http://localhost:4000/users/')
           .then(res => {
             this.setState({
@@ -79,6 +79,11 @@ export default class Shop extends Component {
 
                     <br></br>
                     <a class="btn black-background white b-s" href="/edit-user" role="button">Edit Profile</a>
+                    <br/><br/>
+                    <button class="btn black-background white b-s" onClick={function() {
+                      axios.delete('http://localhost:4000/users/' + localStorage.getItem('userid'))
+                        .then(res => alert("Deleted"));
+                    }} role="button">Delete Profile</button>
                 </div>
             </div>
         </Router>

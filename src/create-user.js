@@ -67,24 +67,6 @@ export default class Shop extends Component {
    });
   }
 
-  onChangeDate(e) {
-    this.setState({
-        date: e.target.value
-    });
-  }
-
-  onChangeMonth(e) {
-   this.setState({
-       month: e.target.value
-   });
-  }
-
-  onChangeYear(e) {
-   this.setState({
-       year: e.target.value
-   });
-  }
-
   onChangeUserType(e) {
    this.setState({
        userType: e.target.value
@@ -175,7 +157,7 @@ export default class Shop extends Component {
                         <div><h5>Birthday:</h5></div>
             <div class="input-group-prepend border-right">
             </div>
-            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Year (yyyy)" id="year" value={this.state.year} onChange={this.onChangeYear}/>
+            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Year (yyyy)" id="year" value={this.state.dob} onChange={this.onChangeDOB}/>
           </div>
           </div>
             <div class="col-lg-8 col-lg-offset-8">
