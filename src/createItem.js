@@ -38,7 +38,7 @@ export default class CreateItem extends Component {
       window.location = "/";
     }
   }
-  
+
   onChangeName(e) {
     this.setState({
         name: e.target.value

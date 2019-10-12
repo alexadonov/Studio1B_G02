@@ -16,9 +16,6 @@ export default class Shop extends Component {
      this.onChangeDOB = this.onChangeDOB.bind(this);
      this.onChangeEmail = this.onChangeEmail.bind(this);
      this.onChangePhone = this.onChangePhone.bind(this);
-     this.onChangeDate = this.onChangeDate.bind(this);
-     this.onChangeMonth = this.onChangeMonth.bind(this);
-     this.onChangeYear = this.onChangeYear.bind(this);
      this.onChangeUserType = this.onChangeUserType.bind(this);
 
 
@@ -75,10 +72,6 @@ export default class Shop extends Component {
 
   onSubmit(e) {
         e.preventDefault();
-        var date = this.state.date;
-
-        var dob = date + "/" + this.state.month + "/" + this.state.year;
-        localStorage.setItem('dob', dob);
 
         const newUser = {
           username: this.state.username,
