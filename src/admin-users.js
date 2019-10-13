@@ -56,7 +56,6 @@ export default class Admin extends Component {
      }
 
   render() {
-    var btn = <td><button class="btn btn-link" onClick={this.deleteUser}>X</button></td>
 
     return (
       <div class="container" >
@@ -86,7 +85,6 @@ export default class Admin extends Component {
                   <th>Name</th>
                   <th>User Type</th>
                   <th>Edit</th>
-                  <th>Delete</th>
                 </tr>
               </thead>
             <tbody>
@@ -98,7 +96,6 @@ export default class Admin extends Component {
                       <td>{currentItem.username}</td>
                       <td>Admin</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
-                      {btn}{localStorage.setItem('id', currentItem._id)}
                     </tr>
                   )
                 }
@@ -109,7 +106,6 @@ export default class Admin extends Component {
                       <td>{currentItem.username }</td>
                       <td>Retailer</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)} >Edit</a></button></td>
-                      {btn}{localStorage.setItem('id', currentItem._id)}
                     </tr>
                   )
                 }
@@ -120,7 +116,6 @@ export default class Admin extends Component {
                       <td>{currentItem.username}</td>
                       <td>User</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)}>Edit</a></button></td>
-                      {btn}{localStorage.setItem('id', currentItem._id)}
                     </tr>
                   )
                 }
