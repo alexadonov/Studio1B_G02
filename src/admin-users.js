@@ -10,8 +10,11 @@ export default class Admin extends Component {
 
   constructor(props) {
        super(props);
+       this.onChangeCurrentID = this.onChangeCurrentID.bind(this);
+
        this.state = {
-         items: []
+         items: [],
+         curId: String
        }
        this.deleteUser = this.deleteUser.bind(this);
     }
@@ -38,10 +41,19 @@ export default class Admin extends Component {
 
     deleteUser(e) {
       e.preventDefault();
+      const newId = {
+        curId: this.state.curId
+      }
 
-      axios.delete('http://localhost:4000/users/' + localStorage.getItem('id'))
-        .then(res => alert("Deleted"));
+      axios.delete('http://localhost:4000/users/' + newId.curId)
+        .then(res => alert("Deleted - Please Refresh Your Page"))
     }
+
+    onChangeCurrentID(e) {
+      this.setState({
+          curId: e.target.value
+      });
+     }
 
   render() {
     var btn = <td><button class="btn btn-link" onClick={this.deleteUser}>X</button></td>
@@ -116,6 +128,15 @@ export default class Admin extends Component {
               }
             </tbody>
             </table>
+
+            <br/>
+            <br/>
+
+            <div class="mb-3">
+              <input class="form-control " id="validationTextarea" placeholder="Enter the ID of the User you wish to delete" value={this.state.curId} onChange={this.onChangeCurrentID} required></input>
+              <div class="invalid-feedback">Enter the ID of the User you wish to delete</div>
+              <td><button class="btn btn-link" onClick={this.deleteUser}>Click to Delete User</button></td>
+            </div>
           </div>
           </div>
         </Router>
