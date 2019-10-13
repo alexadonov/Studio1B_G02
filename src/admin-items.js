@@ -19,10 +19,10 @@ export default class Admin extends Component {
 
     componentDidMount() {
 
-      if(localStorage.getItem('userType') != 'admin' || localStorage.getItem('userType') != '0') {
-        alert("You are not admin and cannot access this page")
-        window.location = "/";
-      }
+      // if(localStorage.getItem('userType') != 'admin' || localStorage.getItem('userType') != '0') {
+      //   alert("You are not admin and cannot access this page")
+      //   window.location = "/";
+      // }
 
       axios.get('http://localhost:4000/items/')
           .then(res => {
@@ -76,7 +76,7 @@ export default class Admin extends Component {
             <table className="table table-striped" style={{ marginTop: 20 }} >
               <thead>
                 <tr>
-                  <th>Owner</th>
+                  <th>Retailer ID</th>
                   <th>Name</th>
                   <th>Edit</th>
                   <th>Delete</th>
@@ -87,7 +87,7 @@ export default class Admin extends Component {
 
                   return (
                     <tr>
-                      <td>{currentItem.ownerId}</td>
+                      <td>{currentItem.retailerId}</td>
                         <td>{currentItem.name}</td>
                         <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
                         {localStorage.setItem('id', currentItem._id)}{btn}

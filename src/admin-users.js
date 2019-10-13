@@ -18,10 +18,10 @@ export default class Admin extends Component {
 
     componentDidMount() {
 
-      if(localStorage.getItem('userType') != 'admin' || localStorage.getItem('userType') != '0') {
-        alert("You are not admin and cannot access this page")
-        window.location = "/";
-      }
+      // if(localStorage.getItem('userType') != 'admin' || localStorage.getItem('userType') != '0') {
+      //   alert("You are not admin and cannot access this page")
+      //   window.location = "/";
+      // }
 
       
       axios.get('http://localhost:4000/users/')
@@ -70,6 +70,7 @@ export default class Admin extends Component {
             <table className="table table-striped" style={{ marginTop: 20 }} >
               <thead>
                 <tr>
+                  <th>User ID</th>
                   <th>Name</th>
                   <th>User Type</th>
                   <th>Edit</th>
@@ -81,6 +82,7 @@ export default class Admin extends Component {
                 if(currentItem.__v == 0) {
                   return (
                     <tr>
+                      <td>{currentItem._id}</td>
                       <td>{currentItem.username}</td>
                       <td>Admin</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
@@ -91,6 +93,7 @@ export default class Admin extends Component {
                 if(currentItem.__v == 1) {
                   return (
                     <tr>
+                      <td>{currentItem._id}</td>
                       <td>{currentItem.username }</td>
                       <td>Retailer</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)} >Edit</a></button></td>
@@ -101,6 +104,7 @@ export default class Admin extends Component {
                 if(currentItem.__v == 2) {
                   return (
                     <tr>
+                      <td>{currentItem._id}</td>
                       <td>{currentItem.username}</td>
                       <td>User</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)}>Edit</a></button></td>
