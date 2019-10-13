@@ -9,7 +9,7 @@ import "./static/shop.css";
 import CurrencyFormat from 'react-currency-format';
 
 
-export default class Shop extends Component {
+export default class PopShop extends Component {
 
   constructor(props) {
        super(props);
@@ -44,9 +44,7 @@ export default class Shop extends Component {
   render() {
 
     return (
-
       <div class="content rounded">
-            <head><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/></head>
       <div className="App">
         <Router>
         </Router>
@@ -56,9 +54,10 @@ export default class Shop extends Component {
             <div class="mainContent pb-4">
                 <section class="pt-0 pb-5">
                             <div class="row pb-5">
-                            <div class="card-deck pb-3 px-4">
+                            <div class="card-deck py-3 px-4">
                         {this.state.items.map(function(currentItem, i) {
-                          return (
+                          if (currentItem.popItem) {
+                            return (
                             <div class="row">
                             <div class="card-deck py-3 px-4">
                               <div class="card" key={i}>
@@ -76,6 +75,7 @@ export default class Shop extends Component {
                         </div>
 
                           )
+    }
                         })
                       }
                          </div>
@@ -102,3 +102,4 @@ export default class Shop extends Component {
     );
   }
 }
+
