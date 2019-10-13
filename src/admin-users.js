@@ -10,8 +10,11 @@ export default class Admin extends Component {
 
   constructor(props) {
        super(props);
+       this.onChangeCurrentID = this.onChangeCurrentID.bind(this);
+
        this.state = {
-         items: []
+         items: [],
+         curId: String
        }
        this.deleteUser = this.deleteUser.bind(this);
     }
@@ -38,13 +41,21 @@ export default class Admin extends Component {
 
     deleteUser(e) {
       e.preventDefault();
+      const newId = {
+        curId: this.state.curId
+      }
 
-      axios.delete('http://localhost:4000/users/' + localStorage.getItem('id'))
-        .then(res => alert("Deleted"));
+      axios.delete('http://localhost:4000/users/' + newId.curId)
+        .then(res => alert("Deleted - Please Refresh Your Page"))
     }
 
+    onChangeCurrentID(e) {
+      this.setState({
+          curId: e.target.value
+      });
+     }
+
   render() {
-    var btn = <td><button class="btn btn-link" onClick={this.deleteUser}>X</button></td>
 
     return (
       <div class="container" >
@@ -74,7 +85,6 @@ export default class Admin extends Component {
                   <th>Name</th>
                   <th>User Type</th>
                   <th>Edit</th>
-                  <th>Delete</th>
                 </tr>
               </thead>
             <tbody>
@@ -86,7 +96,6 @@ export default class Admin extends Component {
                       <td>{currentItem.username}</td>
                       <td>Admin</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
-                      {btn}{localStorage.setItem('id', currentItem._id)}
                     </tr>
                   )
                 }
@@ -97,7 +106,6 @@ export default class Admin extends Component {
                       <td>{currentItem.username }</td>
                       <td>Retailer</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)} >Edit</a></button></td>
-                      {btn}{localStorage.setItem('id', currentItem._id)}
                     </tr>
                   )
                 }
@@ -108,7 +116,6 @@ export default class Admin extends Component {
                       <td>{currentItem.username}</td>
                       <td>User</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)}>Edit</a></button></td>
-                      {btn}{localStorage.setItem('id', currentItem._id)}
                     </tr>
                   )
                 }
@@ -116,6 +123,15 @@ export default class Admin extends Component {
               }
             </tbody>
             </table>
+
+            <br/>
+            <br/>
+
+            <div class="mb-3">
+              <input class="form-control " id="validationTextarea" placeholder="Enter the ID of the User you wish to delete" value={this.state.curId} onChange={this.onChangeCurrentID} required></input>
+              <div class="invalid-feedback">Enter the ID of the User you wish to delete</div>
+              <td><button class="btn btn-link" onClick={this.deleteUser}>Click to Delete User</button></td>
+            </div>
           </div>
           </div>
         </Router>
