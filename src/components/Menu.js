@@ -15,7 +15,13 @@ export default class Menu extends Component {
           </div>
           <div class="col row">
              <div class="col-2 px-0 ml-auto">
-            <a href="sign-in" role="button" class="btn btn-default btn-sm padding-signin">
+            <a onClick={function() {
+              if(localStorage.getItem('loggedIn') != 'true') {
+                window.location = '/sign-in'
+              } else {
+                window.location = '/custProfile'
+              }
+            }} role="button" class="btn btn-default btn-sm padding-signin">
 
 <svg width="23px" height="22px" viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
 <defs></defs>
