@@ -44,13 +44,6 @@ export default class Admin extends Component {
               });
     }
 
-    deleteItem(e) {
-      e.preventDefault();
-
-      axios.delete('http://localhost:4000/items/' + localStorage.getItem('id'))
-        .then(res => alert("Deleted"));
-    }
-
   render() {
     var btn = <td><button class="btn btn-link" onClick={this.deleteItem}>X</button></td>
     return (
@@ -76,7 +69,7 @@ export default class Admin extends Component {
             <table className="table table-striped" style={{ marginTop: 20 }} >
               <thead>
                 <tr>
-                  <th>Owner</th>
+                  <th>Retailer</th>
                   <th>Name</th>
                   <th>Edit</th>
                   <th>Delete</th>
@@ -87,13 +80,13 @@ export default class Admin extends Component {
 
                   return (
                     <tr>
-                      <td>{currentItem.ownerId}</td>
+                      <td>{currentItem.retailerId}</td>
                         <td>{currentItem.name}</td>
                         <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
                         <td><button class="btn btn-link" onClick={function() {
-                          localStorage.setItem('id', currentItem._id)
-                          axios.delete('http://localhost:4000/items/' + localStorage.getItem('id'))
-                            .then(res => alert("Deleted"));
+                          localStorage.setItem('deleteId', currentItem._id)
+                          axios.delete('http://localhost:4000/items/' + localStorage.getItem('deleteId'))
+                            .then(res => alert("Deleted"), window.location = '/');
                         }}>X</button></td>
                     </tr>
                   )
