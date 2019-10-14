@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 let historyRouter = express.Router();
-let History = require('../model/history.model');
+let History = require('../model/cart.model');
 
 historyRouter.route('/').get(function(req, res) {
     History.find({}, function(err, history) {

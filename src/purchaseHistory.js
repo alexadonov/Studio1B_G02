@@ -239,7 +239,7 @@ export default class Shop extends Component {
                         <div className="App">
                             <div class="jumbotron">
                                 <h1 class="headingTop">Purchase History Customer View</h1>
-    
+
 
                                 <table className="table table-striped" style={{ marginTop: 20 }} >
                                   <thead>
@@ -261,7 +261,7 @@ export default class Shop extends Component {
                                             <td><button class="btn btn-link" onClick={function() {
                                               localStorage.setItem('id', currentItem._id)
                                               axios.delete('http://localhost:4000/history/' + localStorage.getItem('id'))
-                                                .then(res => alert("Deleted"));
+                                                .then(res => {window.location.reload(); alert("Deleted")});
                                             }}>X</button></td>
                                         </tr>
                                       )
