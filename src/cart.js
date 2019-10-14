@@ -45,7 +45,7 @@ export default class Cart extends Component {
     componentDidMount() {
       var m = 0
       var items2 = [];
-      axios.get('http://localhost:4000/history')
+      axios.get('http://localhost:4000/cart')
         .then((res) => {
           for(var p = 0; p <= res.data.length; p++) {
             if(res.data[p].customerId === localStorage.getItem('userid')) {
@@ -108,6 +108,19 @@ export default class Cart extends Component {
                                                 stripeKey="pk_test_amIsnVcb4dXtUFh2vbL9EKNo00BAkY8kZo"
                                                 token={this.onToken}
                                                 zipCode
+                                                onClick={function(){
+                                                  axios.post('http://localhost:4000/history', this.state.items)
+                                                    .then((res) => {})
+                                                    .catch(function (error){
+                                                      console.log('What happened? ' + error);
+                                                    })
+                                                    for(var i = 0; i < this.state.items.length; i++) {
+                                                      axios.delete('http://localhost:4000/cart/' + this.state.items[i]._id)
+                                                        .then((res) => {
+                                                          console.log("deleted");
+                                                        })
+                                                    }
+                                                }}
                                               /></td>
                         </tr>
                         </tbody>

@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./components/Menu";
 import "./static/styles.css"
 import { BrowserRouter as Router } from "react-router-dom";
+import axios from 'axios';
 
 /*listsOfProducts = React.createClass({
     render: function(){
@@ -52,7 +53,7 @@ const dumData = [
 export default class Shop extends Component {
     constructor(props){
         super(props);
-        this.state = {text: '', inputText: '', mode:'customer'};
+        this.state = {text: '', inputText: '', mode:'customer', items: []};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleCustomer = this.handleCustomer.bind(this);
@@ -60,6 +61,28 @@ export default class Shop extends Component {
 
 
     }
+    componentDidMount() {
+      var m = 0
+      var items2 = [];
+      axios.get('http://localhost:4000/history')
+        .then((res) => {
+          for(var p = 0; p <= res.data.length; p++) {
+            if(res.data[p].customerId === localStorage.getItem('userid')) {
+              items2[m] = res.data[p];
+              this.setState({items: items2})
+              this.state.total +=parseInt(res.data[p].price, 10);
+              m++;
+            }
+          }
+        })
+        .catch(function (error){
+          console.log('What happened? ' + error);
+        })
+
+      }
+
+
+
     listsOfProducts = () => {
         var products = ["RGB", "Monitor", "GPU", "Dell", "Nice"];
         var productList = products.map(function(name, index){
@@ -216,50 +239,39 @@ export default class Shop extends Component {
                         <div className="App">
                             <div class="jumbotron">
                                 <h1 class="headingTop">Purchase History Customer View</h1>
-                                <div class="card-deck i">
-                                    <div class="row">
-                                        <div class="card col p-0">
-                                            <div class="card-body p-0">
-                                                <h1 class="card-title card-header">Card Title</h1>
-                                                <div class="blank">
-                                                    <img
-                                                        src="https://c7.alamy.com/comp/EPF1YW/nun-with-handgun-isolated-on-white-EPF1YW.jpg"
-                                                        class="card-img-top" alt="..."/>
-                                                    <ul class="list-group list-group-flush">
-                                                        {this.listsOfProducts()}
-                                                    </ul>
-                                                    <div class="card-footer">
-                                                        <a class="btn btn-primary">Item Link</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p></p>
-                                        <a className="btn btn-primary" role="button" onClick = {this.handleRetailer}>Change State</a>
-                                        <div class="card col p-0">
-                                            <div class="card-body p-0">
-                                                <h1 class="card-title card-header">Card title</h1>
-                                                <div class="blank">
-                                                    <img
-                                                        src="https://lz12v4f1p8c1cumxnbiqvm10-wpengine.netdna-ssl.com/wp-content/uploads/2018/02/hilarious-stock-photos-for-memes.jpg"
-                                                        class="card-img-top" alt="..."/>
-                                                    <ul class="list-group list-group-flush">
-                                                        <li className="list-group-item">Date</li>
-                                                        <li className="list-group-item">Amount</li>
-                                                        <li className="list-group-item">Item name</li>
-                                                        <li className="list-group-item">Item price</li>
-                                                        <li className="list-group-item">Item price</li>
-                                                    </ul>
-                                                    <div class="card-footer">
-                                                        <a class="btn btn-primary">Go Somewhere</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+    
+
+                                <table className="table table-striped" style={{ marginTop: 20 }} >
+                                  <thead>
+                                    <tr>
+                                      <th>Name</th>
+                                      <th>price</th>
+                                      <th>Buy Again</th>
+                                      <th>Delete</th>
+                                    </tr>
+                                  </thead>
+                                <tbody>
+                                {this.state.items.map(function(currentItem, i) {
+
+                                      return (
+                                        <tr>
+                                          <td>{currentItem.name}</td>
+                                            <td>{currentItem.price}</td>
+                                            <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/shop"}>Buy Again</a></button></td>
+                                            <td><button class="btn btn-link" onClick={function() {
+                                              localStorage.setItem('id', currentItem._id)
+                                              axios.delete('http://localhost:4000/history/' + localStorage.getItem('id'))
+                                                .then(res => alert("Deleted"));
+                                            }}>X</button></td>
+                                        </tr>
+                                      )
+                                    })
+                                  }
+                                </tbody>
+                                </table>
                             </div>
                         </div>
+
                     </Router>
                 </div>
             );

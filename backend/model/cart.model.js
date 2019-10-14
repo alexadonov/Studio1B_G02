@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let History = new Schema({
+let Cart = new Schema({
     retailerId: {type: String},
     customerId: {type: String},
     productId: {type: String},
@@ -10,4 +10,4 @@ let History = new Schema({
     // productOwner: {type: ObjectId}
 });
 
-module.exports = mongoose.model('history2', History);
+module.exports = mongoose.model('cart', Cart);

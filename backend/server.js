@@ -12,6 +12,9 @@ let userRouter = require('./routes/user.routes.js');
 let Item = require('./model/item.model');
 let itemRouter = require('./routes/items.routes.js');
 
+let Cart = require('./model/cart.model');
+let cartRouter = require('./routes/cart.routes.js');
+
 let History = require('./model/history.model');
 let historyRouter = require('./routes/history.routes.js');
 
@@ -30,6 +33,7 @@ connection.once('open', function() {
 
 app.use('/users', userRouter);
 app.use('/items', itemRouter);
+app.use('/cart', cartRouter);
 app.use('/history', historyRouter);
 
 app.listen(PORT, function() {
