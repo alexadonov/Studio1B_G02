@@ -19,7 +19,9 @@ export default class Shop extends Component {
      this.onChangeYear = this.onChangeYear.bind(this);
      this.onChangeEmail = this.onChangeEmail.bind(this);
      this.onChangePhone = this.onChangePhone.bind(this);
-     this.onChangeUserType = this.onChangeUserType.bind(this);
+     this.onChangeToCustomer = this.onChangeToCustomer.bind(this);
+     this.onChangeToRetailer = this.onChangeToRetailer.bind(this);
+     this.onChangeToAdmin = this.onChangeToAdmin.bind(this);
 
 
      this.onSubmit = this.onSubmit.bind(this);
@@ -85,11 +87,23 @@ export default class Shop extends Component {
    });
   }
 
-  onChangeUserType(e) {
+  onChangeToCustomer(e) {
    this.setState({
-       userType: e.target.value
+       userType: 'Customer'
    });
   }
+
+  onChangeToRetailer(e) {
+    this.setState({
+        userType: 'Retailer'
+    });
+   }
+
+   onChangeToAdmin(e) {
+    this.setState({
+        userType: 'Admin'
+    });
+   }
 
   onSubmit(e) {
         e.preventDefault();
@@ -146,7 +160,6 @@ export default class Shop extends Component {
     return (
       <div class="container">
         <Router>
-          <Menu/>
           <div className="App" >
           <br/>
           <div class="jumbotron">
@@ -196,14 +209,14 @@ export default class Shop extends Component {
 
                 <div class="col">
                   <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" value={this.state.userType} onChange={this.onChangeUserType} required/>
-                    <label class="custom-control-label" for="customControlValidation2">User</label>
+                    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" value={this.state.userType} onChange={this.onChangeToCustomer} required/>
+                    <label class="custom-control-label" for="customControlValidation2">Customer</label>
                   </div>
                 </div>
 
               <div class="col">
                 <div class="custom-control custom-radio mb-3">
-                  <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" value={this.state.userType} onChange={this.onChangeUserType} required/>
+                  <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" value={this.state.userType} onChange={this.onChangeToRetailer} required/>
                   <label class="custom-control-label" for="customControlValidation3">Reatiler</label>
                   <div class="invalid-feedback">Please check a box</div>
                 </div>
@@ -211,7 +224,7 @@ export default class Shop extends Component {
 
               <div class="col">
                 <div class="custom-control custom-radio mb-3">
-                  <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" value={this.state.userType} onChange={this.onChangeUserType} required/>
+                  <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" value={this.state.userType} onChange={this.onChangeToAdmin} required/>
                   <label class="custom-control-label" for="customControlValidation3">Admin</label>
                   <div class="invalid-feedback">Please check a box</div>
                 </div>

@@ -74,7 +74,7 @@ export default class Shop extends Component {
                     </p>
 
                     <p>
-                        <strong>Account Type: </strong> {localStorage.getItem('__v')}
+                        <strong>Account Type: </strong> {localStorage.getItem('userType')}
                     </p>
 
                     <br></br>

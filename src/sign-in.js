@@ -53,10 +53,11 @@ export default class Shop extends Component {
                   if(response.data[i].username === newUser.username && response.data[i].password === newUser.password  ) {
                       localStorage.setItem('username', newUser.username);
                       localStorage.setItem('password', newUser.password);
-                      localStorage.setItem('userid', response.data[i]._id);
+                      localStorage.setItem('currentUserId', response.data[i]._id);
                       localStorage.setItem('dob', response.data[i].dob);
                       localStorage.setItem('phone', response.data[i].phone);
                       localStorage.setItem('email', response.data[i].email);
+                      localStorage.setItem('userType', response.data[i].userType);
                       localStorage.setItem('loggedIn', 'true');
 
                       //alert("Yes");
