@@ -82,7 +82,7 @@ export default class Admin extends Component {
                   return (
                     <tr>
                       <td>{currentItem.username}</td>
-                      <td>Admin</td>
+                      <td>Customer</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
                       <td><button class="btn btn-link" onClick={function() {
                         localStorage.setItem('id', currentItem._id);
@@ -110,7 +110,7 @@ export default class Admin extends Component {
                   return (
                     <tr>
                       <td>{currentItem.username}</td>
-                      <td>User</td>
+                      <td>Admin</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)}>Edit</a></button></td>
                       <td><button class="btn btn-link" onClick={function() {
                         localStorage.setItem('id', currentItem._id);
