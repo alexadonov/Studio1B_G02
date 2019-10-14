@@ -85,6 +85,7 @@ export default class Shop extends Component {
                                     }
                                     axios.post('http://localhost:4000/cart/add', newItem)
                                       .then(response => {
+                                          alert("Item added to cart!")
                                           return;
                                       })
                                       .catch(function (error){
