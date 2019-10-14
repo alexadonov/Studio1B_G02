@@ -84,6 +84,7 @@ export default class Shop extends Component {
                         <div className="App">
                             <div class="jumbotron">
                                 <h1 class="headingTop">Purchase History</h1>
+                                <a href="/custProfile">Return to Profile</a>
                                 <table className="table table-striped" style={{ marginTop: 20 }} >
                                   <thead>
                                     <tr>
@@ -111,7 +112,6 @@ export default class Shop extends Component {
                                 }
                                 </tbody>
                                 </table>
-                                <a href="/custProfile">Return to Customer Profile {this.state.mode}</a>
                             </div>
                         </div>
 
@@ -126,6 +126,7 @@ export default class Shop extends Component {
                         <div className="App">
                             <div class="jumbotron">
                                 <h1 class="headingTop">Purchase History</h1>
+                                <a href="/custProfile">Return to Profile</a>
                                 <table className="table table-striped" style={{ marginTop: 20 }} >
                                     <thead>
                                     <tr>
@@ -153,7 +154,6 @@ export default class Shop extends Component {
                                     }
                                     </tbody>
                                 </table>
-                                <a href="/custProfile">Return to Profile</a>
                             </div>
                         </div>
 
