@@ -87,7 +87,6 @@ export default class Shop extends Component {
                                 <table className="table table-striped" style={{ marginTop: 20 }} >
                                   <thead>
                                     <tr>
-                                        <th>Buyer ID</th>
                                         <th>Retailer ID</th>
                                         <th>Name</th>
                                         <th>Price</th>
@@ -98,7 +97,6 @@ export default class Shop extends Component {
                                 {this.state.items.map(function(currentItem, i) {
                                     return(
                                         <tr>
-                                            <td>{currentItem.customerId}</td>
                                             <td>{currentItem.retailerId}</td>
                                             <td>{currentItem.name}</td>
                                             <td>{currentItem.price}</td>
@@ -132,7 +130,6 @@ export default class Shop extends Component {
                                     <thead>
                                     <tr>
                                         <th>Buyer ID</th>
-                                        <th>Retailer ID</th>
                                         <th>Name</th>
                                         <th>Price</th>
                                         <th>Delete</th>
@@ -143,7 +140,6 @@ export default class Shop extends Component {
                                         return(
                                             <tr>
                                                 <td>{currentItem.customerId}</td>
-                                                <td>{currentItem.retailerId}</td>
                                                 <td>{currentItem.name}</td>
                                                 <td>{currentItem.price}</td>
                                                 <td><button class="btn btn-link" onClick={function() {
