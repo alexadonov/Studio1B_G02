@@ -23,7 +23,6 @@ import AdminCreateUser from "./admin-create-user.js";
 import AdminItem from "./admin-items.js";
 import AdminCreateItem from "./admin-create-item.js";
 import AdminCenter from "./admin-center.js";
-import RetailerProfile from "./retailerProfile";
 import RetailerProducts from "./retailerProducts";
 
 class App extends Component {
@@ -133,12 +132,6 @@ class App extends Component {
                   <AdminCenter />
               </div>
           )} />
-
-              <Route exact={true} path='/retailerProfile' render={() => (
-                  <div className="App">
-                      <RetailerProfile />
-                  </div>
-              )} />
 
               <Route exact={true} path='/retailerProducts' render={() => (
                   <div className="App">
