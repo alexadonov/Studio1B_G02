@@ -98,7 +98,7 @@ export default class EditUser extends Component {
     console.log(obj);
 
     axios.post('http://localhost:4000/users/update/' + localStorage.getItem('id'), obj)
-      .then(res => console.log(res.data))
+      .then(res => console.log(res.data), window.location='/custProfile')
       .catch(function(err) {
         console.log("ERROR: " + err);
       })
