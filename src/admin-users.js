@@ -10,10 +10,10 @@ export default class Admin extends Component {
 
   constructor(props) {
        super(props);
+
        this.state = {
-         items: []
+         items: [],
        }
-       this.deleteUser = this.deleteUser.bind(this);
     }
 
     componentDidMount() {
@@ -22,7 +22,6 @@ export default class Admin extends Component {
       //   alert("You are not admin and cannot access this page")
       //   window.location = "/";
       // }
-
 
       axios.get('http://localhost:4000/users/')
           .then(res => {
@@ -36,15 +35,7 @@ export default class Admin extends Component {
 
     }
 
-    deleteUser(e) {
-      e.preventDefault();
-
-      axios.delete('http://localhost:4000/users/' + localStorage.getItem('id'))
-        .then(res => alert("Deleted"));
-    }
-
   render() {
-    var btn = <td><button class="btn btn-link" onClick={this.deleteUser}>X</button></td>
 
     return (
       <div class="container" >
@@ -70,10 +61,10 @@ export default class Admin extends Component {
             <table className="table table-striped" style={{ marginTop: 20 }} >
               <thead>
                 <tr>
+                  <th>User ID</th>
                   <th>Name</th>
                   <th>User Type</th>
                   <th>Edit</th>
-                  <th>Delete</th>
                 </tr>
               </thead>
             <tbody>
@@ -81,6 +72,7 @@ export default class Admin extends Component {
                 if(currentItem.__v == 0) {
                   return (
                     <tr>
+                      <td>{currentItem._id}</td>
                       <td>{currentItem.username}</td>
                       <td>Customer</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
@@ -95,6 +87,7 @@ export default class Admin extends Component {
                 if(currentItem.__v == 1) {
                   return (
                     <tr>
+                      <td>{currentItem._id}</td>
                       <td>{currentItem.username }</td>
                       <td>Retailer</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)} >Edit</a></button></td>
@@ -109,6 +102,7 @@ export default class Admin extends Component {
                 if(currentItem.__v == 2) {
                   return (
                     <tr>
+                      <td>{currentItem._id}</td>
                       <td>{currentItem.username}</td>
                       <td>Admin</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)}>Edit</a></button></td>
@@ -124,6 +118,7 @@ export default class Admin extends Component {
               }
             </tbody>
             </table>
+
           </div>
           </div>
         </Router>

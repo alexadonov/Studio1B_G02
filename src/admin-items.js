@@ -10,9 +10,10 @@ export default class Admin extends Component {
 
   constructor(props) {
        super(props);
+
        this.state = {
          items: [],
-         users: []
+         users: [],
        }
 
     }
@@ -45,7 +46,6 @@ export default class Admin extends Component {
     }
 
   render() {
-    var btn = <td><button class="btn btn-link" onClick={this.deleteItem}>X</button></td>
     return (
       <div class="container" >
           <Router>
@@ -69,10 +69,10 @@ export default class Admin extends Component {
             <table className="table table-striped" style={{ marginTop: 20 }} >
               <thead>
                 <tr>
-                  <th>Retailer</th>
+                  <th>Retailer ID</th>
+                  <th>Item ID</th>
                   <th>Name</th>
                   <th>Edit</th>
-                  <th>Delete</th>
                 </tr>
               </thead>
             <tbody>
@@ -81,6 +81,7 @@ export default class Admin extends Component {
                   return (
                     <tr>
                       <td>{currentItem.retailerId}</td>
+                      <td>{currentItem._id}</td>
                         <td>{currentItem.name}</td>
                         <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
                         <td><button class="btn btn-link" onClick={function() {
@@ -94,6 +95,7 @@ export default class Admin extends Component {
               }
             </tbody>
             </table>
+
           </div>
           </div>
         </Router>
