@@ -67,7 +67,7 @@ export default class Shop extends Component {
       axios.get('http://localhost:4000/history')
         .then((res) => {
           for(var p = 0; p <= res.data.length; p++) {
-            if(res.data[p].customerId === localStorage.getItem('userid')) {
+            if(res.data[p].customerId === localStorage.getItem('currentUserId')) {
               items2[m] = res.data[p];
               this.setState({items: items2})
               this.state.total +=parseInt(res.data[p].price, 10);
