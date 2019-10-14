@@ -54,7 +54,7 @@ export default class Admin extends Component {
           <br/>
           <div class="shadow p-1 mb-5 bg-white rounded-top">
             <h1>Admin Center: Items</h1>
-            <a href="/admin-user">Return to Centre</a>
+            <a href="/admin">Return to Centre</a>
             <div class="row">
             <div class="col-sm"></div>
             <div class="col-sm"></div>
@@ -62,7 +62,7 @@ export default class Admin extends Component {
                 <h5><a href="/admin-user">View users</a></h5>
               </div>
               <div class="col-sm">
-                <h5><a href="/create-item">Add new item</a></h5>
+                <h5><a href="/admin-create-item">Add new item</a></h5>
               </div>
               <div class="col-sm"></div><div class="col-sm"></div>
             </div>

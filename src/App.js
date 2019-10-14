@@ -21,8 +21,8 @@ import AdminUser from "./admin-users.js";
 import AdminEditUser from "./admin-edit-user.js";
 import AdminCreateUser from "./admin-create-user.js";
 import AdminItem from "./admin-items.js";
+import AdminCreateItem from "./admin-create-item.js";
 import AdminCenter from "./admin-center.js";
-import RetailerProfile from "./retailerProfile";
 import RetailerProducts from "./retailerProducts";
 
 class App extends Component {
@@ -121,17 +121,17 @@ class App extends Component {
               </div>
           )} />
 
+          <Route exact={true} path='/admin-create-item' render={() => (
+              <div className="App">
+                  <AdminCreateItem />
+              </div>
+          )} />
+
           <Route exact={true} path='/admin' render={() => (
               <div className="App">
                   <AdminCenter />
               </div>
           )} />
-
-              <Route exact={true} path='/retailerProfile' render={() => (
-                  <div className="App">
-                      <RetailerProfile />
-                  </div>
-              )} />
 
               <Route exact={true} path='/retailerProducts' render={() => (
                   <div className="App">
