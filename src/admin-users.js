@@ -53,7 +53,7 @@ export default class Admin extends Component {
                 <h5><a href="/admin-item">View Items</a></h5>
               </div>
               <div class="col-sm">
-                <h5><a href="/create-user">Add new User</a></h5>
+                <h5><a href="/admin-create-user">Add new User</a></h5>
               </div>
               <div class="col-sm"></div><div class="col-sm"></div>
             </div>

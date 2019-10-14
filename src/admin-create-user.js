@@ -7,7 +7,7 @@ import Menu from "./components/Menu";
 import axios from 'axios';
 
 
-export default class Shop extends Component {
+export default class AdminCreateUser extends Component {
   constructor(props) {
      super(props);
 
@@ -128,7 +128,7 @@ export default class Shop extends Component {
               localStorage.setItem('phone', newUser.phone);
               localStorage.setItem('dob', newUser.dob);
               localStorage.setItem('userType', newUser.userType);
-                window.location = "/";
+                window.location = "/admin-user";
             })
             .catch(function (error){
                 console.log('What happened? ' + error);
@@ -164,6 +164,7 @@ export default class Shop extends Component {
           <br/>
           <div class="jumbotron">
             <h1>Create User</h1>
+            <a href="/admin-user">Return to Centre</a>
             <form onSubmit={this.onSubmit}>
 
             <div class="form-group">
@@ -224,8 +225,8 @@ export default class Shop extends Component {
 
               <div class="col">
                 <div class="custom-control custom-radio mb-3">
-                  <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" value={this.state.userType} onChange={this.onChangeToAdmin} required/>
-                  <label class="custom-control-label" for="customControlValidation3">Admin</label>
+                  <input type="radio" class="custom-control-input" id="customControlValidation4" name="radio-stacked" value={this.state.userType} onChange={this.onChangeToAdmin} required/>
+                  <label class="custom-control-label" for="customControlValidation4">Admin</label>
                   <div class="invalid-feedback">Please check a box</div>
                 </div>
               </div>
@@ -233,7 +234,6 @@ export default class Shop extends Component {
           </div>
           </div>
           <input type="submit" class="btn btn-outline-primary" value="Submit"/>
-          <a class="btn-txt1 mb-5" href="/sign-in" role="button"><h6>Click <u>here</u>to return to Sign In</h6></a>
           </form>
         </div>
         </div>
