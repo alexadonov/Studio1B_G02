@@ -223,6 +223,7 @@ export default class Shop extends Component {
           </div>
           </div>
           <input type="submit" class="btn btn-outline-primary" value="Submit"/>
+          <a class="btn-txt1 mb-5" href="/sign-in" role="button"><h6>Sign in instead <u>here</u>.</h6></a>
           </form>
         </div>
         </div>
