@@ -65,63 +65,30 @@ export default class Admin extends Component {
                   <th>Name</th>
                   <th>User Type</th>
                   <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
             <tbody>
             {this.state.items.map(function(currentItem, i) {
-                if(currentItem.__v == 0) {
-                  return (
-                    <tr>
-                      <td>{currentItem._id}</td>
-                      <td>{currentItem.username}</td>
-                      <td>Customer</td>
-                      <td><button class="btn btn-link" onClick={function() {
-                        localStorage.setItem('editId', currentItem._id);
-                      }}><a href={"/admin-edit-user"}>Edit</a></button></td>
-                      <td><button class="btn btn-link" onClick={function() {
-                        localStorage.setItem('deleteId', currentItem._id);
-                        axios.delete('http://localhost:4000/users/' + localStorage.getItem('deleteId'))
-                          .then(res => alert("Deleted"));
-                      }}>X</button></td>
-                    </tr>
-                  )
-                }
-                if(currentItem.__v == 1) {
-                  return (
-                    <tr>
-                      <td>{currentItem._id}</td>
-                      <td>{currentItem.username }</td>
-                      <td>Retailer</td>
-                      <td><button class="btn btn-link" onClick={function() {
-                        localStorage.setItem('editId', currentItem._id);
-                      }}><a href={"/admin-edit-user"}>Edit</a></button></td>
-                      <td><button class="btn btn-link" onClick={function() {
-                        localStorage.setItem('deleteId', currentItem._id);
-                        axios.delete('http://localhost:4000/users/' + localStorage.getItem('deleteId'))
-                          .then(res => alert("Deleted"));
-                      }}>X</button></td>
-                    </tr>
-                  )
-                }
-                if(currentItem.__v == 2) {
-                  return (
-                    <tr>
-                      <td>{currentItem._id}</td>
-                      <td>{currentItem.username}</td>
-                      <td>Admin</td>
-                      <td><button class="btn btn-link" onClick={function() {
-                        localStorage.setItem('editId', currentItem._id);
-                      }}><a href={"/admin-edit-user"}>Edit</a></button></td>
-                      <td><button class="btn btn-link" onClick={function() {
-                        localStorage.setItem('deleteId', currentItem._id);
-                        axios.delete('http://localhost:4000/users/' + localStorage.getItem('deleteId'))
-                          .then(res => alert("Deleted"));
-                      }}>X</button></td>
-                    </tr>
-                  )
-                }
-                })
-              }
+              return(
+              <tr>
+                <td>{currentItem._id}</td>
+                <td>{currentItem.username}</td>
+                <td>{currentItem.userType}</td>
+                <td><button class="btn btn-link" onClick={function() {
+                  localStorage.setItem('editId', currentItem._id);
+                  }}><a href={"/admin-edit-user"}>Edit</a></button>
+                </td>
+                <td><button class="btn btn-link" onClick={function() {
+                  localStorage.setItem('deleteId', currentItem._id);
+                  axios.delete('http://localhost:4000/users/' + localStorage.getItem('deleteId'))
+                    .then(res => alert("Deleted"));
+                  }}>X</button>
+                </td>
+              </tr>
+              )
+              })
+            }
             </tbody>
             </table>
 

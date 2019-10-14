@@ -16,7 +16,9 @@ export default class AdminEditUser extends Component {
      this.onChangeDOB = this.onChangeDOB.bind(this);
      this.onChangeEmail = this.onChangeEmail.bind(this);
      this.onChangePhone = this.onChangePhone.bind(this);
-     this.onChangeUserType = this.onChangeUserType.bind(this);
+     this.onChangeToAdmin = this.onChangeToAdmin.bind(this);
+     this.onChangeToRetail = this.onChangeToRetail.bind(this);
+     this.onChangeToCustomer = this.onChangeToCustomer.bind(this);
      this.onSubmit = this.onSubmit.bind(this);
 
      this.state = {
@@ -24,7 +26,8 @@ export default class AdminEditUser extends Component {
          password: String,
          dob: String,
          email: String,
-         phone: String
+         phone: String,
+         userType: String
      }
   }
 
@@ -37,8 +40,8 @@ export default class AdminEditUser extends Component {
                 dob: response.data.dob,
                 email: response.data.email,
                 phone: response.data.phone,
-                userType: response.data.__v
-            }, alert('UserType;' + this.state.userType))
+                userType: response.data.userType
+            })
         })
         .catch(function (error) {
             console.log(error);
@@ -88,26 +91,41 @@ export default class AdminEditUser extends Component {
    });
   }
 
-  onChangeUserType(e) {
+  onChangeToAdmin(e) {
     this.setState({
-        userType: e.target.value
+        userType: 'Admin'
+    });
+   }
+
+   onChangeToRetail(e) {
+    this.setState({
+        userType: 'Retailer'
+    });
+   }
+
+   onChangeToCustomer(e) {
+    this.setState({
+        userType: 'Customer'
     });
    }
 
   onSubmit(e) {
     e.preventDefault();
+    var DOB = this.state.dob;
+    var phone = this.state.phone;
+
     const obj = {
         username: this.state.username,
         password: this.state.password,
-        phone: this.state.phone,
-        dob: this.state.dob,
+        phone: phone,
+        dob: DOB,
         email: this.state.email,
         userType: this.state.userType
     };
     console.log(obj);
 
     axios.post('http://localhost:4000/users/update/' + localStorage.getItem('editUserId'), obj)
-      .then(res => console.log(res.data), alert("Your details have been successfully updated" + this.state.userType), window.location = "/admin-user")
+      .then(res => console.log(res.data), alert("Your details have been successfully updated"), window.location="/admin-edit-user")
       .catch(function(err) {
         console.log("ERROR: " + err);
       })
@@ -122,6 +140,7 @@ export default class AdminEditUser extends Component {
           <br/>
           <div class="jumbotron">
             <h1>Edit User</h1>
+            <a href="/admin-user">Return to Centre</a>
             <form onSubmit={this.onSubmit}>
 
             <div class="form-group">
@@ -153,14 +172,15 @@ export default class AdminEditUser extends Component {
 
                 <div class="col">
                   <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" value={this.state.userType} onChange={this.onChangeUserType} required/>
-                    <label class="custom-control-label" for="customControlValidation2">User</label>
+                    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked"
+                    value={this.state.userType} onChange={this.onChangeToCustomer} required/>
+                    <label class="custom-control-label" for="customControlValidation2">Customer</label>
                   </div>
                 </div>
 
               <div class="col">
                 <div class="custom-control custom-radio mb-3">
-                  <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" value={this.state.userType} onChange={this.onChangeUserType} required/>
+                  <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" value={this.state.userType} onChange={this.onChangeToRetail} required/>
                   <label class="custom-control-label" for="customControlValidation3">Reatiler</label>
                   <div class="invalid-feedback">Please check a box</div>
                 </div>
@@ -168,7 +188,7 @@ export default class AdminEditUser extends Component {
 
               <div class="col">
                 <div class="custom-control custom-radio mb-3">
-                  <input type="radio" class="custom-control-input" id="customControlValidation4" name="radio-stacked" value={this.state.userType} onChange={this.onChangeUserType} required/>
+                  <input type="radio" class="custom-control-input" id="customControlValidation4" name="radio-stacked" value={this.state.userType} onChange={this.onChangeToAdmin} required/>
                   <label class="custom-control-label" for="customControlValidation4">Admin</label>
                   <div class="invalid-feedback">Please check a box</div>
                 </div>

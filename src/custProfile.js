@@ -13,7 +13,11 @@ export default class Shop extends Component {
 
        this.state = {
            username: String,
-           password: String
+           password: String,
+           dob: String,
+           email: String,
+           phone: String,
+           userType: String
         }
     }
 
@@ -23,11 +27,15 @@ export default class Shop extends Component {
         window.location = "/";
       }
 
-      axios.get('http://localhost:4000/users/')
+      axios.get('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
           .then(res => {
             this.setState({
               username: res.data.username,
-              password: res.data.password
+              password: res.data.password,
+              dob: res.data.dob,
+              email: res.data.email,
+              phone: res.data.phone,
+              userType: res.data.userType
             })
           })
           .catch(function (error) {
@@ -51,13 +59,13 @@ export default class Shop extends Component {
                         <h3>Personal Details</h3>
                     </div>
                     <p>
-                        <strong>Name: </strong> {localStorage.getItem('username')}
+                        <strong>Name: </strong> {this.state.username}
                     </p>
                     <p>
-                        <strong>Date of Birth: </strong> {localStorage.getItem('dob')}
+                        <strong>Date of Birth: </strong> {this.state.dob}
                     </p>
                     <p>
-                        <strong>Password: </strong> {localStorage.getItem('password')}
+                        <strong>Password: </strong> {this.state.password}
                     </p>
 
                     <br></br>
@@ -67,21 +75,21 @@ export default class Shop extends Component {
                         <h3>Contact Details</h3>
                     </div>
                     <p>
-                        <strong>Email: </strong> {localStorage.getItem('email')}
+                        <strong>Email: </strong> {this.state.email}
                     </p>
                     <p>
-                        <strong>Phone: </strong> {localStorage.getItem('phone')}
+                        <strong>Phone: </strong> {this.state.phone}
                     </p>
 
                     <p>
-                        <strong>Account Type: </strong> {localStorage.getItem('__v')}
+                        <strong>Account Type: </strong> {this.state.userType}
                     </p>
 
                     <br></br>
                     <a class="btn black-background white b-s" href="/edit-user" role="button">Edit Profile</a>
                     <br/><br/>
                     <button class="btn black-background white b-s" onClick={function() {
-                      axios.delete('http://localhost:4000/users/' + localStorage.getItem('userid'))
+                      axios.delete('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
                         .then(res => alert("Deleted"));
                     }} role="button">Delete Profile</button>
                 </div>

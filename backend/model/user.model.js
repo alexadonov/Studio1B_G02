@@ -12,7 +12,11 @@ let User = new Schema({
     },
     email: {type: String },
     phone: {type: String },
-    dob: { type: String }
+    dob: { type: String },
+    userType: {
+        type: String,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('User', User);
