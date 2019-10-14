@@ -17,7 +17,7 @@ export default class Shop extends Component {
            dob: String,
            email: String,
            phone: String,
-           userType: String
+           userType: String,
         }
     }
 
@@ -53,6 +53,11 @@ export default class Shop extends Component {
                 <div class="jumbotron">
                     <div class="border-bottom p-3 mb-5 bg-white rounded-t">
                         <h1 class="display-4">Customer Profile</h1>
+                        <button onClick={function(){
+                            localStorage.setItem('currentUserId', null)
+                            localStorage.setItem('loggedIn', false)
+                            window.location='/'
+                        }}>Sign Out</button>
                     </div>
 
                     <div>
@@ -86,12 +91,27 @@ export default class Shop extends Component {
                     </p>
 
                     <br></br>
-                    <a class="btn black-background white b-s" href="/edit-user" role="button">Edit Profile</a>
-                    <br/><br/>
-                    <button class="btn black-background white b-s" onClick={function() {
-                      axios.delete('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
-                        .then(res => alert("Deleted"));
-                    }} role="button">Delete Profile</button>
+
+                    <div class="row">
+                        <div className="col"></div>
+                        <div class="col-3">
+                            <a className="btn black-background white b-s" href="/edit-user" role="button">Edit Profile</a>
+                        </div>
+                        <div className="col-3">
+                            <button class="btn black-background white b-s" onClick={function() {
+                                axios.delete('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
+                                    .then(res => alert("Deleted"));
+                                }} role="button">Delete Profile
+                            </button>
+                        </div>
+                        <div className="col-3">
+                            <a className="btn black-background white b-s" href="/retailerProducts" role="button">View My Products</a>
+                        </div>
+                        <div className="col-3">
+                            <a className="btn black-background white b-s" href="/admin" role="button">Admin Centre</a>
+                        </div>
+                        <div className="col"></div>
+                    </div>
                 </div>
             </div>
         </Router>
