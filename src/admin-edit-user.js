@@ -111,7 +111,7 @@ export default class AdminEditUser extends Component {
   onSubmit(e) {
     e.preventDefault();
     var DOB = this.state.dob;
-    var phone = '' + this.state.phone.toString;
+    var phone = this.state.phone;
 
     const obj = {
         username: this.state.username,
