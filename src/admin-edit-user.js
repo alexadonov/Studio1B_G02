@@ -26,7 +26,8 @@ export default class AdminEditUser extends Component {
          password: String,
          dob: String,
          email: String,
-         phone: String
+         phone: String,
+         userType: String
      }
   }
 
@@ -39,7 +40,7 @@ export default class AdminEditUser extends Component {
                 dob: response.data.dob,
                 email: response.data.email,
                 phone: response.data.phone,
-                userType: response.data.__v
+                userType: response.data.userType
             })
         })
         .catch(function (error) {
@@ -92,19 +93,19 @@ export default class AdminEditUser extends Component {
 
   onChangeToAdmin(e) {
     this.setState({
-        userType: 2
+        userType: 'Admin'
     });
    }
 
    onChangeToRetail(e) {
     this.setState({
-        userType: 1
+        userType: 'Retailer'
     });
    }
 
    onChangeToCustomer(e) {
     this.setState({
-        userType: 0
+        userType: 'Customer'
     });
    }
 
@@ -171,7 +172,8 @@ export default class AdminEditUser extends Component {
 
                 <div class="col">
                   <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" value={this.state.userType} onChange={this.onChangeToCustomer} required/>
+                    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked"
+                    value={this.state.userType} onChange={this.onChangeToCustomer} required/>
                     <label class="custom-control-label" for="customControlValidation2">Customer</label>
                   </div>
                 </div>
