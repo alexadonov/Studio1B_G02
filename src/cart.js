@@ -5,30 +5,6 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import NumberFormat from 'react-number-format';
 
-const dummyItems = [
-    {
-        _id: "5d78877668c1611ab0b924bb",
-        retailerId: "5d93de2a1c9d440000a88790",
-        name: "Car",
-        price: 10000000,
-        quantity: 1
-    },
-    {
-        id: "5d8da5453bf18a429041283e",
-        retailerId: "5d93de2a1c9d440000a88790",
-        name: "Toughpad",
-        price: 456,
-        quantity: 1
-    },
-    {
-        id: "5d943d4a1c9d440000a88792",
-        retailerId: "5d93de2a1c9d440000a88790",
-        productName: "an item",
-        price: 20,
-        quantity: 2
-    },
-]
-
 export default class Cart extends Component {
     constructor(props) {
         super(props);
