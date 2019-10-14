@@ -77,7 +77,7 @@ export default class Shop extends Component {
                                     // localStorage.setItem('productPrice', currentItem.price);
 
                                     const newItem = {
-                                      customerId: localStorage.getItem('userid'),
+                                      customerId: localStorage.getItem('currentUserId'),
                                       retailerId: currentItem.retailerId,
                                       productId: currentItem._id,
                                       name: currentItem.name,
