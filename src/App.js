@@ -18,6 +18,7 @@ import CreateUser from "./create-user";
 import EditUser from "./edit-user";
 import CreateItem from "./createItem.js";
 import AdminUser from "./admin-users.js";
+import AdminEditUser from "./admin-edit-user.js";
 import AdminItem from "./admin-items.js";
 import AdminCenter from "./admin-center.js";
 import RetailerProfile from "./retailerProfile";
@@ -98,6 +99,12 @@ class App extends Component {
           <Route exact={true} path='/admin-user' render={() => (
               <div className="App">
                   <AdminUser />
+              </div>
+          )} />
+
+          <Route exact={true} path='/admin-edit-user' render={() => (
+              <div className="App">
+                  <AdminEditUser />
               </div>
           )} />
 

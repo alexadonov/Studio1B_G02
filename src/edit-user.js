@@ -28,19 +28,19 @@ export default class EditUser extends Component {
   }
 
   componentDidMount() {
-    // axios.get('http://localhost:4000/users/' + this.props.match.id)
-    //     .then(response => {
-    //         this.setState({
-    //             username: response.data.username,
-    //             password: response.data.password,
-    //             dob: response.data.dob,
-    //             email: response.data.email,
-    //             phone: response.data.phone
-    //         })
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error);
-    //     })
+    axios.get('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
+    .then(response => {
+      this.setState({
+          username: response.data.username,
+          password: response.data.password,
+          dob: response.data.dob,
+          email: response.data.email,
+          phone: response.data.phone
+      })
+  })
+  .catch(function (error) {
+      console.log(error);
+  })
 
     axios.get('http://localhost:4000/users/') //Calls the webpage that saves all the data
       .then(response => {

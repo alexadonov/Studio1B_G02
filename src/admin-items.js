@@ -85,7 +85,7 @@ export default class Admin extends Component {
                         <td>{currentItem.name}</td>
                         <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
                         <td><button class="btn btn-link" onClick={function() {
-                          localStorage.setItem('deleteId', currentItem._id)
+                          localStorage.setItem('deleteId', currentItem._id);
                           axios.delete('http://localhost:4000/items/' + localStorage.getItem('deleteId'))
                             .then(res => alert("Deleted"), window.location = '/');
                         }}>X</button></td>
