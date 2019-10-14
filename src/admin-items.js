@@ -10,13 +10,10 @@ export default class Admin extends Component {
 
   constructor(props) {
        super(props);
-       this.onChangeCurrentID = this.onChangeCurrentID.bind(this);
-       this.deleteItem = this.deleteItem.bind(this);
 
        this.state = {
          items: [],
          users: [],
-         curId: String
        }
 
     }
@@ -47,23 +44,6 @@ export default class Admin extends Component {
                   console.log(error);
               });
     }
-
-    deleteItem(e) {
-      e.preventDefault();
-      const itemId = {
-        curId: this.state.curId
-      }
-
-      axios.delete('http://localhost:4000/items/' + itemId.curId)
-        .then(res => alert("Deleted - Please refresh page"))
-        .catch(error => alert('Please make sure to enter a valid ITEM id'));
-    }
-
-    onChangeCurrentID(e) {
-      this.setState({
-          curId: e.target.value
-      });
-     }
 
   render() {
     return (
@@ -104,21 +84,17 @@ export default class Admin extends Component {
                       <td>{currentItem._id}</td>
                         <td>{currentItem.name}</td>
                         <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
+                        <td><button class="btn btn-link" onClick={function() {
+                          localStorage.setItem('deleteId', currentItem._id)
+                          axios.delete('http://localhost:4000/items/' + localStorage.getItem('deleteId'))
+                            .then(res => alert("Deleted"), window.location = '/');
+                        }}>X</button></td>
                     </tr>
                   )
                 })
               }
             </tbody>
             </table>
-
-            {/* <br/>
-            <br/> */}
-
-            <div class="mb-3">
-              <input class="form-control " id="validationTextarea" placeholder="Enter the ID of the Item you wish to delete" value={this.state.curId} onChange={this.onChangeCurrentID} required></input>
-              <div class="invalid-feedback">Enter the ID of the User you wish to delete</div>
-              <td><button class="btn btn-link" onClick={this.deleteItem}>Click to Delete Item</button></td>
-            </div>
 
           </div>
           </div>

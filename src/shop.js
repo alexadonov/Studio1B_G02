@@ -22,6 +22,7 @@ export default class Shop extends Component {
          // inStock: Boolean,
          // image: String
        }
+       this.addToCart = this.addToCart.bind(this);
     }
 
     componentDidMount() {
@@ -36,8 +37,8 @@ export default class Shop extends Component {
           });
     }
 
-    addToCart(currentItem) {
-      localStorage.setItem('name', currentItem.name);
+    addToCart(e) {
+      e.preventDefault();
     }
 
 
@@ -69,7 +70,28 @@ export default class Shop extends Component {
                                 </div>
                                 <div class="card-footer">
                                   <a class="price my-2"> <b><CurrencyFormat value={currentItem.price} displayType="text" thousandSeparator={true} prefix="$" /></b></a>
-                                  <button class="list-group-item list-group-item-action" onClick={localStorage.setItem('name', currentItem)}>Add to Cart</button>
+                                  <button class="list-group-item list-group-item-action" onClick={function() {
+                                    // localStorage.setItem('productName', currentItem.name);
+                                    // localStorage.setItem('productId', currentItem._id);
+                                    // localStorage.setItem('productRetailerid', currentItem.retailerId);
+                                    // localStorage.setItem('productPrice', currentItem.price);
+
+                                    const newItem = {
+                                      customerId: localStorage.getItem('userid'),
+                                      retailerId: currentItem.retailerId,
+                                      productId: currentItem._id,
+                                      name: currentItem.name,
+                                      price: currentItem.price
+                                    }
+                                    axios.post('http://localhost:4000/history/add', newItem)
+                                      .then(response => {
+                                          return;
+                                      })
+                                      .catch(function (error){
+                                        console.log('What happened? ' + error);
+                                      })
+
+                                  }}>Add to Cart</button>
                                 </div>
                             </div>
                           </div>

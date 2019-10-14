@@ -10,13 +10,10 @@ export default class Admin extends Component {
 
   constructor(props) {
        super(props);
-       this.onChangeCurrentID = this.onChangeCurrentID.bind(this);
 
        this.state = {
          items: [],
-         curId: String
        }
-       this.deleteUser = this.deleteUser.bind(this);
     }
 
     componentDidMount() {
@@ -26,7 +23,6 @@ export default class Admin extends Component {
       //   window.location = "/";
       // }
 
-      
       axios.get('http://localhost:4000/users/')
           .then(res => {
             this.setState({
@@ -38,22 +34,6 @@ export default class Admin extends Component {
           });
 
     }
-
-    deleteUser(e) {
-      e.preventDefault();
-      const newId = {
-        curId: this.state.curId
-      }
-
-      axios.delete('http://localhost:4000/users/' + newId.curId)
-        .then(res => alert("Deleted - Please Refresh Your Page"))
-    }
-
-    onChangeCurrentID(e) {
-      this.setState({
-          curId: e.target.value
-      });
-     }
 
   render() {
 
@@ -94,8 +74,13 @@ export default class Admin extends Component {
                     <tr>
                       <td>{currentItem._id}</td>
                       <td>{currentItem.username}</td>
-                      <td>Admin</td>
+                      <td>Customer</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"}>Edit</a></button></td>
+                      <td><button class="btn btn-link" onClick={function() {
+                        localStorage.setItem('id', currentItem._id);
+                        axios.delete('http://localhost:4000/users/' + localStorage.getItem('id'))
+                          .then(res => alert("Deleted"));
+                      }}>X</button></td>
                     </tr>
                   )
                 }
@@ -106,6 +91,11 @@ export default class Admin extends Component {
                       <td>{currentItem.username }</td>
                       <td>Retailer</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)} >Edit</a></button></td>
+                      <td><button class="btn btn-link" onClick={function() {
+                        localStorage.setItem('id', currentItem._id);
+                        axios.delete('http://localhost:4000/users/' + localStorage.getItem('id'))
+                          .then(res => alert("Deleted"));
+                      }}>X</button></td>
                     </tr>
                   )
                 }
@@ -114,8 +104,13 @@ export default class Admin extends Component {
                     <tr>
                       <td>{currentItem._id}</td>
                       <td>{currentItem.username}</td>
-                      <td>User</td>
+                      <td>Admin</td>
                       <td>{localStorage.setItem('id', currentItem._id)}<button class="btn btn-link"><a href={"/edit-user"} onClick={localStorage.setItem('id', currentItem._id)}>Edit</a></button></td>
+                      <td><button class="btn btn-link" onClick={function() {
+                        localStorage.setItem('id', currentItem._id);
+                        axios.delete('http://localhost:4000/users/' + localStorage.getItem('id'))
+                          .then(res => alert("Deleted"));
+                      }}>X</button></td>
                     </tr>
                   )
                 }
@@ -124,14 +119,6 @@ export default class Admin extends Component {
             </tbody>
             </table>
 
-            <br/>
-            <br/>
-
-            <div class="mb-3">
-              <input class="form-control " id="validationTextarea" placeholder="Enter the ID of the User you wish to delete" value={this.state.curId} onChange={this.onChangeCurrentID} required></input>
-              <div class="invalid-feedback">Enter the ID of the User you wish to delete</div>
-              <td><button class="btn btn-link" onClick={this.deleteUser}>Click to Delete User</button></td>
-            </div>
           </div>
           </div>
         </Router>

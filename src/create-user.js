@@ -14,6 +14,9 @@ export default class Shop extends Component {
      this.onChangeUsername = this.onChangeUsername.bind(this);
      this.onChangePassword = this.onChangePassword.bind(this);
      this.onChangeDOB = this.onChangeDOB.bind(this);
+     this.onChangeDate = this.onChangeDate.bind(this);
+     this.onChangeMonth = this.onChangeMonth.bind(this);
+     this.onChangeYear = this.onChangeYear.bind(this);
      this.onChangeEmail = this.onChangeEmail.bind(this);
      this.onChangePhone = this.onChangePhone.bind(this);
      this.onChangeUserType = this.onChangeUserType.bind(this);
@@ -91,15 +94,17 @@ export default class Shop extends Component {
   onSubmit(e) {
         e.preventDefault();
         var date = this.state.date;
+        var month = this.state.month;
+        var year = this.state.year;
 
-        var dob = date + "/" + this.state.month + "/" + this.state.year;
-        localStorage.setItem('dob', dob);
+        var DOB = this.state.date + "/" + this.state.month + "/" + this.state.year;
+        localStorage.setItem('dob', DOB);
 
         const newUser = {
           username: this.state.username,
           password: this.state.password,
           email: this.state.email,
-          dob: this.state.dob,
+          dob: DOB,
           phone: this.state.phone,
           userType: this.state.userType
       };
@@ -110,12 +115,26 @@ export default class Shop extends Component {
               localStorage.setItem('password', newUser.password);
               localStorage.setItem('email', newUser.email);
               localStorage.setItem('phone', newUser.phone);
+              localStorage.setItem('dob', newUser.dob);
               localStorage.setItem('userType', newUser.userType);
                 window.location = "/";
             })
             .catch(function (error){
                 console.log('What happened? ' + error);
             })
+
+            axios.get('http://localhost:4000/users/') //Calls the webpage that saves all the data
+            .then(response => {
+              for(var i = 0; i < response.data.length; i++) { //Going through the data
+                if((response.data[i].username === localStorage.getItem('username')) && (response.dara[i].password === localStorage.getItem('password'))) {
+                  localStorage.setItem('currentUserId', response.data[i]._id);
+                  console.log(response.data[i]._id);
+                }
+                          }
+                        })
+                        .catch(function (error){
+                            console.log('What happened? ' + error);
+                        })
 
           this.setState({
             username: '',
@@ -158,18 +177,11 @@ export default class Shop extends Component {
               <div class="row">
 
                 <div class="col-sm">
-                  <select id="inputState" class="form-control" id="date" value={this.state.date} onChange={this.onChangeDate}>
-                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>44</option><option>12</option>
-                    <option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option>
-                    <option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
-                  </select>
+                  <input type="username" class="form-control" aria-label="Date" placeholder="Date (dd)" value={this.state.date} onChange={this.onChangeDate}/>
                 </div>
 
                 <div class="col-sm">
-                  <select id="inputState" class="form-control" value={this.state.month} onChange={this.onChangeMonth} id="month">
-                    <option selected>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option>
-                    <option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
-                  </select>
+                  <input id="inputState" class="form-control" placeholder="Month (mm)" value={this.state.month} onChange={this.onChangeMonth} id="month"/>
                 </div>
 
                 <div class="col-sm">
