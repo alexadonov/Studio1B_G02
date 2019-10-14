@@ -83,8 +83,9 @@ export default class Shop extends Component {
                                       name: currentItem.name,
                                       price: currentItem.price
                                     }
-                                    axios.post('http://localhost:4000/history/add', newItem)
+                                    axios.post('http://localhost:4000/cart/add', newItem)
                                       .then(response => {
+                                          alert("Item added to cart!")
                                           return;
                                       })
                                       .catch(function (error){
