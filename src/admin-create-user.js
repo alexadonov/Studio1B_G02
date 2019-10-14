@@ -164,7 +164,7 @@ export default class AdminCreateUser extends Component {
           <br/>
           <div class="jumbotron">
             <h1>Create User</h1>
-            <a href="/admin-user">Return to Centre</a>
+            <a href="/admin-user">Return to Users</a>
             <form onSubmit={this.onSubmit}>
 
             <div class="form-group">

@@ -45,7 +45,7 @@ export default class Admin extends Component {
           <br/>
           <div class="shadow p-1 mb-5 bg-white rounded-top">
             <h1>Admin Center: Users</h1>
-
+            <a href="/admin">Return to Centre</a>
             <div class="row">
             <div class="col-sm"></div>
             <div class="col-sm"></div>
