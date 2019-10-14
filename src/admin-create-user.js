@@ -138,7 +138,7 @@ export default class AdminCreateUser extends Component {
             .then(response => {
               for(var i = 0; i < response.data.length; i++) { //Going through the data
                 if((response.data[i].username === localStorage.getItem('username')) && (response.dara[i].password === localStorage.getItem('password'))) {
-                  localStorage.setItem('currentUserId', response.data[i]._id);
+                  localStorage.setItem('newUserId', response.data[i]._id);
                   console.log(response.data[i]._id);
                 }
                           }
