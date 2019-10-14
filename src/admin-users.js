@@ -65,6 +65,7 @@ export default class Admin extends Component {
                   <th>Name</th>
                   <th>User Type</th>
                   <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
             <tbody>

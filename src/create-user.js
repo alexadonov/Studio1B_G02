@@ -93,9 +93,6 @@ export default class Shop extends Component {
 
   onSubmit(e) {
         e.preventDefault();
-        var date = this.state.date;
-        var month = this.state.month;
-        var year = this.state.year;
 
         var DOB = this.state.date + "/" + this.state.month + "/" + this.state.year;
         localStorage.setItem('dob', DOB);

@@ -73,6 +73,7 @@ export default class Admin extends Component {
                   <th>Item ID</th>
                   <th>Name</th>
                   <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
             <tbody>
