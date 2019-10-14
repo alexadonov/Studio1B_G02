@@ -53,7 +53,7 @@ export default class Shop extends Component {
                 <div class="jumbotron">
                     <div class="border-bottom p-3 mb-5 bg-white rounded-t">
                         <h1 class="display-4">Customer Profile</h1>
-                        <button onClick={function(){
+                        <button class="btn black-background white b-s" onClick={function(){
                             localStorage.setItem('currentUserId', null)
                             localStorage.setItem('loggedIn', false)
                             window.location='/'
