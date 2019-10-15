@@ -16,6 +16,8 @@ export default class PopShop extends Component {
        this.state = { 
          items: []
        }
+
+       this.addToCart = this.addToCart.bind(this);
     }
 
     componentDidMount() {
@@ -30,8 +32,8 @@ export default class PopShop extends Component {
           });
     }
 
-    addToCart(currentItem) {
-      localStorage.setItem('name', currentItem.name);
+    addToCart(e) {
+      e.preventDefault();
     }
 
   render() {
@@ -61,7 +63,29 @@ export default class PopShop extends Component {
                                 </div>
                                 <div class="card-footer">
                                   <a class="price my-2"> <b><CurrencyFormat value={currentItem.price} displayType="text" thousandSeparator={true} prefix="$" /></b></a>
-                                  <button class="list-group-item list-group-item-action" onClick={localStorage.setItem('name', currentItem)}>Add to Cart</button>
+                                  <button class="list-group-item list-group-item-action" onClick={function() {
+                                    // localStorage.setItem('productName', currentItem.name);
+                                    // localStorage.setItem('productId', currentItem._id);
+                                    // localStorage.setItem('productRetailerid', currentItem.retailerId);
+                                    // localStorage.setItem('productPrice', currentItem.price);
+
+                                    const newItem = {
+                                      customerId: localStorage.getItem('userid'),
+                                      retailerId: currentItem.retailerId,
+                                      productId: currentItem._id,
+                                      name: currentItem.name,
+                                      price: currentItem.price
+                                    }
+                                    axios.post('http://localhost:4000/cart/add', newItem)
+                                      .then(response => {
+                                          alert("Item added to cart!")
+                                          return;
+                                      })
+                                      .catch(function (error){
+                                        console.log('What happened? ' + error);
+                                      })
+
+                                  }}>Add to Cart</button>
                                 </div>
                             </div>
                           </div>
@@ -75,17 +99,7 @@ export default class PopShop extends Component {
                         </div>
                 </section>
             </div>
-            <div class = "sideBar col-3 px-3 py-3">
-                <aside>
-                    <h2>FILTERS</h2>
-                      <div class="list-group list-group-flush">
-                          <button type="button" class="list-group-item list-group-item-action" >Dell</button>
-                          <button type="button" class="list-group-item list-group-item-action" >Lenovo</button>
-                          <button type="button" class="list-group-item list-group-item-action" >HP</button>
-                          <button type="button" class="list-group-item list-group-item-action" >HP</button>
-                          <button type="button" class="list-group-item list-group-item-action" >No Filter</button>
-                    </div>
-                </aside>
+            <div class = "sideBar col-2 px-2 py-2">
             </div>
         </div>
         </div>
