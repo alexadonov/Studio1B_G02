@@ -37,8 +37,8 @@ export default class Shop extends Component {
                             m++;
                         }
                     }
-                else{
-                        if (res.data[p].customerId == localStorage.getItem('currentUserId')) {
+                    else{
+                        if (res.data[p].retailerId == localStorage.getItem('currentUserId')) {
                             items2[m] = res.data[p];
                             this.setState({items: items2})
                             this.state.total += parseInt(res.data[p].price, 10);
@@ -52,30 +52,7 @@ export default class Shop extends Component {
             })
 
     }
-
-        /*axios.get('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
-            .then(res => {
-                this.setState({
-                    userType: res.data.userType
-                })
-            })
-      }*/
-
-    /*componentDidMount() {
-        axios.get('http://localhost:4000/items/')
-            .then(res => {
-                this.setState({
-                    items: res.data
-                })
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }*/
-
-
-
-
+    
     render() {
         if (this.state.userType == 'Customer') {
             return (
