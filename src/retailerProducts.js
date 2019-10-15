@@ -15,8 +15,7 @@ export default class Shop extends Component {
         super(props);
  
         this.state = {
-          items: [],
-          users: [],
+          items: []
         }
  
      }
@@ -37,15 +36,6 @@ export default class Shop extends Component {
            .catch(function (error) {
                console.log(error);
            });
-           axios.get('http://localhost:4000/users/')
-               .then(res => {
-                 this.setState({
-                   users: res.data
-                 })
-               })
-               .catch(function (error) {
-                   console.log(error);
-               });
      }
  
    render() {
