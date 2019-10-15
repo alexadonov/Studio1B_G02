@@ -45,6 +45,7 @@ export default class Shop extends Component {
 
 
   render() {
+
     return (
     <div class="container">
         <Router>
@@ -104,6 +105,16 @@ export default class Shop extends Component {
                                 }} role="button">Delete Profile
                             </button>
                         </div>
+                        <div className="col-3">
+                            <a className="btn black-background white b-s" href="/purchaseHistory" role="button">Purchase History</a>
+                        </div>
+                        <div className="col"></div>
+                    </div>
+
+                    <br/>
+                    <div class="row">
+                        <div className="col"></div>
+                        
                         <div className="col-3">
                             <a className="btn black-background white b-s" href="/retailerProducts" role="button">View My Products</a>
                         </div>
