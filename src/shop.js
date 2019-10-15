@@ -6,7 +6,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Menu from "./components/Menu";
 import axios from 'axios';
 import "./static/shop.css";
-import CurrencyFormat from 'react-currency-format';
+
+import product1 from "./components/img/Blackwidow Keyboard.jpg";
+import product2 from "./components/img/Logitech G502 Mousepad.jpeg";
+import product3 from "./components/img/Lixon Mini Speaker.jpg";
 
 
 export default class Shop extends Component {
@@ -22,7 +25,6 @@ export default class Shop extends Component {
          // inStock: Boolean,
          // image: String
        }
-       this.addToCart = this.addToCart.bind(this);
     }
 
     componentDidMount() {
@@ -37,27 +39,25 @@ export default class Shop extends Component {
           });
     }
 
-    addToCart(e) {
-      e.preventDefault();
+    addToCart(currentItem) {
+      localStorage.setItem('name', currentItem.name);
     }
 
 
   render() {
 
     return (
-
       <div class="content rounded">
-            <head><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/></head>
       <div className="App">
         <Router>
         </Router>
         <div class="jumbotron1">
           <Menu/>
           <div class="row">
-            <div class="mainContent pb-4">
+            <div class="mainContent">
                 <section class="pt-0 pb-5">
                             <div class="row pb-5">
-                            <div class="card-deck pb-3 px-4">
+                            <div class="card-deck py-3 px-4">
                         {this.state.items.map(function(currentItem, i) {
                           return (
                             <div class="row">
@@ -69,7 +69,7 @@ export default class Shop extends Component {
                                   <p class="card-text">{currentItem.description}</p>
                                 </div>
                                 <div class="card-footer">
-                                  <a class="price my-2"> <b><CurrencyFormat value={currentItem.price} displayType="text" thousandSeparator={true} prefix="$" /></b></a>
+                                  <a class="price" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"> <b>${currentItem.price}</b></a>
                                   <button class="list-group-item list-group-item-action" onClick={function() {
                                     // localStorage.setItem('productName', currentItem.name);
                                     // localStorage.setItem('productId', currentItem._id);
@@ -77,7 +77,7 @@ export default class Shop extends Component {
                                     // localStorage.setItem('productPrice', currentItem.price);
 
                                     const newItem = {
-                                      customerId: localStorage.getItem('currentUserId'),
+                                      customerId: localStorage.getItem('userid'),
                                       retailerId: currentItem.retailerId,
                                       productId: currentItem._id,
                                       name: currentItem.name,
@@ -92,8 +92,7 @@ export default class Shop extends Component {
                                         console.log('What happened? ' + error);
                                       })
 
-                                  }}>Add to Cart</button>
-                                </div>
+                                  }}>Add to Cart</button>                                </div>
                             </div>
                           </div>
                         </div>
@@ -109,15 +108,12 @@ export default class Shop extends Component {
                 <aside>
                     <h2>FILTERS</h2>
                       <div class="list-group list-group-flush">
-                        <a href="/shop-dell">
-                          <button type="button" class="list-group-item list-group-item-action" >Dell</button>
-                        </a>
-                        <a href="/shop-lenovo">
-                          <button type="button" class="list-group-item list-group-item-action" >Lenovo</button>
-                        </a>
-                        <a href="/shop-hp">
-                          <button type="button" class="list-group-item list-group-item-action" >HP</button>
-                        </a>
+                          <button type="button" class="list-group-item list-group-item-action">Keyboard</button>
+                          <button type="button" class="list-group-item list-group-item-action">Mouse</button>
+                          <button type="button" class="list-group-item list-group-item-action">Webcam</button>
+                          <button type="button" class="list-group-item list-group-item-action">Fan</button>
+                          <button type="button" class="list-group-item list-group-item-action">Speaker</button>
+                          <button type="button" class="list-group-item list-group-item-action">Cleaner</button>
                     </div>
                 </aside>
             </div>

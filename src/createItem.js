@@ -82,7 +82,6 @@ export default class CreateItem extends Component {
     e.preventDefault();
 
     const newItem = {
-      retailerId: localStorage.getItem('currentUserId'),
       name: this.state.name,
       price: this.state.price,
       description: this.state.description,
@@ -202,7 +201,8 @@ export default class CreateItem extends Component {
       </div>
 
       <div class="custom-file">
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Enter a .jpg Link for Your Image" value="" value={this.state.image} onChange={this.onChangeImage} required/>
+        <input type="file" class="custom-file-input" id="validatedCustomFile" value={this.state.image} onChange={this.onChangeImage} required/>
+        <label class="custom-file-label" for="validatedCustomFile">Upload an Image</label>
         <div class="invalid-feedback">Example invalid custom file feedback</div>
       </div>
 
