@@ -58,6 +58,7 @@ export default class ShopLenovo extends Component {
                             <div class="row pb-5">
                             <div class="card-deck pb-3 px-4">
                         {this.state.items.map(function(currentItem, i) {
+                          if(currentItem.brand == 'Lenovo'){
                           return (
                             <div class="row">
                             <div class="card-deck py-3 px-4">
@@ -97,7 +98,7 @@ export default class ShopLenovo extends Component {
                           </div>
                         </div>
 
-                          )
+                          )}
                         })
                       }
                          </div>

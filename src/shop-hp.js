@@ -59,6 +59,7 @@ export default class ShopHP extends Component {
                             <div class="row pb-5">
                             <div class="card-deck pb-3 px-4">
                         {this.state.items.map(function(currentItem, i) {
+                          if(currentItem.brand == 'HP'){
                           return (
                             <div class="row">
                             <div class="card-deck py-3 px-4">
@@ -98,7 +99,7 @@ export default class ShopHP extends Component {
                           </div>
                         </div>
 
-                          )
+                          )}
                         })
                       }
                          </div>
