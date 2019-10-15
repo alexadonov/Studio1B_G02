@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 let Item = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     price: {
         type: String,
@@ -13,10 +14,9 @@ let Item = new Schema({
     description: {type: String},
     brand: {type: String},
     model: {type: String},
-    inStock: {type: Boolean},
+    inStock: {type: Boolean}, default: true,
     image: {
-        type: String, 
-        required: true
+        type: String
     },
     popItem: {type: Boolean, default: false},
     retailerId: {
