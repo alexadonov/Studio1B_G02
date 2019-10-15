@@ -82,6 +82,7 @@ export default class CreateItem extends Component {
     e.preventDefault();
 
     const newItem = {
+      retailerId: localStorage.getItem('currentUserId'),
       name: this.state.name,
       price: this.state.price,
       description: this.state.description,
