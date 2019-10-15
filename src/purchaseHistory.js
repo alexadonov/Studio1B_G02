@@ -9,7 +9,7 @@ import axios from 'axios';
 export default class Shop extends Component {
     constructor(props){
         super(props);
-        this.state = {mode:'customer', items: [], items5:[]};
+        this.state = {mode:'customer', items: []};
     }
 
     componentDidMount() {
@@ -52,7 +52,7 @@ export default class Shop extends Component {
             })
 
     }
-    
+
     render() {
         if (this.state.userType == 'Customer') {
             return (
