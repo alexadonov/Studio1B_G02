@@ -94,6 +94,9 @@ h1{
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+.grey-back {
+  background-color: #ced4da;
+}
 .form-control {
   background-color: #ced4da;
 }
