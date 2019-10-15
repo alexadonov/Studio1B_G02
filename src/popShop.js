@@ -13,14 +13,8 @@ export default class PopShop extends Component {
 
   constructor(props) {
        super(props);
-       this.state = { items: []
-         // name: String,
-         // price: String,
-         // description: String,
-         // brand: String,
-         // model: String,
-         // inStock: Boolean,
-         // image: String
+       this.state = { 
+         items: []
        }
     }
 
@@ -39,7 +33,6 @@ export default class PopShop extends Component {
     addToCart(currentItem) {
       localStorage.setItem('name', currentItem.name);
     }
-
 
   render() {
 
@@ -75,7 +68,7 @@ export default class PopShop extends Component {
                         </div>
 
                           )
-    }
+                      }
                         })
                       }
                          </div>
@@ -86,12 +79,11 @@ export default class PopShop extends Component {
                 <aside>
                     <h2>FILTERS</h2>
                       <div class="list-group list-group-flush">
-                          <button type="button" class="list-group-item list-group-item-action">Keyboard</button>
-                          <button type="button" class="list-group-item list-group-item-action">Mouse</button>
-                          <button type="button" class="list-group-item list-group-item-action">Webcam</button>
-                          <button type="button" class="list-group-item list-group-item-action">Fan</button>
-                          <button type="button" class="list-group-item list-group-item-action">Speaker</button>
-                          <button type="button" class="list-group-item list-group-item-action">Cleaner</button>
+                          <button type="button" class="list-group-item list-group-item-action" >Dell</button>
+                          <button type="button" class="list-group-item list-group-item-action" >Lenovo</button>
+                          <button type="button" class="list-group-item list-group-item-action" >HP</button>
+                          <button type="button" class="list-group-item list-group-item-action" >HP</button>
+                          <button type="button" class="list-group-item list-group-item-action" >No Filter</button>
                     </div>
                 </aside>
             </div>
