@@ -108,7 +108,7 @@ export default class CreateItem extends Component {
     };
   console.log(editItem);
 
-  axios.post('http://localhost:4000/items/update/', editItem)
+  axios.post('http://localhost:4000/items/update/' + localStorage.getItem('editId'), editItem)
     .then(res => console.log(res.data), window.location.href = '/retailerProducts')
     .catch(function (error){
       console.log('What happened? ' + error);
