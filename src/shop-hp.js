@@ -9,14 +9,19 @@ import "./static/shop.css";
 import CurrencyFormat from 'react-currency-format';
 
 
-export default class PopShop extends Component {
+export default class ShopHP extends Component {
 
   constructor(props) {
        super(props);
-       this.state = { 
-         items: []
+       this.state = { items: []
+         // name: String,
+         // price: String,
+         // description: String,
+         // brand: String,
+         // model: String,
+         // inStock: Boolean,
+         // image: String
        }
-
        this.addToCart = this.addToCart.bind(this);
     }
 
@@ -36,10 +41,13 @@ export default class PopShop extends Component {
       e.preventDefault();
     }
 
+
   render() {
 
     return (
+
       <div class="content rounded">
+            <head><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/></head>
       <div className="App">
         <Router>
         </Router>
@@ -49,10 +57,10 @@ export default class PopShop extends Component {
             <div class="mainContent pb-4">
                 <section class="pt-0 pb-5">
                             <div class="row pb-5">
-                            <div class="card-deck py-3 px-4">
+                            <div class="card-deck pb-3 px-4">
                         {this.state.items.map(function(currentItem, i) {
-                          if (currentItem.popItem) {
-                            return (
+                          if(currentItem.brand == 'HP'){
+                          return (
                             <div class="row">
                             <div class="card-deck py-3 px-4">
                               <div class="card" key={i}>
@@ -91,15 +99,28 @@ export default class PopShop extends Component {
                           </div>
                         </div>
 
-                          )
-                      }
+                          )}
                         })
                       }
                          </div>
                         </div>
                 </section>
             </div>
-            <div class = "sideBar col-2 px-2 py-2">
+            <div class = "sideBar col-3 px-3 py-3">
+                <aside>
+                    <h2>FILTERS</h2>
+                      <div class="list-group list-group-flush">
+                      <a href="/shop-dell">
+                          <button type="button" class="list-group-item list-group-item-action" >Dell</button>
+                        </a>
+                        <a href="/shop-lenovo">
+                          <button type="button" class="list-group-item list-group-item-action" >Lenovo</button>
+                        </a>
+                        <a href="/shop-hp">
+                          <button type="button" class="list-group-item list-group-item-action" >HP</button>
+                        </a>
+                    </div>
+                </aside>
             </div>
         </div>
         </div>
@@ -108,4 +129,3 @@ export default class PopShop extends Component {
     );
   }
 }
-

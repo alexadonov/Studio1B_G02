@@ -5,6 +5,11 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import Home from "./home.js";
 import Shop from "./shop.js";
+
+import ShopDell from "./shop-dell.js";
+import ShopHP from "./shop-hp.js";
+import ShopLenovo from "./shop-lenovo.js";
+
 import Signin from "./sign-in.js";
 import Cart from "./cart.js";
 import Purchase from "./purchaseHistory.js";
@@ -39,6 +44,24 @@ class App extends Component {
             <Route exact={true} path='/shop' render={() => (
               <div className="App">
                 <Shop />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/shop-dell' render={() => (
+              <div className="App">
+                <ShopDell />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/shop-hp' render={() => (
+              <div className="App">
+                <ShopHP />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/shop-lenovo' render={() => (
+              <div className="App">
+                <ShopLenovo />
               </div>
             )}/>
 

@@ -109,12 +109,15 @@ export default class Shop extends Component {
                 <aside>
                     <h2>FILTERS</h2>
                       <div class="list-group list-group-flush">
-                          <button type="button" class="list-group-item list-group-item-action">Keyboard</button>
-                          <button type="button" class="list-group-item list-group-item-action">Mouse</button>
-                          <button type="button" class="list-group-item list-group-item-action">Webcam</button>
-                          <button type="button" class="list-group-item list-group-item-action">Fan</button>
-                          <button type="button" class="list-group-item list-group-item-action">Speaker</button>
-                          <button type="button" class="list-group-item list-group-item-action">Cleaner</button>
+                        <a href="/shop-dell">
+                          <button type="button" class="list-group-item list-group-item-action" >Dell</button>
+                        </a>
+                        <a href="/shop-lenovo">
+                          <button type="button" class="list-group-item list-group-item-action" >Lenovo</button>
+                        </a>
+                        <a href="/shop-hp">
+                          <button type="button" class="list-group-item list-group-item-action" >HP</button>
+                        </a>
                     </div>
                 </aside>
             </div>
