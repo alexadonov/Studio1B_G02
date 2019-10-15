@@ -162,9 +162,12 @@ export default class Shop extends Component {
         <Router>
           <div className="App" >
           <br/>
-          <div class="jumbotron">
-            <h1>Create User</h1>
-            <form onSubmit={this.onSubmit}>
+          <div class="jumbotron4 rounded">
+            <div class="p-1 mb-5 bg-white rounded-top border-bottom">   
+            <h1>Register User</h1>
+            </div>
+            <div class="px-4">
+            <form class="mb-4" onSubmit={this.onSubmit}>
 
             <div class="form-group">
               <input type="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={this.state.username} onChange={this.onChangeUsername} required/>
@@ -180,14 +183,14 @@ export default class Shop extends Component {
 
 
             <div class="form-group">
-              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number" value={this.state.phone} onChange={this.onChangePhone}/>
+              <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number" value={this.state.phone} onChange={this.onChangePhone}/>
             </div>
 
             <div class="form-group">
               <div class="row">
 
                 <div class="col-sm">
-                  <input type="username" class="form-control" aria-label="Date" placeholder="Date (dd)" value={this.state.date} onChange={this.onChangeDate}/>
+                  <input type="day" class="form-control" aria-label="Date" placeholder="Date (dd)" value={this.state.date} onChange={this.onChangeDate}/>
                 </div>
 
                 <div class="col-sm">
@@ -232,12 +235,13 @@ export default class Shop extends Component {
 
           </div>
           </div>
-          <input type="submit" class="btn btn-outline-primary" value="Submit"/>
-          <a class="btn-txt1 mb-5" href="/sign-in" role="button"><h6>Click <u>here</u>to return to Sign In</h6></a>
+          <input type="submit" class="btn black-background white b-s" value="Submit"/> 
+          <a class="btn-txt1 mb-5" href="/sign-in" role="button"><h6>Already registered? Sign In <u>here</u></h6></a>
           </form>
         </div>
         </div>
-
+        </div>
+        
 
         </Router>
       </div>
