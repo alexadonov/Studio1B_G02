@@ -263,7 +263,7 @@ export default class Shop extends Component {
               <div class="row">
 
                 <div class="col-sm">
-                  <input type="username" class="form-control" aria-label="Date" placeholder="Date (dd)" value={this.state.date} onChange={this.onChangeDate}/>
+                  <input type="day" class="form-control" aria-label="Date" placeholder="Date (dd)" value={this.state.date} onChange={this.onChangeDate}/>
                 </div>
 
                 <div class="col-sm px-0">
@@ -306,13 +306,13 @@ export default class Shop extends Component {
             </div>
           </div>
           </div>
+
           <input type="submit" class="btn black-background white b-s" value="Register"/>
           <a class="btn-txt1 mb-5" href="/sign-in" role="button"><h6>Already registered? Click <u>here</u> to sign in</h6></a>
           </form>
         </div>
         </div>
         </div>
-
 
         </Router>
       </div>

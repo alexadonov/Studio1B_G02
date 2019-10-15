@@ -3,7 +3,7 @@ import CartItem from "./components/cartitem";
 import Menu from "./components/Menu";
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
-import NumberFormat from 'react-number-format';
+import CurrencyFormat from 'react-currency-format';
 
 const dummyItems = [
     {
@@ -51,7 +51,7 @@ export default class Cart extends Component {
       axios.get('http://localhost:4000/cart')
         .then((res) => {
           for(var p = 0; p <= res.data.length; p++) {
-            if(res.data[p].customerId === localStorage.getItem('userid')) {
+            if(res.data[p].customerId === localStorage.getItem('currentUserId')) {
               items2[m] = res.data[p];
               this.setState({items: items2})
               this.state.total +=parseInt(res.data[p].price, 10);
@@ -128,7 +128,8 @@ export default class Cart extends Component {
                         </tr>
                         <tr>
                           <td>Total</td>
-                          <td><NumberFormat value={this.state.total} displayType={'text'} thousandSeparator={true} prefix={'$'} renderText={value => <div>{value}</div>} /></td>
+
+                          <td><CurrencyFormat value={this.state.total} displayType="text" thousandSeparator={true} prefix="$" /></td>
                           <td>
                           <button class="btn btn-primary" onClick={this.saveHistory}>Pay with 💳</button></td>
 
