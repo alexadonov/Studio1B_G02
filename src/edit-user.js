@@ -113,6 +113,7 @@ export default class EditUser extends Component {
           <br/>
           <div class="jumbotron">
             <h1>Edit User</h1>
+            <a href="/custProfile">Return to Profile</a>
             <form onSubmit={this.onSubmit}>
 
             <div class="form-group">
