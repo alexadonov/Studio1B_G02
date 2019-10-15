@@ -14,9 +14,15 @@ let Item = new Schema({
     brand: {type: String},
     model: {type: String},
     inStock: {type: Boolean},
-    image: {type: String},
+    image: {
+        type: String, 
+        required: true
+    },
     popItem: {type: Boolean, default: false},
-    retailerId: {type: String, required: true}
+    retailerId: {
+        type: String, 
+        required: true
+    }
 });
 
 module.exports = mongoose.model('item', Item);
