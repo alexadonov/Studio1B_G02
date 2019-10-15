@@ -169,7 +169,7 @@ export default class Shop extends Component {
             <div class="px-4">
         
         
-        <form class="" onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit}>
             <div>
             <div class="col" align="center" >
             <div class="col-lg-8 col-lg-offset-8" id="input-gap">
