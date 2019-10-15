@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,7 +8,7 @@ import "./static/shop.css";
 import CurrencyFormat from 'react-currency-format';
 
 
-export default class Shop extends Component {
+export default class ShopLenovo extends Component {
 
   constructor(props) {
        super(props);
@@ -109,7 +108,7 @@ export default class Shop extends Component {
                 <aside>
                     <h2>FILTERS</h2>
                       <div class="list-group list-group-flush">
-                        <a href="/shop-dell">
+                      <a href="/shop-dell">
                           <button type="button" class="list-group-item list-group-item-action" >Dell</button>
                         </a>
                         <a href="/shop-lenovo">
