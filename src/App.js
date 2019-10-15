@@ -30,6 +30,7 @@ import AdminItem from "./admin-items.js";
 import AdminEditItem from "./admin-edit-item.js";
 import AdminCreateItem from "./admin-create-item.js";
 import AdminCenter from "./admin-center.js";
+import AdminHistory from "./admin-history.js";
 
 import RetailerProducts from "./retailerProducts";
 import EditItem from "./edit-item.js";
@@ -163,6 +164,12 @@ class App extends Component {
           <Route exact={true} path='/admin' render={() => (
               <div className="App">
                   <AdminCenter />
+              </div>
+          )} />
+
+          <Route exact={true} path='/admin-history' render={() => (
+              <div className="App">
+                  <AdminHistory />
               </div>
           )} />
 
