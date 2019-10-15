@@ -22,6 +22,7 @@ import AdminUser from "./admin-users.js";
 import AdminEditUser from "./admin-edit-user.js";
 import AdminCreateUser from "./admin-create-user.js";
 import AdminItem from "./admin-items.js";
+import AdminEditItem from "./admin-edit-item.js";
 import AdminCreateItem from "./admin-create-item.js";
 import AdminCenter from "./admin-center.js";
 
@@ -121,6 +122,12 @@ class App extends Component {
           <Route exact={true} path='/admin-item' render={() => (
               <div className="App">
                   <AdminItem />
+              </div>
+          )} />
+
+          <Route exact={true} path='/admin-edit-item' render={() => (
+              <div className="App">
+                  <AdminEditItem />
               </div>
           )} />
 
