@@ -14,7 +14,7 @@ let Item = new Schema({
     brand: {type: String},
     model: {type: String},
     inStock: {type: Boolean},
-    image: {data: Buffer, contentType: String },
+    image: {type: String},
     popItem: {type: Boolean, default: false},
     retailerId: {type: String, required: true}
 });
