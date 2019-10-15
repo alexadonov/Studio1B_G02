@@ -95,7 +95,7 @@ export default class Shop extends Component {
         }
         else{
             return(
-                <button type="button" className="btn btn-primary" onClick={this.handleToRetail}>View Sales History</button>
+                <button type="button" className="btn btn-primary" onClick={this.handleToRetail}>View Shop History</button>
             );
         }
     }
