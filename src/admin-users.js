@@ -38,12 +38,11 @@ export default class Admin extends Component {
   render() {
 
     return (
-      <div class="container" >
+      <div class="container">
           <Router>
           <div className="App">
-          <Menu/>
           <br/>
-          <div class="shadow p-1 mb-5 bg-white rounded-top">
+          <div class="shadow bg-white rounded-top jumbotron1 overflow-scroll">
             <h1>Admin Center: Users</h1>
             <a href="/admin">Return to Centre</a>
             <div class="row">
@@ -94,7 +93,6 @@ export default class Admin extends Component {
             }
             </tbody>
             </table>
-
           </div>
           </div>
         </Router>

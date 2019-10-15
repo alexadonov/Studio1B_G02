@@ -163,8 +163,13 @@ export default class Shop extends Component {
           <div className="App" >
           <br/>
           <div class="jumbotron4 rounded shadow">
-            <div class="p-1 mb-5 bg-white rounded-top border-bottom">
+            <div class="p-1 bg-white rounded-top border-bottom">
             <h1>Register</h1>
+            </div>
+            <div class="col-sm px-1 mb-3">
+        <a href="/" role="button" class="btn btn-default btn-sm px-0"><b>Home></b></a>
+                <a href="/sign-in" role="button" class="btn btn-default btn-sm px-0"><b>SignIn></b></a>
+              <a class="btn btn-default btn-sm px-0"><b>Register</b></a>
             </div>
             <div class="px-4">
         

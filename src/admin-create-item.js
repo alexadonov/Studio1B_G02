@@ -132,14 +132,14 @@ export default class CreateItem extends Component {
 
   render() {
     return (
-      <div class="container">
+      <div class="container rounded">
         <Router>
           <div className="App" >
           <br/>
-          <div class="jumbotron">
+          <div class="jumbotron4 rounded shadow">
             <h1>Create Item</h1>
             <a href="/admin-item">Return to Items</a>
-            <form onSubmit={this.onSubmit}>
+            <form class="m-4" onSubmit={this.onSubmit}>
             <br/>
             <div class="container">
               <div class="row">
@@ -217,7 +217,7 @@ export default class CreateItem extends Component {
           </div>
 
             <br/>
-          <input type="submit" class="btn btn-outline-primary" value="Submit"/>
+          <input type="submit" class="btn black-background white b-s" value="Submit"/>
           </form>
         </div>
         </div>

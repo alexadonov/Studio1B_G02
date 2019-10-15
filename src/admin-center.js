@@ -44,7 +44,6 @@ export default class Admin extends Component {
       <div class="container" >
           <Router>
           <div className="App">
-          <Menu/>
           <br/>
           <div class="shadow p-1 mb-5 bg-white rounded-top">
             <h1>Welcome to the Admin Center</h1>

@@ -47,7 +47,6 @@ export default class Shop extends Component {
     return (
 
       <div class="content rounded">
-            <head><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/></head>
       <div className="App">
         <Router>
         </Router>
