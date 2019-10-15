@@ -3,7 +3,7 @@ import CartItem from "./components/cartitem";
 import Menu from "./components/Menu";
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
-import NumberFormat from 'react-number-format';
+import CurrencyFormat from 'react-currency-format';
 
 const dummyItems = [
     {
@@ -128,7 +128,8 @@ export default class Cart extends Component {
                         </tr>
                         <tr>
                           <td>Total</td>
-                          <td><NumberFormat value={this.state.total} displayType={'text'} thousandSeparator={true} prefix={'$'} renderText={value => <div>{value}</div>} /></td>
+
+                          <td><CurrencyFormat value={this.state.total} displayType="text" thousandSeparator={true} prefix="$" /></td>
                           <td>
                           <button class="btn btn-primary" onClick={this.saveHistory}>Pay with 💳</button></td>
 
