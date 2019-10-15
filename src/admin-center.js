@@ -56,7 +56,7 @@ export default class Admin extends Component {
                 <button type="button" class="btn btn-outline-primary btn-lg"><a href="admin-user">User</a></button>
               </div>
               <div class="col thumb-padding item">
-                <a href="admin-user"><img width="500px" height="312px"class="rounded wrappera" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI9cborZzVItjbFy9W-P9FinwQWknN9Bhh5NGe5iOYdb-DyQYGXw" alt="My image"/></a>
+                <a href="admin-item"><img width="500px" height="312px"class="rounded wrappera" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI9cborZzVItjbFy9W-P9FinwQWknN9Bhh5NGe5iOYdb-DyQYGXw" alt="My image"/></a>
                 <button type="button" class="btn btn-outline-primary btn-lg"><a href="admin-item">Items</a></button>
               </div>
           </div>

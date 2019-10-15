@@ -27,16 +27,32 @@ export default class CreateItem extends Component {
          description: String,
          brand: String,
          model: String,
-         stock: String,
+         stock: Boolean,
          image: String
       }
   }
 
   componentDidMount() {
-    if(localStorage.getItem('userType') === "user") {
+    if(localStorage.getItem('userType') === "Customer") {
       alert('You do not have access to this page');
       window.location = "/";
     }
+
+    axios.get('http://localhost:4000/items/' + localStorage.getItem('editId'))
+          .then(res => {
+            this.setState({
+              name: res.data.name,
+              price: res.data.price,
+              description: res.data.description,
+              brand: res.data.brand,
+              model: res.data.model,
+              stock: res.data.stock,
+              image: res.data.image
+            })
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
   }
 
   onChangeName(e) {
@@ -81,8 +97,7 @@ export default class CreateItem extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const newItem = {
-      retailerId: localStorage.getItem('currentUserId'),
+    const editItem = {
       name: this.state.name,
       price: this.state.price,
       description: this.state.description,
@@ -90,42 +105,14 @@ export default class CreateItem extends Component {
       model: this.state.model,
       stock: this.state.stock,
       image: this.state.stock
-  };
+    };
+  console.log(editItem);
 
-  //Checks the name is unique and will not conflict with other items
-  // axios.get('http://localhost:4000/items/')
-  //     .then(response => {
-  //       for(var i = 0; i < response.data.length; i++) {
-  //         if(response.data[i].name === newItem.name  ) {
-  //             alert("Name taken");
-  //             return 0;
-  //           }
-  //         }
-  //     })
-  //     .catch(function (error) {
-  //         console.log(error);
-  //     });
-
-  //Adds the item - if it fails will alert the customer
-  axios.post('http://localhost:4000/items/add', newItem)
-    .then(response => {
-        alert("Welcome to the club!");
-        return;
-    })
+  axios.post('http://localhost:4000/items/update/' + localStorage.getItem('editId'), editItem)
+    .then(res => console.log(res.data), window.location.href = '/retailerProducts')
     .catch(function (error){
       console.log('What happened? ' + error);
     })
-
-    this.setState({
-      name: '',
-      price : '',
-      description: '',
-      brand: '',
-      model: '',
-      stock: '',
-      image: ''
-    });
-
   }
 
 
@@ -137,7 +124,8 @@ export default class CreateItem extends Component {
           <div className="App" >
           <br/>
           <div class="jumbotron">
-            <h1>Create Item</h1>
+            <h1>Edit Item</h1>
+            <a href="/retailerProducts">Return to Products</a>
             <form onSubmit={this.onSubmit}>
             <br/>
             <div class="container">
@@ -202,7 +190,7 @@ export default class CreateItem extends Component {
       </div>
 
       <div class="custom-file">
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Enter a .jpg Link for Your Image" value="" value={this.state.image} onChange={this.onChangeImage} required/>
+      <input type="text" class="form-control" id="validationTooltip01" placeholder="Enter a .jpg link" value="" value={this.state.image} onChange={this.onChangeImage} required/>
         <div class="invalid-feedback">Example invalid custom file feedback</div>
       </div>
 

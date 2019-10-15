@@ -78,7 +78,7 @@ export default class Shop extends Component {
                          <td>{currentItem.name}</td>
                          <td>${currentItem.price}</td>
                          <td>{currentItem.brand}</td>
-                         <td>{localStorage.setItem('editId', currentItem._id)}<button class="btn btn-link"><a href={"/"}>Edit</a></button></td>
+                         <td>{localStorage.setItem('editId', currentItem._id)}<button class="btn btn-link"><a href={"/edit-item"}>Edit</a></button></td>
                          <td><button class="btn btn-link" onClick={function() {
                            localStorage.setItem('deleteId', currentItem._id);
                            axios.delete('http://localhost:4000/items/' + localStorage.getItem('deleteId'))

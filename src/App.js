@@ -5,6 +5,11 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import Home from "./home.js";
 import Shop from "./shop.js";
+
+import ShopDell from "./shop-dell.js";
+import ShopHP from "./shop-hp.js";
+import ShopLenovo from "./shop-lenovo.js";
+
 import Signin from "./sign-in.js";
 import Cart from "./cart.js";
 import Purchase from "./purchaseHistory.js";
@@ -17,13 +22,17 @@ import Address from "./Address.js";
 import CreateUser from "./create-user";
 import EditUser from "./edit-user";
 import CreateItem from "./createItem.js";
+
 import AdminUser from "./admin-users.js";
 import AdminEditUser from "./admin-edit-user.js";
 import AdminCreateUser from "./admin-create-user.js";
 import AdminItem from "./admin-items.js";
+import AdminEditItem from "./admin-edit-item.js";
 import AdminCreateItem from "./admin-create-item.js";
 import AdminCenter from "./admin-center.js";
+
 import RetailerProducts from "./retailerProducts";
+import EditItem from "./edit-item.js";
 
 class App extends Component {
   render() {
@@ -39,6 +48,24 @@ class App extends Component {
             <Route exact={true} path='/shop' render={() => (
               <div className="App">
                 <Shop />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/shop-dell' render={() => (
+              <div className="App">
+                <ShopDell />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/shop-hp' render={() => (
+              <div className="App">
+                <ShopHP />
+              </div>
+            )}/>
+
+            <Route exact={true} path='/shop-lenovo' render={() => (
+              <div className="App">
+                <ShopLenovo />
               </div>
             )}/>
 
@@ -121,6 +148,12 @@ class App extends Component {
               </div>
           )} />
 
+          <Route exact={true} path='/admin-edit-item' render={() => (
+              <div className="App">
+                  <AdminEditItem />
+              </div>
+          )} />
+
           <Route exact={true} path='/admin-create-item' render={() => (
               <div className="App">
                   <AdminCreateItem />
@@ -136,6 +169,12 @@ class App extends Component {
               <Route exact={true} path='/retailerProducts' render={() => (
                   <div className="App">
                       <RetailerProducts />
+                  </div>
+              )} />
+
+            <Route exact={true} path='/edit-item' render={() => (
+                  <div className="App">
+                      <EditItem />
                   </div>
               )} />
 
