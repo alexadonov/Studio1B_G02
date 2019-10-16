@@ -53,7 +53,7 @@ export default class Cart extends Component {
           for(var p = 0; p <= res.data.length; p++) {
             if(res.data[p].customerId === localStorage.getItem('currentUserId')) {
               items2[m] = res.data[p];
-              
+
               this.state.total +=parseInt(res.data[p].price, 10);
                 this.setState({items: items2})
               m++;
@@ -83,8 +83,7 @@ export default class Cart extends Component {
                 axios.delete('http://localhost:4000/cart/' + this.state.items[i]._id)
                   .then((res) => {
                     console.log("deleted");
-                    alert("Payment Successful!");
-                    window.location.reload();
+                    window.location = '/';
                   })
               }
             })
