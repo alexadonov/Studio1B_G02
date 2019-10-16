@@ -58,8 +58,9 @@ export default class Admin extends Component {
               </div>
               <div class="col-sm"></div><div class="col-sm"></div>
             </div>
-            <div class="container overflow-scroll">
-            <table class="table table-striped overflow-scroll">
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+            <table class="table table-bordered table-striped mb-0">
               <thead>
                 <tr>
                   <th>User ID</th>
