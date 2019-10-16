@@ -128,7 +128,19 @@ export default class Cart extends Component {
                         </tbody>
 
                     </table>
-<button class="btn black-background white b-s my-3" onClick={this.saveHistory}>Pay with 💳</button>
+                    <StripeCheckout
+                      label="Pay with 💳"
+                      amount="500" //This should change
+                      billingAddress
+                      description="Computers & Stuff" //This should change
+                      image="/logo.svg"
+                      locale="auto"
+                      name="Loren Ipsum"
+                      stripeKey="pk_test_amIsnVcb4dXtUFh2vbL9EKNo00BAkY8kZo"
+                      token={this.onToken}
+                      zipCode
+                    />
+<button class="btn black-background white b-s my-3" onClick={this.saveHistory}>Make a Purchase</button>
                 </div>
             </div>
         );
