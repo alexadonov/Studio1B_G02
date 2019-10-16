@@ -15,8 +15,10 @@ export default class PopShop extends Component {
        super(props);
        this.state = { 
          items: [],
+         itemsId: [],
          history: [],
-         countArr: []
+         temp: [{id: String, cnt: Number}],
+         counts: []
        }
 
        this.addToCart = this.addToCart.bind(this);
@@ -32,23 +34,22 @@ export default class PopShop extends Component {
       axios.get('http://localhost:4000/items')
           .then(res => {
             this.setState({
-              items: res.data
+              items: res.data,
+              itemsId: res.data._id
             })
           })
           .catch(function (error) {
               console.log(error);
           });
   
-          for(var i=0; i < this.state.items.length; i++){
-            var count = this.state.history.filter(id => id == this.state.items[i]._id)
-            var arr = [{key: String, cnt: Number}];
+          
+          for(var i=0; i < this.state.itemsId.length; i++){
+            var count = this.state.history.filter(id => id == this.state.itemsId[i])
 
-            arr[i].id = this.state.items[i]._id
-            arr[i].cnt = count.length
-            this.setState({
-              countArr: arr
-            })
+            this.state.temp[i] = {id: this.state.itemsId[i], cnt: count.length}
           }
+
+          console.log(this.state.temp)
     }
 
     addToCart(e) {
