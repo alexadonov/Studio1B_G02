@@ -54,6 +54,8 @@ itemRouter.route('/update/:id').post(function(req, res) {
             item.brand = req.body.brand;
             item.model = req.body.model;
             item.inStock = req.body.inStock;
+            item.popItem = req.body.popItem;
+            item.retailerId = req.body.retailerId;
             item.save().then(item => {
                 res.json('item updated!');
             })
