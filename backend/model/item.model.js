@@ -14,7 +14,7 @@ let Item = new Schema({
     description: {type: String},
     brand: {type: String},
     model: {type: String},
-    inStock: {type: Boolean}, default: true,
+    inStock: {type: Boolean, default: true},
     image: {
         type: String
     },
