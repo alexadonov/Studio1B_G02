@@ -30,6 +30,16 @@ export default class Home extends Component {
        .catch(function (error) {
            console.log(error);
        });
+     
+     axios.get('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
+          .then(res => {
+            this.setState({
+              username: res.data.username,
+            })
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
     }
 
   render() {
@@ -39,6 +49,7 @@ export default class Home extends Component {
         <div className="App">
           <div class="jumbotron1 rounded">
           <Menu/>
+        <a class="btn-default2 btn-lg"><b>Welcome! </b>{this.state.username}</a>
             <div class="row">
               <div class="col thumb-padding">
             <a href="./popShop">
