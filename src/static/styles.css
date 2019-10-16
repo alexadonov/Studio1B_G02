@@ -162,7 +162,7 @@ hr {
 }
 .my-custom-scrollbar {
 position: relative;
-height: 200px;
+height: 80%;
 overflow: auto;
 }
 .table-wrapper-scroll-y {
