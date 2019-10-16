@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./components/Menu";
@@ -23,7 +22,7 @@ export default class Admin extends Component {
       //   window.location = "/";
       // }
 
-      axios.get('http://localhost:4000/users/')
+      axios.get('http://localhost:4000/history/')
           .then(res => {
             this.setState({
               items: res.data
@@ -38,35 +37,22 @@ export default class Admin extends Component {
   render() {
 
     return (
-      <div class="container">
+      <div class="container" >
           <Router>
           <div className="App">
           <br/>
-          <div class="shadow bg-white rounded-top jumbotron1 overflow-scroll">
-            <h1>Admin Center: Users</h1>
+          <div class="shadow p-1 mb-5 bg-white rounded-top">
+            <h1>Admin: Purchase History</h1>
             <a href="/admin">Return to Centre</a>
-            <div class="row">
-            <div class="col-sm"></div>
-            <div class="col-sm"></div>
-              <div class="col-sm">
-                <h5><a href="/admin-item">View Items</a></h5>
-              </div>
-              <div class="col-sm">
-                <h5><a href="/admin-create-user">Add new User</a></h5>
-              </div>
-              <div class="col-sm">
-                <h5><a href="/admin-history">Sales History</a></h5>
-              </div>
-              <div class="col-sm"></div><div class="col-sm"></div>
-            </div>
+
 
             <table className="table table-striped" style={{ marginTop: 20 }} >
               <thead>
                 <tr>
-                  <th>User ID</th>
-                  <th>Name</th>
-                  <th>User Type</th>
-                  <th>Edit</th>
+                  <th>Retailer ID</th>
+                  <th>Customer Id</th>
+                  <th>Product Name</th>
+                  <th>Price</th>
                   <th>Delete</th>
                 </tr>
               </thead>
@@ -74,17 +60,14 @@ export default class Admin extends Component {
             {this.state.items.map(function(currentItem, i) {
               return(
               <tr>
-                <td>{currentItem._id}</td>
-                <td>{currentItem.username}</td>
-                <td>{currentItem.userType}</td>
-                <td><button class="btn btn-link" onClick={function() {
-                  localStorage.setItem('editId', currentItem._id);
-                  }}><a href={"/admin-edit-user"}>Edit</a></button>
-                </td>
+                <td>{currentItem.retailerId}</td>
+                <td>{currentItem.customerId}</td>
+                <td>{currentItem.name}</td>
+                <td>${currentItem.price}</td>
                 <td><button class="btn btn-link" onClick={function() {
                   localStorage.setItem('deleteId', currentItem._id);
-                  axios.delete('http://localhost:4000/users/' + localStorage.getItem('deleteId'))
-                    .then(res => alert("Deleted"));
+                  axios.delete('http://localhost:4000/history/' + localStorage.getItem('deleteId'))
+                    .then(res => window.location="/admin-history");
                   }}>X</button>
                 </td>
               </tr>
@@ -93,6 +76,7 @@ export default class Admin extends Component {
             }
             </tbody>
             </table>
+
           </div>
           </div>
         </Router>

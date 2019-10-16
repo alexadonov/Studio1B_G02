@@ -5,39 +5,38 @@ export default class Menu extends Component {
   render() {
     return (
         <div>
-        <head><link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet"/></head>
         <div class="bg-white rounded-top position-relative border-bottom">
-        <div class="row px-0 mx-auto">
-        <div class="col px-1">
-        </div>
-          <div class="col-6 px-1">
-            <h1 class="display-4 pt-1" id="title">Computers & Stuff</h1>
-          </div>
-          <div class="col row">
-             <div class="col-2 px-0 ml-auto">
+        
+         <div class="container pb-1 text-right">
+          <div class="row px-5 mx-auto">
+            <div class="col-sm px-1">
+            </div>
+            <div class="col-8 px-1">
+                <h1 class="display-4 pt-1" id="title">Computers & Stuff</h1>
+            </div>
+            <div class="col-sm px-1 d-flex row justify-content-end float-right ml-3">
+              <div class="col-sm px-1 ">
             <a onClick={function() {
               if(localStorage.getItem('loggedIn') != 'true') {
-                window.location = '/sign-in'
+                window.location.href = '/sign-in'
               } else {
-                window.location = '/custProfile'
+                window.location.href = '/custProfile'
               }
             }} role="button" class="btn btn-default btn-sm padding-signin">
 
-<svg width="23px" height="22px" viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-<defs></defs>
-<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="Curved-essential-icons" transform="translate(-160.000000, -291.000000)" fill="#000000">
-        <g id="Group-730">
-            <path d="M171.500176,292.682927 C173.668907,292.682927 175.427005,294.943659 175.427005,297.731707 C175.427005,300.519756 173.668907,302.780488 171.500176,302.780488 C169.331444,302.780488 167.573346,300.519756 167.573346,297.731707 C167.573346,294.943659 169.331444,292.682927 171.500176,292.682927 M171.500176,304.463415 C168.406956,304.463415 165.89042,301.443683 165.89042,297.731707 C165.89042,294.019732 168.406956,291 171.500176,291 C174.593395,291 177.109932,294.019732 177.109932,297.731707 C177.109932,301.443683 174.593395,304.463415 171.500176,304.463415 Z M176.632766,303.906534 C176.696156,303.912705 183.0004,304.622339 183.0004,311.475778 C183.0004,311.940266 182.623424,312.317241 182.158937,312.317241 L160.841863,312.317241 C160.376815,312.317241 160.0004,311.940266 160.0004,311.475778 C160.0004,304.622339 166.304083,303.912705 166.367473,303.906534 C166.827473,303.859412 167.242034,304.19768 167.288595,304.659924 C167.335156,305.122168 166.998571,305.533363 166.537449,305.581046 C166.33718,305.602363 162.185961,306.11229 161.724839,310.634315 L181.275961,310.634315 C180.817083,306.0719 176.6524,305.60012 176.465034,305.581046 C176.00279,305.535046 175.665083,305.122729 175.711644,304.659924 C175.757083,304.19768 176.170522,303.85829 176.632766,303.906534 Z" id="Fill-560"></path>
-        </g>
-    </g>
-</g>
-</svg></a>
-             </div>
-             <div class="col-3 px-0">
+            <svg width="23px" height="22px" viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Curved-essential-icons" transform="translate(-160.000000, -291.000000)" fill="#000000">
+                    <g id="Group-730">
+                        <path d="M171.500176,292.682927 C173.668907,292.682927 175.427005,294.943659 175.427005,297.731707 C175.427005,300.519756 173.668907,302.780488 171.500176,302.780488 C169.331444,302.780488 167.573346,300.519756 167.573346,297.731707 C167.573346,294.943659 169.331444,292.682927 171.500176,292.682927 M171.500176,304.463415 C168.406956,304.463415 165.89042,301.443683 165.89042,297.731707 C165.89042,294.019732 168.406956,291 171.500176,291 C174.593395,291 177.109932,294.019732 177.109932,297.731707 C177.109932,301.443683 174.593395,304.463415 171.500176,304.463415 Z M176.632766,303.906534 C176.696156,303.912705 183.0004,304.622339 183.0004,311.475778 C183.0004,311.940266 182.623424,312.317241 182.158937,312.317241 L160.841863,312.317241 C160.376815,312.317241 160.0004,311.940266 160.0004,311.475778 C160.0004,304.622339 166.304083,303.912705 166.367473,303.906534 C166.827473,303.859412 167.242034,304.19768 167.288595,304.659924 C167.335156,305.122168 166.998571,305.533363 166.537449,305.581046 C166.33718,305.602363 162.185961,306.11229 161.724839,310.634315 L181.275961,310.634315 C180.817083,306.0719 176.6524,305.60012 176.465034,305.581046 C176.00279,305.535046 175.665083,305.122729 175.711644,304.659924 C175.757083,304.19768 176.170522,303.85829 176.632766,303.906534 Z" id="Fill-560"></path>
+                    </g>
+                </g>
+            </g>
+            </svg></a>
+                </div>
+        <div class="col-sm px-1">
              <a href="cart" role="button" class="btn btn-default btn-sm padding-signin">
-
-
              <svg width="23px" height="20px" viewBox="0 0 23 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
                  <defs></defs>
                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -48,10 +47,12 @@ export default class Menu extends Component {
                      </g>
                  </g>
              </svg></a>
-             </div>
+                </div>
 
-           </div>
+            </div>
+          </div>
         </div>
+            
           <div class="container pb-1">
           <div class="row px-5 mx-auto">
             <div class="col-sm px-1">
