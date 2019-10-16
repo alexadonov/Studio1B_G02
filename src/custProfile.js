@@ -133,13 +133,13 @@ export default class Shop extends Component {
                     <div class="row">
                         <div className="col"></div>
                         
-                        <div className="col-3">
+                        <div className="col">
                         {this.state.userType === 'Retailer' &&<a className="btn black-background white b-s" href="/retailerProducts" role="button">View My Products</a>}
                         </div>
-                        <div className="col-3">
+                        <div className="col">
                             {this.state.userType === 'Admin' && <a className="btn black-background white b-s" href="/admin" role="button">Admin Centre</a>}
                         </div>
-                        <div className="col"></div>
+                        
                     </div>
                 </div>
 </div>

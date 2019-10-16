@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   min-height: 0;
-    height: 99vh;
 }
 
 .App-logo {
@@ -76,7 +75,7 @@ h1{
 .btn {
   border-color:#97E0AD;
     cursor:pointer;
-}
+}   
 .b-s{
   width: 186.5px;
 }
@@ -154,4 +153,11 @@ h6{
       box-shadow: 0 0 0 0.1rem rgb(169, 227, 174);
   border-color: rgb(169, 227, 174);
     background-color: #97E0AD;
+}
+.table {
+   margin: auto;
+   width: 50% !important; 
+}
+table th {
+   text-align: center; 
 }

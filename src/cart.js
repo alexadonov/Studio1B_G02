@@ -99,10 +99,10 @@ export default class Cart extends Component {
             <div class="content rounded">
                 <div class="jumbotron1 rounded">
                     <Menu/>
-                    <h1>Cart</h1>
-                    <br/>
-                    <br/>
-                    <table className="table">
+                    <div class="mx-3 row">
+        <a class="btn-default2 btn-lg"><u><b>Cart</b></u></a>
+        </div>
+                    <table class="table table-bordered table-striped text-center">
                         <thead>
                         <tr>
                             <th scope="col">Product</th>
@@ -115,30 +115,21 @@ export default class Cart extends Component {
                             this.state.items.map(function(item)  {
                                 return (
                                   <CartItem item={item}/>
-
                                 )
                             })
                         }
-
                         <tr>
                           <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Total</td>
 
-                          <td><CurrencyFormat value={this.state.total} displayType="text" thousandSeparator={true} prefix="$" /></td>
+                          <td><b>Total</b></td>
                           <td>
-                          <button class="btn btn-primary" onClick={this.saveHistory}>Pay with 💳</button></td>
-
-
+                              <b><CurrencyFormat value={this.state.total} displayType="text" thousandSeparator={true} prefix="$" />.00</b>
+                          </td>
                         </tr>
                         </tbody>
 
                     </table>
+<button class="btn black-background white b-s my-3" onClick={this.saveHistory}>Pay with 💳</button>
                 </div>
             </div>
         );

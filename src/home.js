@@ -53,7 +53,7 @@ export default class Home extends Component {
               </div>
             </div>
         <div>
-        <div class="mx-3 mt-3 row">
+        <div class="mx-3 row">
         <a class="btn-default2 btn-lg"><b>Featured Brands</b></a>
         </div>
         <div class="row">

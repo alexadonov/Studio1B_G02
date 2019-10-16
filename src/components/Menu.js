@@ -1,21 +1,50 @@
 import React, { Component } from 'react';
 import "./menu.css";
+import axios from 'axios';
 
 export default class Menu extends Component {
+     constructor(props) {
+       super(props);
+
+       this.state = {
+           username: String,
+ 
+        }
+    }
+        componentDidMount() {
+
+    
+      axios.get('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
+          .then(res => {
+            this.setState({
+              username: res.data.username
+            })
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+    }
+
   render() {
     return (
         <div>
-        <div class="bg-white rounded-top position-relative border-bottom">
+        <div class="bg-white rounded-top border-bottom">
         
-         <div class="container pb-1 text-right">
-          <div class="row px-5 mx-auto">
-            <div class="col-sm px-1">
+         <div class="container pb-1">
+          <div class="row mx-auto">
+            <div class="col px-1 text-left">
+                <button class="btn btn-default btn-sm" onClick={function(){
+                            localStorage.setItem('currentUserId', null)
+                            localStorage.setItem('loggedIn', false)
+                            window.location='/'
+                        }}><b>Logout</b></button>
+                            <a>{this.state.username}</a>
             </div>
-            <div class="col-8 px-1">
+            <div class="col-9 px-1">
                 <h1 class="display-4 pt-1" id="title">Computers & Stuff</h1>
             </div>
-            <div class="col-sm px-1 d-flex row justify-content-end float-right ml-3">
-              <div class="col-sm px-1 ">
+            <div class="col px-1 d-flex row justify-content-end float-right ml-3">
+              <div class="col-sm px-1 text-right">
             <a onClick={function() {
               if(localStorage.getItem('loggedIn') != 'true') {
                 window.location.href = '/sign-in'
