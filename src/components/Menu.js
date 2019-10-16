@@ -8,7 +8,6 @@ export default class Menu extends Component {
        this.state = {
            username: String,
         }
-        
     }
        componentDidMount() {
 
@@ -28,10 +27,15 @@ export default class Menu extends Component {
         <div class="bg-white rounded-top position-relative border-bottom">
                   <div class="row px-5 mx-auto">
             <div class="col px-1 my-auto">
-                <button class="btn btn-default btn-sm mr-3" onClick={function(){
-                            localStorage.setItem('currentUserId', null)
+                <button class="btn btn-default btn-sm" onClick={function(){
+                            if(localStorage.getItem('loggedIn') != 'true') {
+                window.location.href = '/sign-in'
+              } else {
+                localStorage.setItem('currentUserId', null)
                             localStorage.setItem('loggedIn', false)
                             window.location='/'
+              }
+                            
                         }}><b>Logout</b></button>
                         <a id="logout-btn" class="my-auto"><b>{this.state.username}</b></a>
             </div>
@@ -43,7 +47,7 @@ export default class Menu extends Component {
             <a onClick={function() {
               if(localStorage.getItem('loggedIn') != 'true') {
                 window.location.href = '/sign-in'
-                document.getElementById("logout-btn").style.display = "none";
+                document.getElementById("logout-btn").style.display = "none"
               } else {
                 window.location.href = '/custProfile'
               }
@@ -74,7 +78,7 @@ export default class Menu extends Component {
              </svg></a>
                 </div>
           </div>
-            
+    
           <div class="container ">
           <div class="row px-5 mx-auto">
             <div class="col-sm px-1">
@@ -87,6 +91,8 @@ export default class Menu extends Component {
               <a href="/popShop" tole="button" class="btn btn-default btn-sm"><b>Popular</b></a>
             </div>
           </div>
+
+
         </div>
         </div>
         </div>

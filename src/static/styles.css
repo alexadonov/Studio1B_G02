@@ -160,3 +160,10 @@ hr {
 .i{
   display: inline-block;
 }
+.table {
+   margin: auto;
+   width: 50% !important; 
+}
+.table th{
+   text-align: center;
+}

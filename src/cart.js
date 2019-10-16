@@ -99,46 +99,37 @@ export default class Cart extends Component {
             <div class="content rounded">
                 <div class="jumbotron1 rounded">
                     <Menu/>
-                    <h1>Cart</h1>
-                    <br/>
-                    <br/>
-                    <table className="table">
-                        <thead>
+                    <a class="btn-default2 btn-lg"><u><b>Cart</b></u></a>
+                    <table className="table table-bordered text-center table-striped" align="center">
+                        <thead >
                         <tr>
                             <th scope="col">Product</th>
                             <th scope="col">Price</th>
                             <th scope="col">Delete</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
                         {
                             this.state.items.map(function(item)  {
                                 return (
                                   <CartItem item={item}/>
-
                                 )
                             })
                         }
 
                         <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Total</td>
-
-                          <td><CurrencyFormat value={this.state.total} displayType="text" thousandSeparator={true} prefix="$" /></td>
+                          <td><b>Total</b></td>
+                          <td><b><CurrencyFormat value={this.state.total} displayType="text" thousandSeparator={true} prefix="$" />.00</b></td>
                           <td>
-                          <button class="btn btn-primary" onClick={this.saveHistory}>Pay with 💳</button></td>
-
-
+                          </td>
                         </tr>
-                        </tbody>
 
+                      
+                        </tbody>
+                        
                     </table>
+<div class="align-right pt-4">
+                <button class="btn black-background white b-s" onClick={this.saveHistory}>Pay with 💳</button>    </div>
                 </div>
             </div>
         );

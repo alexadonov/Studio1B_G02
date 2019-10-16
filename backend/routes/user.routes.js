@@ -30,7 +30,7 @@ userRouter.route('/update/:id').post(function(req, res) {
         else
           user.username = req.body.username;
           user.password = req.body.password;
-          user.phone = req.body.phome;
+          user.phone = req.body.phone;
           user.dob = req.body.dob;
           user.email = req.body.email;
 
