@@ -18,6 +18,7 @@ export default class Home extends Component {
       // inStock: Boolean,
       // image: String
     }
+      
  }
 
  componentDidMount() {
@@ -30,15 +31,28 @@ export default class Home extends Component {
        .catch(function (error) {
            console.log(error);
        });
+     
+      axios.get('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
+      .then(res => {
+        this.setState({
+          username: res.data.username,
+        })
+      })
+      .catch(function (error) {
+          console.log(error);
+      });
     }
 
   render() {
     return (
       <div class="content rounded">
 
-        <div className="App">
+        <div className="App my-auto">
           <div class="jumbotron1 rounded">
           <Menu/>
+        <div class="mt-2">
+        <a >Welcome!</a> <b>{this.state.username}</b>
+        </div>
             <div class="row">
               <div class="col thumb-padding">
             <a href="./popShop">
