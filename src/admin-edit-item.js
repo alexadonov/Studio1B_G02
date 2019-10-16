@@ -175,13 +175,13 @@ export default class AdminEditItem extends Component {
             <div class="col">
               <div class="custom-control custom-radio">
                 <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" value={this.state.stock} onChange={this.onChangeStock} required/>
-                <label class="custom-control-label" for="customControlValidation2">In Stock</label>
+                <label class="custom-control-label" for="customControlValidation2">Popular</label>
               </div>
             </div>
           <div class="col">
             <div class="custom-control custom-radio mb-3">
               <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" value={this.state.stock} onChange={this.onChangeStock} required/>
-              <label class="custom-control-label" for="customControlValidation3">Not in Stock</label>
+              <label class="custom-control-label" for="customControlValidation3">Not Popular</label>
               <div class="invalid-feedback">Please check a box</div>
             </div>
           </div>
