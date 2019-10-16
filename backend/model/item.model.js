@@ -18,9 +18,9 @@ let Item = new Schema({
     image: {
         type: String
     },
-    popItem: {type: Boolean, default: false},
+    popItem: {type: Boolean, default: false, require: true},
     retailerId: {
-        type: String, 
+        type: String,
         required: true
     }
 });

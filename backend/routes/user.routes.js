@@ -33,6 +33,7 @@ userRouter.route('/update/:id').post(function(req, res) {
           user.phone = req.body.phome;
           user.dob = req.body.dob;
           user.email = req.body.email;
+          user.dob = req.body.dob;
 
             user.save().then(user => {
                 res.json('User updated!');
