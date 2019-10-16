@@ -23,30 +23,13 @@ export default class PopShop extends Component {
     }
 
     componentDidMount() {
-      axios.get('http://localhost:4000/history/').then(res => {
+      axios.get('http://localhost:4000/history').then(res => {
         this.setState({
           history: res.data.productId
         })
-        var hist = this.state.history
-
-        const uniqueId = hist.filter(function(item, index){
-          return res.data.productId.indexOf(item) === index
-        })
-
-        for(var i=0; i<uniqueId.length; i++){
-          var arr = []
-
-          const count = res.data.productId.filter(id => id == uniqueId[i])
-
-          arr[i] = {id: uniqueId[i], count: count.length}
-
-          this.setState({
-            countArr: arr
-          })
-        }
-      })
-
-      axios.get('http://localhost:4000/items/')
+      });
+      
+      axios.get('http://localhost:4000/items')
           .then(res => {
             this.setState({
               items: res.data
@@ -55,6 +38,17 @@ export default class PopShop extends Component {
           .catch(function (error) {
               console.log(error);
           });
+  
+          for(var i=0; i < this.state.items.length; i++){
+            var count = this.state.history.filter(id => id == this.state.items[i]._id)
+            var arr = [{key: String, cnt: Number}];
+
+            arr[i].id = this.state.items[i]._id
+            arr[i].cnt = count.length
+            this.setState({
+              countArr: arr
+            })
+          }
     }
 
     addToCart(e) {
@@ -62,9 +56,9 @@ export default class PopShop extends Component {
     }
 
   render() {
-
     return (
       <div class="content rounded">
+            <head><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/></head>
       <div className="App">
         <Router>
         </Router>
@@ -74,17 +68,42 @@ export default class PopShop extends Component {
             <div class="mainContent pb-4">
                 <section class="pt-0 pb-5">
                             <div class="row pb-5">
-                            <div class="card-deck py-3 px-4">
-                        {this.state.countArr.map(function(currentItem, i) {
-                            return (
+                            <div class="card-deck pb-3 px-4">
+                        {this.state.items.map(function(currentItem, i) {
+                          return (
                             <div class="row">
                             <div class="card-deck py-3 px-4">
                               <div class="card" key={i}>
+                                <img src={currentItem.image} class="card-img-top card-header" alt="placeholder"/>
                                 <div class="card-body">
-                                  <h5 class="card-title"><b>{currentItem.id}</b></h5>
-                                  <p class="card-text">{currentItem.count}</p>
+                                  <h5 class="card-title"><b>{currentItem.name}</b></h5>
+                                  <p class="card-text">{currentItem.description}</p>
                                 </div>
                                 <div class="card-footer">
+                                  <a class="price my-2"> <b><CurrencyFormat value={currentItem.price} displayType="text" thousandSeparator={true} prefix="$" /></b></a>
+                                  <button class="list-group-item list-group-item-action" onClick={function() {
+                                    // localStorage.setItem('productName', currentItem.name);
+                                    // localStorage.setItem('productId', currentItem._id);
+                                    // localStorage.setItem('productRetailerid', currentItem.retailerId);
+                                    // localStorage.setItem('productPrice', currentItem.price);
+
+                                    const newItem = {
+                                      customerId: localStorage.getItem('currentUserId'),
+                                      retailerId: currentItem.retailerId,
+                                      productId: currentItem._id,
+                                      name: currentItem.name,
+                                      price: currentItem.price
+                                    }
+                                    axios.post('http://localhost:4000/cart/add', newItem)
+                                      .then(response => {
+                                          alert("Item added to cart!")
+                                          return;
+                                      })
+                                      .catch(function (error){
+                                        console.log('What happened? ' + error);
+                                      })
+
+                                  }}>Add to Cart</button>
                                 </div>
                             </div>
                           </div>
@@ -97,7 +116,21 @@ export default class PopShop extends Component {
                         </div>
                 </section>
             </div>
-            <div class = "sideBar col-2 px-2 py-2">
+            <div class = "sideBar col-3 px-3 py-3">
+                <aside>
+                    <h2>FILTERS</h2>
+                      <div class="list-group list-group-flush">
+                        <a href="/shop-dell">
+                          <button type="button" class="list-group-item list-group-item-action" >Dell</button>
+                        </a>
+                        <a href="/shop-lenovo">
+                          <button type="button" class="list-group-item list-group-item-action" >Lenovo</button>
+                        </a>
+                        <a href="/shop-hp">
+                          <button type="button" class="list-group-item list-group-item-action" >HP</button>
+                        </a>
+                    </div>
+                </aside>
             </div>
         </div>
         </div>
