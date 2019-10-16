@@ -47,11 +47,11 @@ export default class Admin extends Component {
 
   render() {
     return (
-      <div class="content rounded" >
+      <div class="container rounded" >
           <Router>
           <div className="App">
 
-          <div class="shadow p-1 mb-5 bg-white rounded-top">
+          <div class="shadow jumbotron1 p-1 mb-5 bg-white rounded-top">
             <h1>Admin Center: Items</h1>
             <a href="/admin">Return to Centre</a>
             <div class="row">
@@ -65,7 +65,7 @@ export default class Admin extends Component {
               </div>
               <div class="col-sm"></div><div class="col-sm"></div>
             </div>
-            <div class="overflow-auto">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
 
             <table class="table table-bordered table-striped mb-0">
               <thead>
