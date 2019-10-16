@@ -41,7 +41,7 @@ export default class Admin extends Component {
       <div class="container">
           <Router>
           <div className="App">
-          <div class="shadow bg-white rounded-top jumbotron1">
+          <div class="shadow bg-white rounded-top mt-2 jumbotron1">
             <h1>Admin Center: Users</h1>
             <a href="/admin">Return to Centre</a>
             <div class="row">

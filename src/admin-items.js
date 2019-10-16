@@ -51,7 +51,7 @@ export default class Admin extends Component {
           <Router>
           <div className="App">
 
-          <div class="shadow jumbotron1 p-1 mb-5 bg-white rounded-top">
+          <div class="shadow jumbotron1 p-1 mt-2 mb-1 bg-white rounded-top">
             <h1>Admin Center: Items</h1>
             <a href="/admin">Return to Centre</a>
             <div class="row">
