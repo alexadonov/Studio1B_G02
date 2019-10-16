@@ -83,8 +83,7 @@ export default class Cart extends Component {
                 axios.delete('http://localhost:4000/cart/' + this.state.items[i]._id)
                   .then((res) => {
                     console.log("deleted");
-                    alert("Payment Successful!");
-                    window.location.reload();
+                    window.location = '';
                   })
               }
             })
