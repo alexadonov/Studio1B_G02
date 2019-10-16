@@ -161,8 +161,7 @@ export default class Shop extends Component {
       <div class="container">
         <Router>
           <div className="App" >
-          <br/>
-          <div class="jumbotron4 rounded shadow">
+          <div class="jumbotron5 mt-3 rounded shadow">
             <div class="p-1 bg-white rounded-top border-bottom">
             <h1>Register</h1>
             </div>

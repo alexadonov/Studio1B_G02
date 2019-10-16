@@ -43,8 +43,8 @@ export default class Menu extends Component {
             <div class="col-9 px-1">
                 <h1 class="display-4 pt-1" id="title">Computers & Stuff</h1>
             </div>
-            <div class="col px-1 d-flex row justify-content-end float-right ml-3">
-              <div class="col-sm px-1 text-right">
+            <div class="col row px-1">
+              <div class="col-sm px-1 mx-auto">
             <a onClick={function() {
               if(localStorage.getItem('loggedIn') != 'true') {
                 window.location.href = '/sign-in'

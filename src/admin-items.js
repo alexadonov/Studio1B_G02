@@ -47,11 +47,10 @@ export default class Admin extends Component {
 
   render() {
     return (
-      <div class="container" >
+      <div class="content rounded" >
           <Router>
           <div className="App">
 
-          <br/>
           <div class="shadow p-1 mb-5 bg-white rounded-top">
             <h1>Admin Center: Items</h1>
             <a href="/admin">Return to Centre</a>
@@ -66,8 +65,9 @@ export default class Admin extends Component {
               </div>
               <div class="col-sm"></div><div class="col-sm"></div>
             </div>
+            <div class="overflow-auto">
 
-            <table className="table table-striped" style={{ marginTop: 20 }} >
+            <table class="table table-bordered table-striped mb-0">
               <thead>
                 <tr>
                   <th>Retailer ID</th>
@@ -97,7 +97,7 @@ export default class Admin extends Component {
               }
             </tbody>
             </table>
-
+</div>
           </div>
           </div>
         </Router>
