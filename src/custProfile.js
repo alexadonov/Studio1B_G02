@@ -21,11 +21,24 @@ export default class Shop extends Component {
         }
     }
 
+   /* getUser = () => {
+        this.setState({
+            username: localStorage.getItem('username'),
+            password: localStorage.getItem('password'),
+            dob: localStorage.getItem('dob'),
+            email: localStorage.getItem('email'),
+            userType: localStorage.getItem('userType')
+
+        })
+    */
+
     componentDidMount() {
       if(localStorage.getItem('loggedIn') != 'true') {
         alert("You are not logged in and cannot access this page")
         window.location = "/";
       }
+
+      
 
       axios.get('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
           .then(res => {
@@ -121,10 +134,10 @@ export default class Shop extends Component {
                         <div className="col"></div>
                         
                         <div className="col-3">
-                            <a className="btn black-background white b-s" href="/retailerProducts" role="button">View My Products</a>
+                        {this.state.userType === 'Retailer' &&<a className="btn black-background white b-s" href="/retailerProducts" role="button">View My Products</a>}
                         </div>
                         <div className="col-3">
-                            <a className="btn black-background white b-s" href="/admin" role="button">Admin Centre</a>
+                            {this.state.userType === 'Admin' && <a className="btn black-background white b-s" href="/admin" role="button">Admin Centre</a>}
                         </div>
                         <div className="col"></div>
                     </div>
