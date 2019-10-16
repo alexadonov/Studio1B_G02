@@ -89,7 +89,7 @@ export default class CreateItem extends Component {
       brand: this.state.brand,
       model: this.state.model,
       stock: this.state.stock,
-      image: this.state.stock
+      image: this.state.image
   };
 
   //Checks the name is unique and will not conflict with other items
@@ -110,6 +110,7 @@ export default class CreateItem extends Component {
   axios.post('http://localhost:4000/items/add', newItem)
     .then(response => {
         alert("Welcome to the club!");
+        window.location = '/shop';
         return;
     })
     .catch(function (error){
