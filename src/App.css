@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   min-height: 0;
+    height: 99vh;
 }
 
 .App-logo {
@@ -25,6 +26,7 @@
 }
 .mainContent {
     display:inline-block;
+    height:100%;
 }
 
 @keyframes App-logo-spin {
@@ -73,7 +75,7 @@ h1{
 }
 .btn {
   border-color:#97E0AD;
-  font-family: "Roboto", sans-serif;
+    cursor:pointer;
 }
 .b-s{
   width: 186.5px;
@@ -85,8 +87,8 @@ h1{
   background-color:#DFF5E6; color:#87C99B;
 }
 .input-group {
-  font-family: "Roboto", sans-serif;
 }
+
 .vertical-center {
   margin: 0;
   position: relative;
@@ -112,7 +114,6 @@ h1{
   padding-right: 15px;
 }
 h6{
-  font-family: "Roboto", sans-serif;
   font-size: 12px;
   padding: 8px;
 }
@@ -148,4 +149,9 @@ h6{
 
 .slider-slide {
   background-image: linear-gradient(to left, #F8FFAE, #43C6AC)
+}
+.custom-control-input:checked~.custom-control-label::before{
+      box-shadow: 0 0 0 0.1rem rgb(169, 227, 174);
+  border-color: rgb(169, 227, 174);
+    background-color: #97E0AD;
 }

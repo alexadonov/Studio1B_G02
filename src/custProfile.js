@@ -21,11 +21,24 @@ export default class Shop extends Component {
         }
     }
 
+   /* getUser = () => {
+        this.setState({
+            username: localStorage.getItem('username'),
+            password: localStorage.getItem('password'),
+            dob: localStorage.getItem('dob'),
+            email: localStorage.getItem('email'),
+            userType: localStorage.getItem('userType')
+
+        })
+    */
+
     componentDidMount() {
       if(localStorage.getItem('loggedIn') != 'true') {
         alert("You are not logged in and cannot access this page")
         window.location = "/";
       }
+
+      
 
       axios.get('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
           .then(res => {
@@ -47,23 +60,28 @@ export default class Shop extends Component {
   render() {
 
     return (
-    <div class="container">
+    <div class="content rounded">
         <Router>
             <div className="App">
-            <br/>
-                <div class="jumbotron">
-                    <div class="border-bottom p-3 mb-5 bg-white rounded-t">
-                        <h1 class="display-4">Customer Profile</h1>
-                        <button class="btn black-background white b-s" onClick={function(){
+ 
+                <div class="jumbotron1 shadow rounded">
+                    <div class="border-bottom bg-white rounded-t">
+                        <h1 class="">Customer Profile</h1>
+                                 <a href="/" role="button" class="btn btn-default btn-sm "><b>Home</b></a>
+        <button class="btn btn-default btn-sm mr-3" onClick={function(){
                             localStorage.setItem('currentUserId', null)
                             localStorage.setItem('loggedIn', false)
                             window.location='/'
-                        }}>Sign Out</button>
+                        }}><b>Logout</b></button>
                     </div>
 
+                    <div class="ml-3 mt-3">
+                    <div class="row">
+                    <div class="text-right col">
                     <div>
-                        <h3>Personal Details</h3>
+                        <h3 ><b>Personal Details</b></h3>
                     </div>
+                    <div class="ml-4">
                     <p>
                         <strong>Name: </strong> {this.state.username}
                     </p>
@@ -73,13 +91,13 @@ export default class Shop extends Component {
                     <p>
                         <strong>Password: </strong> {this.state.password}
                     </p>
-
-                    <br></br>
-                    <br></br>
-
-                    <div>
-                        <h3>Contact Details</h3>
                     </div>
+                    </div>
+                    <div class="text-left col">
+                    <div>
+                        <h3><b>Contact Details</b></h3>
+                    </div>
+                    <div class="ml-4">
                     <p>
                         <strong>Email: </strong> {this.state.email}
                     </p>
@@ -90,10 +108,10 @@ export default class Shop extends Component {
                     <p>
                         <strong>Account Type: </strong> {this.state.userType}
                     </p>
-
-                    <br></br>
-
-                    <div class="row">
+                    </div>
+</div>
+</div>
+                    <div class="row pt-3 border-top">
                         <div className="col"></div>
                         <div class="col-3">
                             <a className="btn black-background white b-s" href="/edit-user" role="button">Edit Profile</a>
@@ -116,14 +134,15 @@ export default class Shop extends Component {
                         <div className="col"></div>
                         
                         <div className="col-3">
-                            <a className="btn black-background white b-s" href="/retailerProducts" role="button">View My Products</a>
+                        {this.state.userType === 'Retailer' &&<a className="btn black-background white b-s" href="/retailerProducts" role="button">View My Products</a>}
                         </div>
                         <div className="col-3">
-                            <a className="btn black-background white b-s" href="/admin" role="button">Admin Centre</a>
+                            {this.state.userType === 'Admin' && <a className="btn black-background white b-s" href="/admin" role="button">Admin Centre</a>}
                         </div>
                         <div className="col"></div>
                     </div>
                 </div>
+</div>
             </div>
         </Router>
     </div>

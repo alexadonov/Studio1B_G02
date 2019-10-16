@@ -75,7 +75,6 @@ letter-spacing: 0;
 .sideBar{
     flex:1.2;
     order:1;
-    font-family: "Roboto", sans-serif;
     font-size: 18px;
     color: #000000;
     letter-spacing: 0;
