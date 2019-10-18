@@ -3,51 +3,51 @@ import "./menu.css";
 import axios from 'axios';
 
 export default class Menu extends Component {
-     constructor(props) {
+    constructor(props) {
        super(props);
-
        this.state = {
            username: String,
- 
         }
     }
-        componentDidMount() {
+       componentDidMount() {
 
-    
       axios.get('http://localhost:4000/users/' + localStorage.getItem('currentUserId'))
           .then(res => {
             this.setState({
-              username: res.data.username
+              username: res.data.username,
             })
           })
           .catch(function (error) {
               console.log(error);
           });
     }
-
   render() {
     return (
         <div>
-        <div class="bg-white rounded-top border-bottom">
-        
-         <div class="container pb-1">
-          <div class="row mx-auto">
-            <div class="col px-1 text-left">
+        <div class="bg-white rounded-top position-relative border-bottom">
+                  <div class="row px-5 mx-auto">
+            <div class="col px-1 my-auto">
                 <button class="btn btn-default btn-sm" onClick={function(){
-                            localStorage.setItem('currentUserId', null)
+                            if(localStorage.getItem('loggedIn') != 'true') {
+                window.location.href = '/sign-in'
+              } else {
+                localStorage.setItem('currentUserId', null)
                             localStorage.setItem('loggedIn', false)
                             window.location='/'
+              }
+                            
                         }}><b>Logout</b></button>
-                            <a>{this.state.username}</a>
+                        <a id="logout-btn" class="my-auto"><b>{this.state.username}</b></a>
             </div>
             <div class="col-9 px-1">
-                <h1 class="display-4 pt-1" id="title">Computers & Stuff</h1>
+                <h1 class="pt-1" id="title">Computers & Stuff</h1>
             </div>
-            <div class="col row px-1">
-              <div class="col-sm px-1 mx-auto">
+            <div class="col px-1 row">
+              <div class="col px-1 ">
             <a onClick={function() {
               if(localStorage.getItem('loggedIn') != 'true') {
                 window.location.href = '/sign-in'
+                document.getElementById("logout-btn").style.display = "none"
               } else {
                 window.location.href = '/custProfile'
               }
@@ -77,12 +77,9 @@ export default class Menu extends Component {
                  </g>
              </svg></a>
                 </div>
-
-            </div>
           </div>
-        </div>
-            
-          <div class="container pb-1">
+    
+          <div class="container ">
           <div class="row px-5 mx-auto">
             <div class="col-sm px-1">
               <a href="/" role="button" class="btn btn-default btn-sm "><b>Home</b></a>
@@ -94,6 +91,9 @@ export default class Menu extends Component {
               <a href="/popShop" tole="button" class="btn btn-default btn-sm"><b>Popular</b></a>
             </div>
           </div>
+
+
+        </div>
         </div>
         </div>
       </div>
