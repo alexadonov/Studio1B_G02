@@ -45,11 +45,14 @@ export default class PopShop extends Component {
         </Router>
         <div class="jumbotron1">
           <Menu/>
-          <div class="row">
-            <div class="mainContent pb-4">
-                <section class="pt-0 pb-5">
+          <div class="row mx-auto">
+            <div class="mainContent mx-auto pb-4">
+         <div class="mx-3 row">
+        <a class="btn-default2 btn-lg"><u><b>Popular Items</b></u></a>
+        </div>
+                <section class="pt-0 mx-auto pb-5">
                             <div class="row pb-5">
-                            <div class="card-deck py-3 px-4">
+                            <div class="card-deck mx-auto py-3 px-4">
                         {this.state.items.map(function(currentItem, i) {
                           if (currentItem.popItem) {
                             return (
@@ -98,8 +101,6 @@ export default class PopShop extends Component {
                          </div>
                         </div>
                 </section>
-            </div>
-            <div class = "sideBar col-2 px-2 py-2">
             </div>
         </div>
         </div>

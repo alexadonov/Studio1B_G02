@@ -20,7 +20,7 @@ deleteItem = () => {
             <tr id={item.id}>
                 <td>{item.name}</td>
                 <td><CurrencyFormat value={item.price} displayType="text" thousandSeparator={true} prefix="$" />.00</td>
-                <td onClick={function() {
+                <td class="pointer-cursor" onClick={function() {
                   axios.delete('http://localhost:4000/cart/' + item._id)
                     .then((res) => {
                       console.log("deleted");

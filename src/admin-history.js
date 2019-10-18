@@ -40,13 +40,11 @@ export default class Admin extends Component {
       <div class="container" >
           <Router>
           <div className="App">
-          <br/>
-          <div class="shadow p-1 mb-5 bg-white rounded-top">
+          <div class="shadow p-1 jumbotron1 mt-2 mb-1 bg-white rounded-top">
             <h1>Admin: Purchase History</h1>
             <a href="/admin">Return to Centre</a>
-
-
-            <table className="table table-striped" style={{ marginTop: 20 }} >
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table class="table table-bordered table-striped mb-0">
               <thead>
                 <tr>
                   <th>Retailer ID</th>
@@ -76,7 +74,7 @@ export default class Admin extends Component {
             }
             </tbody>
             </table>
-
+</div>
           </div>
           </div>
         </Router>

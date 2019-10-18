@@ -41,8 +41,7 @@ export default class Admin extends Component {
       <div class="container">
           <Router>
           <div className="App">
-          <br/>
-          <div class="shadow bg-white rounded-top jumbotron1 overflow-scroll">
+          <div class="shadow bg-white rounded-top mt-2 jumbotron1">
             <h1>Admin Center: Users</h1>
             <a href="/admin">Return to Centre</a>
             <div class="row">
@@ -59,8 +58,9 @@ export default class Admin extends Component {
               </div>
               <div class="col-sm"></div><div class="col-sm"></div>
             </div>
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
 
-            <table className="table table-striped" style={{ marginTop: 20 }} >
+            <table class="table table-bordered table-striped mb-0">
               <thead>
                 <tr>
                   <th>User ID</th>
@@ -93,6 +93,7 @@ export default class Admin extends Component {
             }
             </tbody>
             </table>
+</div>
           </div>
           </div>
         </Router>

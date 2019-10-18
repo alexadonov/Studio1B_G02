@@ -161,7 +161,6 @@ export default class AdminCreateUser extends Component {
       <div class="container">
         <Router>
           <div className="App" >
-          <br/>
           <div class="jumbotron">
             <h1>Create User</h1>
             <a href="/admin-user">Return to Users</a>
@@ -233,7 +232,7 @@ export default class AdminCreateUser extends Component {
 
           </div>
           </div>
-          <input type="submit" class="btn btn-outline-primary" value="Submit"/>
+          <input type="submit" class="btn black-background white b-s" value="Submit"/>
           </form>
         </div>
         </div>

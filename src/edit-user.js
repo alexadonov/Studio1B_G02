@@ -82,8 +82,8 @@ export default class EditUser extends Component {
 
   onChangePhone(e) {
    this.setState({
-       phone: e.target.value
-   });
+      phone: e.target.value
+    });    
   }
 
   onSubmit(e) {

@@ -135,7 +135,6 @@ export default class CreateItem extends Component {
       <div class="container rounded">
         <Router>
           <div className="App" >
-          <br/>
           <div class="jumbotron4 rounded shadow">
             <h1>Create Item</h1>
             <a href="/admin-item">Return to Items</a>
