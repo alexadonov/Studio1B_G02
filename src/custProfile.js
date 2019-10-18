@@ -131,12 +131,12 @@ export default class Shop extends Component {
 
                     <br/>
                     <div class="row">
-                        <div className="col"></div>
+                        <div className="col-1"></div>
                         
-                        <div className="col">
+                        <div className="col-1">
                         {this.state.userType === 'Retailer'&&<a className="btn black-background white b-s" href="/retailerProducts" role="button">View My Products</a>}
                         </div>
-                        <div className="col">
+                        <div className="col-2">
                             {this.state.userType === 'Admin'&& <a className="btn black-background white b-s" href="/admin" role="button">Admin Centre</a>}
                         </div>
                         

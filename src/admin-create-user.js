@@ -161,7 +161,7 @@ export default class AdminCreateUser extends Component {
       <div class="container">
         <Router>
           <div className="App" >
-          <div class="jumbotron">
+          <div class="jumbotron1 shadow px-3 mt-2">
             <h1>Create User</h1>
             <a href="/admin-user">Return to Users</a>
             <form onSubmit={this.onSubmit}>

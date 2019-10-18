@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./components/Menu";
 import axios from 'axios';
 import { Link, BrowserRouter as Router } from "react-router-dom";
+import CurrencyFormat from 'react-currency-format';
 
 
 export default class Admin extends Component {
@@ -61,7 +62,7 @@ export default class Admin extends Component {
                 <td>{currentItem.retailerId}</td>
                 <td>{currentItem.customerId}</td>
                 <td>{currentItem.name}</td>
-                <td>${currentItem.price}</td>
+                <td><CurrencyFormat value={currentItem.price} displayType="text" thousandSeparator={true} prefix="$" />.00</td>
                 <td><button class="btn btn-link" onClick={function() {
                   localStorage.setItem('deleteId', currentItem._id);
                   axios.delete('http://localhost:4000/history/' + localStorage.getItem('deleteId'))
