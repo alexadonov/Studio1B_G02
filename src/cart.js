@@ -53,7 +53,7 @@ export default class Cart extends Component {
           for(var p = 0; p <= res.data.length; p++) {
             if(res.data[p].customerId === localStorage.getItem('currentUserId')) {
               items2[m] = res.data[p];
-              
+
               this.state.total +=parseInt(res.data[p].price, 10);
                 this.setState({items: items2})
               m++;
@@ -128,6 +128,7 @@ export default class Cart extends Component {
                         </tbody>
 
                     </table>
+
                     <StripeCheckout
                       label="Pay with 💳"
                       amount="500" //This should change
