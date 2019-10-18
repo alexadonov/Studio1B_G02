@@ -83,11 +83,7 @@ export default class Cart extends Component {
                 axios.delete('http://localhost:4000/cart/' + this.state.items[i]._id)
                   .then((res) => {
                     console.log("deleted");
-<<<<<<< HEAD
-                    window.location = '/';
-=======
                     window.location = '';
->>>>>>> c1c8b4e07802771b016dc0891c693f89ffba4ba0
                   })
               }
             })
@@ -132,25 +128,7 @@ export default class Cart extends Component {
                         </tbody>
 
                     </table>
-<<<<<<< HEAD
-                    <br/>
 
-                    <StripeCheckout
-  label="Pay with 💳"
-  amount={this.state.total} //This should change
-  billingAddress
-  description="Computers & Stuff" //This should change
-  locale="auto"
-  name=""
-  stripeKey="pk_test_amIsnVcb4dXtUFh2vbL9EKNo00BAkY8kZo"
-  token={this.onToken}
-  onClick={this.saveHistory}
-  zipCode
-
-/>
-<br/>
-  <button class="btn black-background white b-s my-3" onClick={this.saveHistory}>Save to Purchase History</button>
-=======
                     <StripeCheckout
                       label="Pay with 💳"
                       amount="500" //This should change
@@ -164,7 +142,6 @@ export default class Cart extends Component {
                       zipCode
                     />
 <button class="btn black-background white b-s my-3" onClick={this.saveHistory}>Make a Purchase</button>
->>>>>>> c1c8b4e07802771b016dc0891c693f89ffba4ba0
                 </div>
             </div>
         );
